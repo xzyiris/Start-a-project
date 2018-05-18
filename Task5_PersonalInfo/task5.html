@@ -88,11 +88,19 @@
 			transform: translateY(-50%);
 		}
 		.remark{
+			margin-left:30px;
 			height: 100px;
-			margin-left: 30px;
 			border-bottom: 1px solid #e1e5e7;
 		}
 
+		div.remark>img{
+			position: relative;
+			top: 32px;
+		}
+		div.remark>span{
+			position: relative;
+			top: 34px;
+		}
 	</style>
 </head>
 <body>
@@ -116,12 +124,15 @@
 		<div class="rectangle"></div>
 		<p style="font-size: 32px;float: left;position: relative;top: 50%;transform: translateY(-50%);margin-left: 30px;font-weight: bolder; ">专业技能</p>
 	</div>
-	<div class="remark" style="vertical-align: middle;">
-		<img src="./img/star.png" style="margin-left: 70px;">
+	<div class="remark">
+		<img src="./img/star.png">
 		<span style="font-size:32px;"> &nbsp&nbsp住家 &nbsp&nbsp</span>
 		<span style="color:#e1e5e7;font-size: 32px;">| &nbsp&nbsp</span>
 		<img src="./img/star.png">
-		<span style="font-size:32px;">不含餐</span>
+		<span style="font-size:32px;">&nbsp&nbsp不含餐</span>
+	</div>
+	<div class="remark">
+		<span></span>
 	</div>
 </div>
 </body>
