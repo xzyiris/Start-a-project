@@ -1,0 +1,42 @@
+
+.container{
+  width: 100%;
+  min-width: 500px;
+}
+.title{
+  background-color: #5fc0cd;
+  display: block;
+  height: 5.5em;
+}
+.vertical-center{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.switch{
+  display: inline-block;
+  background-color: #55a8b3;
+  border-radius:1em;
+  width: 18em;
+  height: 4.4em;
+
+}
+.list-box{
+  height: 5em;
+}
+.triangle{
+  height: 0;
+  width: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 13px solid #999999;
+
+}
+.vertical-line{
+  width: 1px;
+  height: 4em;
+  background-color: #999999;
+  display: inline-block;
+  margin:0 0.5em;
+}
