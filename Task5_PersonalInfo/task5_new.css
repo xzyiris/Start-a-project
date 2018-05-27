@@ -1,65 +1,78 @@
 body{
-	font-size: 62.5%;
 	margin:0;
-
-
+	padding: 0;
+	font-size: 62.5%;
 }
 .title{
+	position: fixed;
+	z-index: 10;
+	height: 8.8em;
+	width: 100%;
+	padding: 1.5em;
 	background-color: #5fc0cd;
 	text-align: center;
-	position: relative;
-	padding: 1em;
+	white-space: nowrap;
 }
 .title-text{
-	font-size: 3.6em;
-	color: white;
+	position: relative;
 	display: inline-block;
-}
-.arrow{
-	display: inline-block;
-	position: absolute;
-	left: 1em;
 	top: 50%;
 	transform: translateY(-50%);
+	font-size: 3.6em;
+	color: white;
+	letter-spacing: 0.1em;
+}
+.arrow{
+	position: absolute;
+	display: inline-block;
+	top: 50%;
+	left: 3.5em;
+	transform: translateY(-50%);
+
 }
 .profile{
-	background-image: url(./task5-1-assets/backgroundImage.png);
+	position: relative;
 	height: 33em;
 	width: 100%;
+	padding: 0;
+	background-image: url(./task5-1-assets/backgroundImage.png);
 	background-repeat: no-repeat;
 	background-size: cover;
-	position: relative;
 }
 .profile-text{
 	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-	left: 25em;
 	display: inline-block;
+	top: 50%;
+	left: 25em;
+	transform: translateY(-50%);
 }
 .rectangle{
+	display: inline-block;
 	width:0.3em;
 	height: 2.6em;
+	margin-right: 3em;
 	border-radius: 0.1em;
 	background-color: #55a8b3;
-	display: inline-block; 
-	margin-right: 3em;
 }
 .skill{
-	margin: 3em;
+	padding: 3em;
+	border-bottom:1px solid #999999;
+	white-space: nowrap;
 }
 .skill-text{
-	font-size: 3.2em;
 	display: inline-block;
+	font-size: 3.2em;
+	letter-spacing: 0.1em;
 }
 .head{
-	top: 50%;
-	transform: translateY(-50%);
 	position: absolute;
-	left: 3em;
 	display: inline-block;
+	top: 50%;
+	left: 3em;
+	transform: translateY(-50%);
 }
 .name{
+	font-family: SimHei;
 	font-size: 3.6em;
 	color: white;
 }
@@ -73,91 +86,98 @@ body{
 	transform: translateY(-50%);
 }
 .location-text{
+	margin-left: 1em;
 	font-size: 2.4em;
 	color: white;
-	margin-left: 1em;
-}
-.h-line{
-	height: 0.1em;
-	background-color: #999999;
 }
 .remark{
-	display: inline-block;
 	position: relative;
-	margin: 2em 5em;
+	padding: 2em 5em;
+	margin: 0 0 0 3em;
+	border-bottom: 1px solid #999999;
+	white-space: nowrap;
 }
 .vertical-center{
-	top: 50%;
 	position: absolute;
+	top: 50%;
 	transform: translateY(-50%);
 }
 .remark-text{
-	font-size: 3.2em;
 	display: inline-block;
-	margin-left: 1em;
-}
-.h-line-2{
-	height: 0.1em;
-	margin-left: 3em;
-	background-color: #999999;
+	margin: 0 0 0 1em;
+	font-size: 3.2em;
 }
 .list-item{
 	position: relative;
-	padding: 2em 5em;
+	padding: 2em 3em;
+	margin: 0 0 0 3em;
+	border-bottom: 1px solid #999999;
+	white-space: nowrap;
 }
 .text-gray{
-	color: #999999;
-	font-size: 3.2em;
 	display: inline-block;
+	vertical-align: middle;
+	padding-right: 1em;
+	border-right: 1px solid #999999;
+	font-size: 3.2em;
+	color: #999999;
+	letter-spacing: 0.1em;
 }
 .text-main{
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 0 0 1em;
 	font-size: 3.2em;
-	display: inline-block;
-}
-.v-line{
-	height: 3.2em;
-	width: 0.1em;
-	background-color: #999999;
-	display: inline-block;
-	position: relative;
-	top: 0.5em;
-	margin: 0 2em;
-}
-.self-intro{
-	position: relative;
-	padding: 2em 5em;
+	white-space: pre-wrap;
 }
 .blank{
-	height: 10em;
+	height: 15em;
 }
 .message{
-	color: #5fc0cd;
-	padding: 2.5em 0 2.5em 0;
-	border: 1px solid #5fc0cd;
-	border-radius: 1em;
-	margin-bottom: 2em;
 	position: relative;
+	display: inline-block;
+	top: 50%;
+	transform: translateY(-50%);
 	left: 8%;
 	width: 40%;
-	display: inline-block;
+	padding: 25px 0 25px 0;
+	border: 1px solid #5fc0cd;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	font-size: 3.2em;
+	color: #5fc0cd;
+	background-color: white;
 }
-.message-text{
-	font-size: 3.4em;
-	text-align: center;
-}
+
 .contact{
 	color: white;
 	background-color: #5fc0cd;
-	padding: 2.5em 0 2.5em 0;
+	padding: 25px 0 25px 0;
 	border: 1px solid #5fc0cd;
-	border-radius: 1em;
-	margin-bottom: 2em;
+	border-radius: 10px;
+	margin-bottom: 20px;
 	position: relative;
 	left: 10%;
 	width: 40%;
 	display: inline-block;
+	font-size: 3.2em;
+	top: 50%;
+	transform: translateY(-50%);
+	position: relative;
 }
 .contact-text{
-	font-size: 3.4em;
 	text-align: center;
+	font-size: 3.4em;
+}
+.red-text{
+	color: #e26163;
+}
+.button{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 10em;
+	width: 100%;
+	padding: 1em 0;
+	background-color: white;
 }
