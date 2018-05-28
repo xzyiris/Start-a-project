@@ -93,8 +93,8 @@ div.row div.col-xs-4{
 }
 .sprite{
     display: inline-block;
-    width: 3em;
-    height: 3em;
+    width: 3.5em;
+    height: 3.5em;
     background-image: url(./task6-assets/sprite.png);
     background-repeat: no-repeat;
 }
@@ -120,11 +120,17 @@ div.row div.col-xs-4{
     font-size: 3em;
     font-weight: bold;
     font-family: SimHei;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .red-text{
     font-size: 3em;
     font-weight: bold;
     color: #e63b0e;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .arrow-right{
     display: inline-block;
