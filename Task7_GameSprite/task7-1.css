@@ -1,15 +1,17 @@
-html{
+html {
   font-size: 62.5%;
   background-color: #29bde0;
-
 }
-.container{
+
+.container {
   width: 100%;
   background-color: #29bde0;
 }
-.header{
+
+.header {
   height: 24rem;
 }
+
 .main-body {
   position: absolute;
   top: 24rem;
@@ -17,30 +19,38 @@ html{
   overflow: scroll;
   overflow-x: hidden;
 }
-.footer{
+
+.footer {
   position: absolute;
   height: 18rem;
   bottom: 0%;
 }
-.title{
+
+.title {
   height: 7rem;
   line-height: 7rem;
+  overflow: hidden;
 }
-.title-text{
+
+.title-text {
   font-size: 3.4rem;
   color: white;
 }
-.menu-img{
+
+.menu-img {
   display: inline-block;
   vertical-align: middle;
 }
-.sub-title{
+
+.sub-title {
   display: inline-block;
   position: relative;
   left: 2rem;
   font-size: 2.6rem;
+  overflow: hidden;
 }
-.circle{
+
+.circle {
   display: inline-block;
   position: relative;
   vertical-align: middle;
@@ -48,10 +58,9 @@ html{
   width: 5.2rem;
   border-radius: 2.6rem;
   background-color: #fbb435;
-
 }
 
-.triangle{
+.triangle {
   position: relative;
   left: 1.5rem;
   top: 1rem;
@@ -61,7 +70,8 @@ html{
   border-top: 1.5rem solid transparent;
   border-bottom: 1.5rem solid transparent;
 }
-.triangle-down{
+
+.triangle-down {
   display: inline-block;
   position: relative;
   left: 6rem;
@@ -72,29 +82,32 @@ html{
   border-right: 0.75rem solid transparent;
 }
 
-.prompt{
+.prompt {
   position: relative;
   display: inline-block;
   left: 5.5rem;
   margin: 0 0 4rem 0;
   font-size: 2.4rem;
   color: white;
+  overflow: hidden;
 }
-.head-box{
-  display:inline-block;
+
+.head-box {
+  display: inline-block;
   height: 13.6rem;
   line-height: 13.6rem;
   width: 13.6rem;
   padding: 0.5rem;
   background-color: white;
   cursor: pointer;
-
 }
-.vote-box{
+
+.vote-box {
   display: inline-block;
   width: 13.6rem;
 }
-.name{
+
+.name {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,33 +116,37 @@ html{
   vertical-align: middle;
   font-size: 3rem;
 }
-.number{
+
+.number {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 25%;
-  background-color:#83b09a;
+  background-color: #83b09a;
   font-size: 2.2rem;
   color: white;
 }
-.sprite-box{
+
+.sprite-box {
   display: inline-block;
   width: 13.5rem;
   height: 3rem;
   margin: 2.5rem 0;
 }
-span{
+
+span {
   display: none;
   background-image: url(./task7-1-assets/sprite.png);
   background-repeat: no-repeat;
   background-size: cover;
-
 }
-.sprite-1{
+
+.sprite-1 {
   width: 3rem;
   height: 3rem;
   background-position: 0 0;
 }
+
 .sprite-2 {
   width: 3rem;
   height: 3rem;
@@ -148,11 +165,12 @@ span{
   background-position: -10.5rem 0;
 }
 
-.clear{
+.clear {
   clear: both;
 }
-.btn{
-  width: 49rem;
+
+.btn {
+  width: 80%;
   height: 8.7rem;
   margin: auto;
   font-size: 4rem;
@@ -161,7 +179,7 @@ span{
   margin: 5rem 0 0 0;
 }
 
-.vote-box:hover span{
+.vote-box:hover span {
   display: inline-block;
   cursor: pointer;
 }

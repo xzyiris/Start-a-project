@@ -1,0 +1,39 @@
+html{
+  font-size: 62.5%;
+}
+body{
+  padding: 0;
+  margin: 0;
+}
+header{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  background-color: #29bde0;
+  height: 7rem;
+  width: 100%;
+  color: white;
+}
+header img{
+  display: inline-block;
+  margin: 0 2rem;
+}
+.header-text{
+  font-size: 4rem;
+}
+.result{
+  display: block;
+  height: 62.5rem;
+  text-align: center;
+  background-color: #29bde0;
+
+}
+.result img{
+  display: inline-block;
+}
+.victory-text{
+  display: inline-block;
+  width: 80%;
+  font-size: 3.3rem;
+  color: #fbb435;
+}
