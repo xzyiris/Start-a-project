@@ -3,6 +3,8 @@ html {
   background-color: #29bde0;
 }
 
+
+
 .container {
   width: 100%;
   background-color: #29bde0;
@@ -20,24 +22,8 @@ html {
   overflow-x: hidden;
 }
 
-.main-body::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-.main-body::-webkit-button {
-  background-color: #f0f0f0;
-}
-.main-body::-webkit-scrollbar-track{
-    background-color:  #29bde0;
-}
-.main-body::-webkit-scrollbar-track-piece{
-  background-color : #29bde0;
-
-}
-.main-body::-webkit-scrollbar-thumb{
-  background: #29bde0;
-  border-radius: 5px;
+.main-body::-webkit-scrollbar{
+  display: none;
 }
 
 .footer {

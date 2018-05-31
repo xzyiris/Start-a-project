@@ -136,3 +136,7 @@ div.version-text p{
   top:50%;
   transform:translateY(-50%);
 }
+a{
+  text-decoration: none;
+  color: white;
+}

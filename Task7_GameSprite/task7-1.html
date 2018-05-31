@@ -271,14 +271,27 @@
   <!--main-body end-->
   <!--footer start-->
   <div class="container footer text-center">
-    <button class="btn">投死</button>
-<audio autoplay="autoplay" preload="auto" loop="loop">
+<a href="./task7-2.html">
+
+  <button class="btn">投死</button>
+</a>
+
+    <audio id="audios" autoplay="autoplay" preload="auto" loop="loop">
 
       <source src="./fortuneFreedom.mp3" type="audio/mpeg">
-      </audio>
+    </audio>
 
   </div>
+  <script>
+    document.addEventListener('WeixinJSBridgeReady', function () {
+      document.getElementById('audios').play()
+    })
 
+    document.addEventListener('touchstart', function () {
+      document.getElementById('audios').play()
+    })
+
+  </script>
   <!--footer end-->
 
 </body>
