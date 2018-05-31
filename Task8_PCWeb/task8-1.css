@@ -1,0 +1,44 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  display: table;
+  line-height: 4rem;
+  height: 4rem;
+  background-color: white;
+}
+
+.header-text {
+  font-size: 1.4rem;
+  color: #29b078;
+  vertical-align: middle;
+}
+
+.circle {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 2px 3px rgba(73, 73, 73,0.8);
+}
+
+.circle-visited {
+  width: 1.4rem;
+  height: 1.4rem;
+  background-color: #29b078;
+  border-radius: 50%;
+  box-shadow: 0 2px 3px rgba(73, 73, 73, 0.8);
+}
+.circle-flow{
+  width: 7rem;
+  height: 7rem;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(73, 73, 73, 0.6);
+
+}
