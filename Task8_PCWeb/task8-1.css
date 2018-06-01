@@ -2,14 +2,17 @@ html {
   font-size: 62.5%;
   max-width: 120rem;
   letter-spacing: 1px;
+  white-space: nowrap;
 }
 
 body {
   margin: 0;
 }
-a{
+
+a {
   cursor: pointer;
 }
+
 header {
   position: relative;
   display: block;
@@ -116,12 +119,14 @@ nav {
   height: 20rem;
   padding: 0 3rem;
   margin: 14rem 0 12rem 0;
+  white-space: normal;
 }
 
 .specialty-icon {
   position: relative;
   display: inline-block;
-  height: 30%;;
+  height: 30%;
+  ;
   width: 100%;
 }
 
@@ -180,8 +185,10 @@ nav {
   width: 15rem;
   margin: 0 0 0 2rem;
   color: #999;
+  white-space: normal;
 }
-.flow-arrow{
+
+.flow-arrow {
   display: inline-block;
 }
 
@@ -195,14 +202,18 @@ nav {
   width: 22rem;
   background-color: white;
   box-shadow: 0 0 10px rgba(73, 73, 73, 0.5);
+  white-space: normal;
 }
-.excellent-box img{
+
+.excellent-box img {
   margin: 2rem 0;
 }
+
 .excellent-box * {
   display: inline-block;
   padding: 0 3rem;
 }
+
 .name {
   font-size: 1.8rem;
   margin: 0 0 3rem 0;
@@ -215,7 +226,7 @@ nav {
 }
 
 .coperate-title {
-  margin:13rem 0 7rem 0;
+  margin: 13rem 0 7rem 0;
   font-size: 1.8rem;
 }
 
@@ -228,7 +239,7 @@ nav {
   width: 100%;
   max-width: 120rem;
   padding: 0;
-  box-shadow: 0 0 10px rgba(73, 73, 73,0.5);
+  box-shadow: 0 0 10px rgba(73, 73, 73, 0.5);
 }
 
 .co-icon-box {
@@ -249,27 +260,32 @@ nav {
   box-shadow: 0 0 10px rgba(73, 73, 73, 0.5);
 }
 
-.link{
+.link {
   display: flex;
   justify-content: space-between;
   height: 3rem;
 }
-.link-title{
+
+.link-title {
   margin: 11rem 0 3rem 0;
   font-size: 1.8rem;
 }
-.link a{
+
+.link a {
   font-size: 1.4rem;
   color: #999;
 }
+
 .circle-flow-text {
   font-size: 1.8rem;
   color: #29b078;
 }
-.switch{
+
+.switch {
   text-align: center;
-  margin:2.4rem 0 0 0;
+  margin: 2.4rem 0 0 0;
 }
+
 .circle {
   display: inline-block;
   width: 1.4rem;
@@ -279,13 +295,12 @@ nav {
   box-shadow: 0 2px 3px rgba(73, 73, 73, 0.8);
 }
 
-.circle-visited {
-  display: inline-block;
-  width: 1.4rem;
-  height: 1.4rem;
+.circle:visited {
   background-color: #29b078;
-  border-radius: 50%;
-  box-shadow: 0 2px 3px rgba(73, 73, 73, 0.8);
+}
+
+.circle:active {
+  background-color: #29b078;
 }
 
 .circle-flow {
@@ -300,39 +315,44 @@ nav {
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(73, 73, 73, 0.6);
 }
-footer{
+
+footer {
   position: relative;
   background-color: #29b078;
   text-align: center;
 }
-footer a{
+
+footer a {
   display: inline-block;
   font-size: 1.6rem;
   color: white;
 }
-.footer-box{
+
+.footer-box {
   position: relative;
   display: inline-block;
   text-align: left;
   width: 100%;
   max-width: 120rem;
-  padding:0 15px;
+  padding: 0 15px;
 }
-.footer-col-1{
+
+.footer-col-1 {
   display: inline-block;
   width: 36rem;
   height: 5rem;
   line-height: 5rem;
   vertical-align: middle;
 }
-.footer-col-2{
+
+.footer-col-2 {
   display: inline-block;
   height: 5rem;
   line-height: 5rem;
   vertical-align: middle;
 }
 
-.copyright{
+.copyright {
   position: relative;
   bottom: 1rem;
   left: 50%;
@@ -341,11 +361,11 @@ footer a{
   font-size: 1.2rem;
   color: white;
 }
-.barcode{
+
+.barcode {
   position: absolute;
   top: 50%;
   right: 2rem;
   transform: translateY(-50%);
   color: white;
-
 }
