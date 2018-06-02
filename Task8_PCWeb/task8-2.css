@@ -97,7 +97,7 @@ aside{
 }
 section{
   overflow: hidden;
-  height: 110rem;
+  padding-bottom: 20rem;
   box-shadow: 0 2px 8px rgba(73, 73, 73, 0.6);
 }
 .section-box{
@@ -140,9 +140,9 @@ li:hover{
   padding: 2rem 0;
 }
 .intro-box{
-  height: 15rem;
   padding: 3rem 6rem 0 6rem;
   border-bottom: 1px solid #a0a0a0;
+  overflow: hidden;
 }
 .logo-box{
   display: inline-block;
