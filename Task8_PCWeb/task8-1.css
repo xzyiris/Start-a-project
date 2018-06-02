@@ -32,7 +32,9 @@ header {
   display: inline-block;
   right: 0;
 }
-
+.outer-link img{
+  cursor: pointer;
+}
 header img {
   margin: 0 1rem;
 }
@@ -62,6 +64,7 @@ nav {
 .cell {
   display: inline-block;
   padding: 0 3.4rem;
+  cursor: pointer;
 }
 
 .cell:hover {
@@ -198,6 +201,7 @@ nav {
 }
 
 .excellent-box {
+  text-align: center;
   height: 37rem;
   width: 22rem;
   background-color: white;
@@ -207,6 +211,7 @@ nav {
 
 .excellent-box img {
   margin: 2rem 0;
+
 }
 
 .excellent-box * {
@@ -368,4 +373,29 @@ footer a {
   right: 2rem;
   transform: translateY(-50%);
   color: white;
+}
+.carousel-indicators li{
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 2px 3px rgba(73, 73, 73, 0.8);
+}
+.carousel-indicators li.active {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  border: 1px solid #29b078;
+  background-color: #29b078;
+}
+.carousel-indicators{
+  bottom: -50px;
+}
+.slide-box{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 10px;
 }

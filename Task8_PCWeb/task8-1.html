@@ -8,12 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-  <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以  根据需要只加载单个插件。 -->
+  <link rel="stylesheet" href="./task8-1.css">
+  <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-  <link rel="stylesheet" type="text/css" media="screen" href="./task8-1.css" />
 
 </head>
 
@@ -36,13 +33,15 @@
     </div>
   </nav>
 
-  <div id="myCarousel" class="carousel slide">
+  <div id="myCarousela" class="carousel slide">
     <!-- 轮播（Carousel）指标 -->
+    <!--
     <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousela" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousela" data-slide-to="1"></li>
+      <li data-target="#myCarousela" data-slide-to="2"></li>
     </ol>
+  -->
     <!-- 轮播（Carousel）项目 -->
     <div class="carousel-inner">
       <div class="item active">
@@ -56,11 +55,11 @@
       </div>
     </div>
     <!-- 轮播（Carousel）导航 -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <a class="left carousel-control" href="#myCarousela" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <a class="right carousel-control" href="#myCarousela" role="button" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
@@ -212,49 +211,91 @@
       </div>
 
       <div class="excellent-title">优秀学员展示</div>
-      <div class="" style="display:flex;justify-content: space-between;width:100%;max-width:130rem;padding: 0;">
+      <div id="myCarousel" class="carousel slide">
+          <!-- 轮播（Carousel）指标 -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+          </ol>
+          <!-- 轮播（Carousel）项目 -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <div class="slide-box">
+                <div class="excellent-box">
+                  <img src="./task8-1-assets/head-2.png">
+                  <br>
+                  <span class="name">技术顾问：罗大佑</span>
+                  <div class="excellent-intro">
+                    百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研发、团队管理与建设。
+                  </div>
+                </div>
+                <div class="excellent-box">
+                  <img src="./task8-1-assets/head-3.png">
+                  <br>
+                  <span class="name">技术顾问：罗大佑</span>
+                  <div class="excellent-intro">
+                    百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研发、团队管理与建设。
+                  </div>
+                </div>
+                <div class="excellent-box">
+                  <img src="./task8-1-assets/head-4.png">
+                  <br>
+                  <span class="name">技术顾问：罗大佑</span>
+                  <div class="excellent-intro">
+                    百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研发、团队管理与建设。
+                  </div>
+                </div>
+                <div class="excellent-box">
+                  <img src="./task8-1-assets/head-1.png">
+                  <br>
+                  <span class="name">技术顾问：罗大佑</span>
+                  <div class="excellent-intro">
+                    百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研发、团队管理与建设。
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+                <div class="slide-box">
+                    <div class="excellent-box">
+                      <img src="./task8-1-assets/head-3.png">
+                      <br>
+                      <span class="name">技术顾问：罗大佑</span>
+                      <div class="excellent-intro">
+                        百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研发、团队管理与建设。
+                      </div>
+                    </div>
+                    <div class="excellent-box">
+                      <img src="./task8-1-assets/head-2.png">
+                      <br>
+                      <span class="name">技术顾问：罗大佑</span>
+                      <div class="excellent-intro">
+                        百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研发、团队管理与建设。
+                      </div>
+                    </div>
+                    <div class="excellent-box">
+                      <img src="./task8-1-assets/head-4.png">
+                      <br>
+                      <span class="name">技术顾问：罗大佑</span>
+                      <div class="excellent-intro">
+                        百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研发、团队管理与建设。
+                      </div>
+                    </div>
+                    <div class="excellent-box">
+                      <img src="./task8-1-assets/head-1.png">
+                      <br>
+                      <span class="name">技术顾问：罗大佑</span>
+                      <div class="excellent-intro">
+                        百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研发、团队管理与建设。
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
 
-        <div class="excellent-box">
-          <img src="./task8-1-assets/head-1.png">
-          <br>
-          <span class="name">技术顾问：罗大佑</span>
-          <div class="excellent-intro">
-            百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研发、团队管理与建设。
-          </div>
         </div>
 
-        <div class="excellent-box">
-          <img src="./task8-1-assets/head-2.png">
-          <br>
-          <span class="name">技术顾问：罗大佑</span>
-          <div class="excellent-intro">
-            百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研发、团队管理与建设。
-          </div>
-        </div>
-        <div class="excellent-box">
-          <img src="./task8-1-assets/head-3.png">
-          <br>
-          <span class="name">技术顾问：罗大佑</span>
-          <div class="excellent-intro">
-            百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研发、团队管理与建设。
-          </div>
-        </div>
-        <div class="excellent-box">
-          <img src="./task8-1-assets/head-4.png">
-          <br>
-          <span class="name">技术顾问：罗大佑</span>
 
-          <div class="excellent-intro">
-            百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研发、团队管理与建设。
-          </div>
-        </div>
-      </div>
-      <div class="switch">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-      </div>
       <div class="coperate-title">
         战略合作企业
       </div>
