@@ -23,28 +23,6 @@ header {
   background-color: white;
 }
 
-.main-body {
-  background-color: #fafafa;
-}
-
-.outer-link {
-  position: absolute;
-  display: inline-block;
-  right: 0;
-}
-.outer-link img{
-  cursor: pointer;
-}
-header img {
-  margin: 0 1rem;
-}
-
-.header-text {
-  font-size: 1.4rem;
-  color: #29b078;
-  vertical-align: middle;
-}
-
 nav {
   height: 10rem;
   line-height: 10rem;
@@ -70,6 +48,27 @@ nav {
 .cell:hover {
   border-bottom: 4px solid white;
 }
+
+.main-body {
+  background-color: #fafafa;
+}
+
+.outer-link {
+  position: absolute;
+  display: inline-block;
+  right: 0;
+}
+.outer-link img{
+  cursor: pointer;
+}
+
+
+.header-text {
+  font-size: 1.4rem;
+  color: #29b078;
+  vertical-align: middle;
+}
+
 
 .banner {
   height: 60rem;
