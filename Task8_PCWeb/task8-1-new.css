@@ -12,6 +12,8 @@ body{
 .navbar {
   background-color: #29b078;
   margin: 0;
+  border-radius: 0;
+  border-color: #29b078;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -27,7 +29,7 @@ body{
 .flow-unit {
   display: -webkit-flex;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 15px;
 }
@@ -127,6 +129,7 @@ section {
 .wrap-box {
   position: relative;
   top: 3rem;
+  margin-left: 35px;
 }
 
 .sub-title {
@@ -139,7 +142,8 @@ section {
 }
 
 .learn-text {
-  padding: 0 1rem;
+  padding: 1rem 10%;
+  width: 80%;
 }
 
 .head img {
@@ -197,7 +201,7 @@ footer .container {
     right: 2rem;
   }
   .text {
-    text-align: justify;
+    text-align: center;
   }
   .carousel-indicators {
     position: absolute;
@@ -218,8 +222,14 @@ footer .container {
     padding-right: 85px;
     padding-left: 85px;
   }
+
   .navbar-nav>li>a {
-    padding: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 42px;
+    font-size: 16px;
+    border-bottom:4px solid transparent;
+
   }
   .navbar-nav>li>a:hover {
     border-bottom: 4px solid white;
@@ -228,7 +238,10 @@ footer .container {
     float: right;
   }
   .header {
-    padding: 10px 100px;
+    width: 100%;
+    max-width: 120rem;
+    padding: 10px 0;
+    margin: 0 auto;
   }
   span {
     display: inline-block;
@@ -258,6 +271,20 @@ footer .container {
   .navbar-default .navbar-nav>li>a:hover {
     color: white;
   }
+  .jnshu {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12rem;
+    height: auto;
+  }
+  .jnshu img {
+    width: 100%;
+    height: 100%;
+  }
+  .jnshu-hidden {
+    display: none;
+  }
 }
 
 @media screen and (max-width:767px) {
@@ -281,6 +308,9 @@ footer .container {
   }
   .wrap-box {
     text-align: center;
+    position: relative;
+    top: 3rem;
+    margin: 0;
   }
   .text {
     text-align: center;
@@ -312,6 +342,20 @@ footer .container {
     display: block;
     text-align: center;
     height: 12rem;
+  }
+  .jnshu {
+    display: none;
+  }
+  .jnshu-hidden {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 5rem;
+    height: auto;
+  }
+  .jnshu-hidden img {
+    width: 100%;
+    height: 100%;
   }
 }
 @media screen and (max-width:992px){
