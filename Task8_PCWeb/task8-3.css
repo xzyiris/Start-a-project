@@ -13,21 +13,19 @@ a {
   cursor: pointer;
 }
 
-header {
-  position: relative;
-  display: block;
-  height: 4rem;
-  line-height: 4rem;
-  max-width: 120rem;
-  margin: 0 auto;
-  background-color: white;
+.outer-link img {
+  margin: 0 10px;
+}
+.hot-line {
+  color: #29b078;
 }
 
-nav {
-  height: 10rem;
-  line-height: 10rem;
+.navbar {
   background-color: #29b078;
-  font-size: 1.6rem;
+  margin: 0;
+}
+
+.navbar-default .navbar-nav>li>a {
   color: white;
 }
 
@@ -50,11 +48,7 @@ nav {
   border-bottom: 4px solid white;
 }
 
-.outer-link {
-  position: absolute;
-  display: inline-block;
-  right: 0;
-}
+
 
 .outer-link img {
   cursor: pointer;
@@ -78,6 +72,7 @@ nav {
   width: 100%;
   max-width: 120rem;
   margin: 0 auto;
+  padding: 0 10px;
 }
 
 .sub-nav {
@@ -171,13 +166,14 @@ td {
 .hover-display:hover {
   visibility: visible;
 }
-
+/*
 a {
   display: inline-block;
   margin: 0 1rem;
   font-size: 1.4rem;
   color: black;
 }
+*/
 
 a:hover {
   background-color: #29b078;
@@ -233,9 +229,134 @@ a:hover {
   margin: 0;
 }
 
-@media screen and (max-width: 768px) {
+footer {
+  position: relative;
+  background-color: #29b078;
+  height: 15rem;
+}
+
+.footer-col,.footer-col a {
+  color: white;
+  margin: 1rem 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.barcode {
+  color: white;
+}
+.copyright{
+  font-size: 1.2rem;
+  color: white;
+  background-color: #29b078;
+}
+
+@media screen and (min-width:768px){
+  /*nav CSS start*/
+  .navbar-collapse {
+    padding-right: 85px;
+    padding-left: 85px;
+  }
+  .navbar-nav>li>a {
+    padding: 50px;
+  }
+  .navbar-nav>li>a:hover {
+    border-bottom: 4px solid white;
+  }
+  .nav {
+    float: right;
+  }
+  .header {
+    padding: 10px 100px;
+  }
+  .jnshu {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12rem;
+    height: auto;
+  }
+  .jnshu img {
+    width: 100%;
+    height: 100%;
+  }
+  .jnshu-hidden {
+    display: none;
+  }
+  .outer-link {
+    float: right;
+  }
+  /*nav CSS end*/
+  .barcode{
+    background-color: #29b078;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+  .footer-col{
+    display: inline-block;
+    width: 30rem;
+    margin: 1rem 0;
+  }
+  .footer-col a{
+    margin: ;
+  }
+  span.outer-link {
+    float: right;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /*nav CSS start*/
+  span.hot-line,
+  span.outer-link {
+    display: block;
+    text-align: center;
+    margin: 10px;
+  }
+  .header {
+    padding: 0 10px;
+  }
+  .nav li:hover {
+    color: #29b078;
+    background-color: white;
+  }
+  .navbar-default .navbar-nav>li>a:hover {
+    color: #29b078;
+  }
+  .jnshu {
+    display: none;
+  }
+  .jnshu-hidden {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 5rem;
+    height: auto;
+  }
+  .jnshu-hidden img {
+    width: 100%;
+    height: 100%;
+  }
+  /*nav CSS end*/
   .direction a{
     display: block;
     text-align: center;
+  }
+  .barcode {
+    display: block;
+    padding: 2rem;
+    background-color: #29b078;
+  }
+  .footer-col {
+    float: left;
+    width: 50%;
+  }
+
+  span.outer-link {
+    display: block;
+    text-align: center;
+    margin: 10px;
   }
 }

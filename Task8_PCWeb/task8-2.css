@@ -1,13 +1,15 @@
-html{
+html {
   font-size: 62.5%;
 }
-.body{
+
+.body {
   background-color: #29b078;
 }
 
 .hot-line {
   color: #29b078;
 }
+
 .navbar {
   background-color: #29b078;
   margin: 0;
@@ -16,11 +18,13 @@ html{
 .navbar-default .navbar-nav>li>a {
   color: white;
 }
-.banner{
+
+.banner {
   width: 100%;
   height: auto;
 }
-.banner img{
+
+.banner img {
   width: 100%;
   height: 100%;
 }
@@ -34,6 +38,7 @@ footer {
   background-color: #29b078;
   height: 15rem;
 }
+
 footer .container {
   margin-bottom: 0;
 }
@@ -50,34 +55,91 @@ footer .container {
 .barcode {
   color: white;
 }
-.copyright{
+
+.copyright {
   font-size: 1.2rem;
   color: white;
   background-color: #29b078;
 }
-.nav-aside{
+
+.nav-aside {
   border: 1px solid #e6e6e6;
   margin-right: 2em;
   background-color: white;
-
-}
-ul{
-  padding-left: 11rem;
 }
 
-li{
+ul {
+  padding-left: 38%;
+  padding-top: 1rem;
+}
+
+.nav-aside ul li {
+  line-height: 1.5rem;
+  vertical-align: middle;
+  margin: 3rem 0;
+  font-size: 1.4rem;
+  color: #29b078;
   list-style-type: none;
 }
-.circle{
+
+.circle {
   display: inline-block;
+  vertical-align: middle;
   height: 8px;
   width: 8px;
-  border:1px solid #f1a750;
+  border: 1px solid #f1a750;
   border-radius: 50%;
-
 }
 
-@media screen and (min-width:768px){
+.active {
+  background-color: #f9a372;
+  color: #f1a750;
+}
+
+.sub-nav {
+  padding: 3rem 0;
+  font-size: 1.6rem;
+}
+
+.sub-title {
+  padding: 2rem;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 1.6rem;
+}
+
+.intro-wrap {
+  position: relative;
+  padding: 2rem 6rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.intro {
+  padding: 5rem 0;
+}
+
+.intro-content {
+  font-size: 1.4rem;
+  line-height: 4rem;
+  color: #999;
+}
+
+.text {
+  padding: 2rem 6rem;
+  line-height: 4rem;
+  font-size: 1.4rem;
+  color: #999;
+}
+
+p {
+  text-indent: 3rem;
+  text-align: justify;
+}
+
+footer {
+  margin: 5rem 0 0 0;
+}
+
+@media screen and (min-width:768px) {
   /*nav CSS start*/
   .navbar-collapse {
     padding-right: 85px;
@@ -95,44 +157,45 @@ li{
   .header {
     padding: 10px 100px;
   }
-
-  .jnshu{
+  .jnshu {
     position: absolute;
-    top:50%;
+    top: 50%;
     transform: translateY(-50%);
     width: 12rem;
     height: auto;
   }
-  .jnshu img{
+  .jnshu img {
     width: 100%;
     height: 100%;
   }
-  .jnshu-hidden{
+  .jnshu-hidden {
     display: none;
   }
   .outer-link {
     float: right;
   }
   /*nav CSS end*/
-
-  .nav-aside{
+  .nav-aside {
     width: 30rem;
     float: left;
   }
-  section{
+  section {
     overflow: hidden;
     border: 1px solid #e6e6e6;
     background-color: white;
   }
-  .intro{
-    width: 18rem;
+  .intro {
+    position: relative;
+    width: 30%;
     height: auto;
     float: left;
-
   }
-  .intro img{
+  .intro img {
     width: 100%;
     height: 100%;
+  }
+  .intro-content {
+    overflow: hidden;
   }
   .footer-col {
     display: inline-block;
@@ -147,7 +210,7 @@ li{
   }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
   /*nav CSS start*/
   span.hot-line,
   span.outer-link {
@@ -158,29 +221,43 @@ li{
   .header {
     padding: 0 10px;
   }
-  .nav li:hover{
+  .nav li:hover {
     color: #29b078;
     background-color: white;
   }
   .navbar-default .navbar-nav>li>a:hover {
     color: #29b078;
   }
-  .jnshu{
+  .jnshu {
     display: none;
   }
-  .jnshu-hidden{
+  .jnshu-hidden {
     position: absolute;
-    top:15px;
+    top: 15px;
     left: 15px;
     width: 5rem;
     height: auto;
   }
-  .jnshu-hidden img{
+  .jnshu-hidden img {
     width: 100%;
     height: 100%;
   }
-
   /*nav CSS end*/
+  .intro {
+    text-align: center;
+    padding: 2rem;
+  }
+  .text,
+  .intro-content,
+  .intro-wrap {
+    padding: 2rem;
+    line-height: 2rem;
+    font-size: 1.4rem;
+    color: #999;
+  }
+  .intro-content{
+    padding: 0;
+  }
   .footer-col {
     float: left;
     width: 50%;
@@ -189,5 +266,43 @@ li{
     display: block;
     padding: 2rem;
     background-color: #29b078;
+  }
+  .nav-aside {
+    border: 1px solid #e6e6e6;
+    margin-right: 0em;
+    background-color: white;
+  }
+}
+
+@media screen and (max-width:900px) and (min-width:600px) {
+  .intro {
+    display: block;
+    float: none;
+    width: 100%;
+  }
+  .navbar-nav>li>a {
+    padding: 30px;
+  }
+  .navbar-collapse {
+    padding-right: 85px;
+    padding-left: 85px;
+  }
+  .jnshu {
+    display: none;
+  }
+  .jnshu img {
+    width: 100%;
+    height: 100%;
+  }
+  .jnshu-hidden {
+    position: absolute;
+    display:block;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .nav-aside {
+
+    margin-right: 1em;
+
   }
 }

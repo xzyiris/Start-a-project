@@ -29,6 +29,7 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px;
 }
 
 .circle {
@@ -232,7 +233,10 @@ footer .container {
   span {
     display: inline-block;
   }
-  .outer-link {
+  .hot-line{
+    display: inline-block;
+  }
+  span.outer-link {
     float: right;
   }
   #flow-unit-4 img {
@@ -300,10 +304,6 @@ footer .container {
   #flow-unit-4 img {
     visibility: visible;
   }
-  .my-col {
-    text-align: center;
-    display: block;
-  }
   .footer-col {
     float: left;
     width: 50%;
@@ -312,5 +312,19 @@ footer .container {
     display: block;
     text-align: center;
     height: 12rem;
+  }
+}
+@media screen and (max-width:992px){
+  #flow-unit-4 img{
+    visibility: visible;
+  }
+  .my-col {
+    display: block;
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+  .my-col img{
+    display: inline-block;
   }
 }
