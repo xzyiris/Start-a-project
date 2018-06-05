@@ -1,0 +1,25 @@
+.progress {
+  position: relative;
+  display: inline-block;
+  left: 6.8rem;
+  height: 2.4rem;
+  width: 2.4rem;
+  border-radius: 50%;
+  background-color: #ff7f02;
+}
+.progress:after {
+  position: absolute;
+  height: 0.5rem;
+  width: 16rem;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -6.8rem;
+  content: "";
+  background-color: #ff7f02;
+}
+.progress:hover{
+  background-color: aqua;
+}
+.progress:hover::after{
+  background-color: aqua;
+}
