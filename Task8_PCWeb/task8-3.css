@@ -66,6 +66,10 @@ a {
   border-bottom: 1px solid #edf1f2;
 }
 
+.direction a {
+  color: black;
+}
+
 .sub-title {
   padding: 2rem 0;
   font-size: 1.6rem;
@@ -82,11 +86,16 @@ a {
   clear: both;
 }
 
+.td-name {
+  vertical-align: middle;
+}
+
 table {
   width: 100%;
 }
 
 td {
+  width: 33.3333%;
   border: 1px solid #999;
   padding: 1rem;
   font-size: 1.4rem;
@@ -120,6 +129,7 @@ td {
 
 .hover-title,
 .hover-text {
+  line-height: 3rem;
   text-align: center;
   padding: 1rem 0;
 }
@@ -132,7 +142,7 @@ td {
   position: absolute;
   top: 15px;
   z-index: 10;
-  height: 92%;
+  height: 93%;
   width: 95%;
   padding: 5rem;
   background-color: rgba(32, 32, 32, 0.8);
@@ -210,6 +220,7 @@ a:hover {
 .row {
   margin: 0;
 }
+
 footer {
   position: relative;
   background-color: #29b078;
@@ -219,8 +230,8 @@ footer .container {
   position: relative;
   padding-left: 15px;
   padding-right: 15px;
-
 }
+
 .footer-col,
 .footer-col a {
   color: white;
@@ -232,6 +243,9 @@ footer .container {
 
 .barcode {
   color: white;
+}
+.barcode-text{
+  margin: 10px 0;
 }
 
 .copyright {
@@ -251,7 +265,7 @@ footer .container {
   .navbar-nav>li>a {
     height: 50px;
     box-sizing: border-box;
-    padding: 42px;
+    padding: 42px 20px;
     font-size: 16px;
     border-bottom: 4px solid transparent;
   }
@@ -263,7 +277,7 @@ footer .container {
   }
   .header {
     width: 100%;
-    padding: 10px;
+    padding: 10px 5%;
     margin: 0;
   }
   .jnshu {
@@ -297,7 +311,7 @@ footer .container {
     display: inline-block;
     width: 30rem;
   }
-  .login{
+  .login {
     display: none;
   }
 }
@@ -310,6 +324,9 @@ footer .container {
   }
   .header {
     padding: 0 10px;
+  }
+  .nav li{
+    text-align: center;
   }
   .nav li:hover {
     color: #29b078;
@@ -336,6 +353,7 @@ footer .container {
   .direction a {
     display: block;
     text-align: center;
+    padding: 8px;
   }
   .barcode {
     position: absolute;
@@ -355,19 +373,36 @@ footer .container {
     text-align: left;
     width: 80%;
   }
-  .my-hidden{
+  .my-hidden {
     display: none;
   }
   .login {
     display: flex;
     justify-content: flex-end;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
   }
-  .login span{
+  .login span {
     padding: 0 1rem;
   }
   span.hot-line,
   span.outer-link {
     display: none;
+  }
+  .divide-6 {
+    display: block;
+    width: 100%;
+  }
+  .hover-display {
+    padding:5rem;
+  }
+}
+
+@media screen and (max-width:1250px) and (min-width:768px) {
+  .divide-6 {
+    display: block;
+    width: 100%;
+  }
+  .hover-display {
+    padding: 10rem 5rem;
   }
 }
