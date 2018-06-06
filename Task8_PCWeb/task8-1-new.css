@@ -83,9 +83,10 @@ body{
 footer {
   position: relative;
   background-color: #29b078;
-  height: 15rem;
 }
-
+footer.container{
+  position: relative;
+}
 section {
   background-color: #fafafa;
 }
@@ -133,8 +134,9 @@ section {
 }
 
 .sub-title {
+  margin: 0 0 6rem 0;
   font-size: 1.8rem;
-  margin: 2rem 0;
+  font-weight: bold;
 }
 
 .flow {
@@ -142,8 +144,10 @@ section {
 }
 
 .learn-text {
-  padding: 1rem 10%;
+  padding: 1rem 5%;
   width: 80%;
+  font-size: 14px;
+  color: #cacaca;
 }
 
 .head img {
@@ -187,19 +191,25 @@ footer .container {
   color: white;
 }
 .copyright{
+  margin: 2rem 0 1rem 0;
   font-size: 1.2rem;
   color: white;
   background-color: #29b078;
 }
-
+.blank{
+  height: 2rem;
+  width: 100%;
+  background-color: #29b078;
+}
 
 
 @media screen and (min-width:768px) {
   .barcode {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-  }
+    position: relative;
+    top: -5rem;
+    right: 0;
+    float: right;
+}
   .text {
     text-align: center;
   }
@@ -239,9 +249,8 @@ footer .container {
   }
   .header {
     width: 100%;
-    max-width: 120rem;
-    padding: 10px 0;
-    margin: 0 auto;
+    padding: 10px;
+    margin: 0;
   }
   span {
     display: inline-block;
@@ -296,15 +305,18 @@ footer .container {
     color: #29b078;
   }
   .barcode {
-    display: block;
-    padding: 2rem;
+    position: absolute;
+    display: inline-block;
+    top: 6rem;
+    right: 1rem;
+    padding: 1rem;
     background-color: #29b078;
   }
   .row-flex a {
     width: 25%;
     float: left;
-    text-align: center;
-    margin: 0.5rem;
+    text-align: left;
+    margin:5px auto;
   }
   .wrap-box {
     text-align: center;
@@ -326,7 +338,7 @@ footer .container {
     margin: 10px;
   }
   .header {
-    padding: 0 10px;
+    padding: 0;
   }
   .flow-unit {
     padding: 15px;
@@ -334,9 +346,17 @@ footer .container {
   #flow-unit-4 img {
     visibility: visible;
   }
+  footer .container{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .footer-col {
-    float: left;
-    width: 50%;
+    display: inline-block;
+    text-align: left;
+    width: 80%;
+  }
+  .my-hidden{
+    display: none;
   }
   .my-col {
     display: block;
@@ -358,7 +378,7 @@ footer .container {
     height: 100%;
   }
 }
-@media screen and (max-width:992px){
+@media screen and (max-width:992px) and (min-width:768px){
   #flow-unit-4 img{
     visibility: visible;
   }
@@ -371,4 +391,5 @@ footer .container {
   .my-col img{
     display: inline-block;
   }
+
 }
