@@ -13,6 +13,8 @@ html {
 .navbar {
   background-color: #29b078;
   margin: 0;
+  border-radius: 0;
+  border-color: #29b078;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -36,17 +38,19 @@ html {
 footer {
   position: relative;
   background-color: #29b078;
-  height: 15rem;
 }
 
 footer .container {
-  margin-bottom: 0;
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+
 }
 
 .footer-col,
 .footer-col a {
   color: white;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -57,9 +61,11 @@ footer .container {
 }
 
 .copyright {
+  padding: 8px;
   font-size: 1.2rem;
   color: white;
   background-color: #29b078;
+  border-top: 1px solid #32c086;
 }
 
 .nav-aside {
@@ -71,6 +77,9 @@ footer .container {
 ul {
   padding-left: 38%;
   padding-top: 1rem;
+}
+ul.navbar-nav{
+  padding: 0;
 }
 
 .nav-aside ul li {
@@ -138,15 +147,22 @@ p {
 footer {
   margin: 5rem 0 0 0;
 }
+.barcode-text {
+  margin: 10px 0;
+}
 
 @media screen and (min-width:768px) {
   /*nav CSS start*/
   .navbar-collapse {
-    padding-right: 85px;
-    padding-left: 85px;
+    padding-right: 5%;
+    padding-left: 5%;
   }
   .navbar-nav>li>a {
-    padding: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 42px;
+    font-size: 16px;
+    border-bottom: 4px solid transparent;
   }
   .navbar-nav>li>a:hover {
     border-bottom: 4px solid white;
@@ -155,7 +171,9 @@ footer {
     float: right;
   }
   .header {
-    padding: 10px 100px;
+    width: 100%;
+    padding: 10px;
+    margin: 0;
   }
   .jnshu {
     position: absolute;
@@ -201,22 +219,22 @@ footer {
     display: inline-block;
     width: 30rem;
   }
+  .login{
+    display: none;
+  }
   .barcode {
     position: absolute;
-    top: 50%;
-    right: 2rem;
-    transform: translateY(-50%);
-    color: white;
+    right: 10px;
+    bottom: 25px;
   }
+
 }
 
 @media screen and (max-width:767px) {
   /*nav CSS start*/
   span.hot-line,
   span.outer-link {
-    display: block;
-    text-align: center;
-    margin: 10px;
+    display: none;
   }
   .header {
     padding: 0 10px;
@@ -243,6 +261,7 @@ footer {
     height: 100%;
   }
   /*nav CSS end*/
+
   .intro {
     text-align: center;
     padding: 2rem;
@@ -259,18 +278,36 @@ footer {
     padding: 0;
   }
   .footer-col {
-    float: left;
-    width: 50%;
+    display: inline-block;
+    text-align: left;
+    width: 80%;
+  }
+  .my-hidden {
+    display: none;
   }
   .barcode {
-    display: block;
-    padding: 2rem;
+    position: absolute;
+    display: inline-block;
+    top: 6rem;
+    right: 1rem;
+    padding: 0;
     background-color: #29b078;
   }
   .nav-aside {
     border: 1px solid #e6e6e6;
     margin-right: 0em;
     background-color: white;
+  }
+  .login {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem 1rem;
+  }
+  .login span{
+    padding: 0 1rem;
+  }
+  .navbar-default .navbar-nav li{
+    text-align: center;
   }
 }
 
@@ -288,18 +325,13 @@ footer {
     padding-left: 85px;
   }
   .jnshu {
-    display: none;
+    display: block;
   }
   .jnshu img {
     width: 100%;
     height: 100%;
   }
-  .jnshu-hidden {
-    position: absolute;
-    display:block;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+
   .nav-aside {
 
     margin-right: 1em;
