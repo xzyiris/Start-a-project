@@ -78,19 +78,47 @@ header {
 }
 .step select {
   float: right;
+  border: none;
+  width: auto;
+  height: 37px;
+  width: 130px;
+  padding-left: 10px;
+  border: 1px solid #e7e7e7;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url(../resource/box-assets/select.png);
+  background-repeat: no-repeat;
+  background-position: 100px;
+}
+.step label::before {
+  content: "\a0";
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 18px;
+  width: 1em;
+  height: 1em;
+  margin-right: .4em;
+  border-radius: 50%;
+  border: 1px solid #d6d6d6;
+  text-indent: .15em;
+  line-height: 1;
+}
+.step [type="radio"]:checked + label::before {
+  background-image: url(../resource/box-assets/selected.png);
+  background-size: cover;
 }
 .step .group {
   padding: 35px;
   background-color: #fbfcff;
+  vertical-align: middle;
+}
+.step .group * {
+  vertical-align: middle;
 }
 .step .group .outer-radius,
 .step .group .inner-radius {
-  vertical-align: middle;
   margin: 30px 0;
-}
-.step .group .outer-radius *,
-.step .group .inner-radius * {
-  vertical-align: middle;
 }
 .step .group .outer-radius .input,
 .step .group .inner-radius .input {
@@ -123,16 +151,18 @@ input {
 [type="radio"] {
   width: 16px;
   height: 16px;
+  border: 0;
+  display: none;
 }
 .blank-box {
   display: inline-block;
   width: 60px;
   height: 1px;
 }
-#ruler-group {
+.group {
   position: relative;
 }
-#ruler-group select {
+.group select {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
