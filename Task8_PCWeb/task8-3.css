@@ -79,7 +79,7 @@ a {
 
 .head-box img {
   float: left;
-  margin: 0 1rem;
+  margin: 0 1rem 0 0;
 }
 
 .clear-float {
@@ -121,10 +121,11 @@ td {
   font-size: 1.4rem;
   text-align: justify;
   padding: 1rem 1rem 0 0;
+  overflow: hidden;
 }
 
 .head-box {
-  padding: 1rem 0;
+  padding: 1rem;
 }
 
 .hover-title,
@@ -135,7 +136,7 @@ td {
 }
 
 .hover-text {
-  text-align: justify;
+  text-align: j;
 }
 
 .hover-display {
