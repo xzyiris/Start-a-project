@@ -11,47 +11,187 @@
   <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
   <script src="../bootstrap/jquery-3.3.1.min.js"></script>
   <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以  根据需要只加载单个插件。 -->
-  <script src="../bootstrap/css/js/bootstrap.min.js"></script>
+  <script src="../bootstrap/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="./CSS/task10.css" />
+  <link rel="icon" href="./resource/timg.png" type="img/x-icon">
 </head>
 
 <body>
   <header>
-    <div class="text-center">客服热线: 010-594-78634</div>
-    <div>
-      <span>登陆</span>
-      <span>注册</span>
+    <div class="header-wrap">
+      <div class="hotline">客服热线: 010-594-78634</div>
+      <div class="login">
+        <span>登陆</span>
+        <span class="active">注册</span>
+      </div>
+
+      <div class="clearfix"></div>
     </div>
   </header>
   <main>
-    <section>
-      <span>首页</span>
-      <span>在线定制</span>
-      <span>标准版</span>
-      <span>品质保障</span>
-    </section>
-    <div class="progress-wrap">
-      <div class="progress"></div>
-      <div class="progress-text">
-        <span>1.定制纸箱</span>
-        <span>2.选择数量</span>
-        <span>3.上传附件</span>
-        <span>4.确认下单</span>
+    <section class="switch">
+      <div class="label">
+        <span class="active">首页</span>
+        <span>在线定制</span>
+        <span>标准版</span>
+        <span style="margin-right: 5px;">品质保障</span>
       </div>
+    </section>
+    <div class="my-progress-wrap">
+      <div class="progress-body">
+        <div class="progress-bar" id="active">
+          <span>1</span>
+        </div>
+        <div class="progress-bar">
+          <span>2</span>
+        </div>
+        <div class="progress-bar">
+          <span>3</span>
+        </div>
+        <div class="progress-bar">
+          <span>4</span>
+        </div>
+
+      </div>
+      <div class="clearfix"></div>
+
+    <div class="my-progress-text">
+      <span class="progress-text-active">1.定制纸箱</span>
+      <span>2.选择数量</span>
+      <span>3.上传附件</span>
+      <span>4.确认下单</span>
+      <div class="clearfix"></div>
+    </div>
+
+  </div>
+
+    <div class="step-title">
+      请您按照以下步骤来定制您的纸箱
     </div>
     <section class="step">
-      <div class="step-title">
-        请您按照以下步骤来定制您的纸箱
-      </div>
+
       <form>
-        <div class="row-title">
-          <img src="./resource/box-assets/box.png">
-          <span>选择箱型</span>
+        <div class="select-box">
+          <div class="row-title" style="
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;">
+            <img src="./resource/box-assets/box.png">
+            <span>选择箱型</span>
+          </div>
+          <div class="group">
+            <input type="radio" name="box" checked>对口箱
+            <div class="blank-box"></div>
+            <input type="radio" name="box">飞机盒
+            <div class="blank-box"></div>
+            <input type="radio" name="box">天地盖
+            <div class="blank-box"></div>
+            <select name="select-box">
+              <option>查看详情</option>
+            </select>
+          </div>
         </div>
-        <div class="radio"></div>
+        <div class="confirm-dimension">
+          <div class="row-title">
+            <img src="./resource/box-assets/ruler.png">
+            <span>确定尺寸</span>
+          </div>
+          <div class="group" id="ruler-group">
+            <div class="outer-radius">
+              <input type="radio" name="radius" checked>外径
+              <div class="blank-box"></div>
+              <div class="input">
+                长
+                <input type="text" name="length">mm
+              </div>
+              <div class="blank-box"></div>
+              <div class="input">
+                宽
+                <input type="text" name="length">mm
+              </div>
+              <div class="blank-box"></div>
+              <div class="input">
+                高
+                <input type="text" name="length">mm
+              </div>
+            </div>
+            <div class="inner-radius">
+              <input type="radio" name="radius">内径
+              <div class="blank-box"></div>
+              <div class="input">
+                长
+                <input type="text" name="length">mm
+              </div>
+              <div class="blank-box"></div>
+              <div class="input">
+                宽
+                <input type="text" name="length">mm
+              </div>
+              <div class="blank-box"></div>
+              <div class="input">
+                高
+                <input type="text" name="length">mm
+              </div>
+            </div>
+
+            <select name="select-box">
+              <option>查看详情</option>
+            </select>
+          </div>
+
+        </div>
+
+
+        <div class="select-material">
+          <div class="row-title">
+            <img src="./resource/box-assets/scissors.png">
+            <span>选择材质</span>
+          </div>
+          <div class="group">
+            <input type="radio" name="material" checked>三层A瓦材质
+            <div class="blank-box"></div>
+            <input type="radio" name="material">三层A瓦材质
+            <div class="blank-box"></div>
+            <input type="radio" name="material">三层A瓦材质
+            <div class="blank-box"></div>
+            <input type="radio" name="material">三层A瓦材质
+            <div class="blank-box"></div>
+            <input type="radio" name="material">三层A瓦材质
+            <div class="blank-box"></div>
+            <select name="select-box">
+              <option>查看详情</option>
+            </select>
+          </div>
+        </div>
+        <div class="btn-wrap">
+          <input type="submit" value="下一步">
+        </div>
       </form>
     </section>
   </main>
+  <footer>
+    <div class="footer-wrap">
+      <div class="footer-title">51包装网——纸箱包装首选平台</div>
+      <div class="link">
+        <a>关于我们</a>
+        <a>配送进程</a>
+        <a>联系我们</a>
+        <br>
+        <a>下载指南</a>
+        <a>媒体介绍</a>
+      </div>
+      <div class="barcode">
+        <div class="contact">
+          <div>TEL：400-0000-000</div>
+          <div>企业QQ：123456789</div>
+          <div>微信号：XXXXXXX</div>
+        </div>
+        <img src="./resource/box-assets/barcode.png">
+      </div>
+    </div>
+    <div class="copyright">
+      北京五一包装科技有限公司Copyright ©2015 51baozhuang.com015 All rights reserved. 京icp备99999999-1
+    </div>
+  </footer>
 </body>
 
 </html>
