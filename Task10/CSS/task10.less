@@ -1,76 +1,98 @@
 //color:
-@blue:#1d7ad9;
-@nav-gray:#f9f9f9;
-@title-gray:#f3f3f3;
-@button-color:#e15053;
-@content-color:#fbfcff;
-@progress-color:#cccccc;
-@progress-active-color:#ff7f02;
+@blue: #1d7ad9;
+@nav-gray: #f9f9f9;
+@title-gray: #f3f3f3;
+@button-color: #e15053;
+@content-color: #fbfcff;
+@text-color: #737374;
+@progress-color: #cccccc;
+@progress-active-color: #ff7f02;
+@border-color: #d6d6d6;
 //font-size:
-@small-size:1.4rem;
-@normal-size:1.6rem;
-@big-size:1.8rem;
-@title-size:2.2rem;
-
+@small-size: 1.4rem;
+@normal-size: 1.6rem;
+@big-size: 1.8rem;
+@title-size: 2.2rem;
 //progress-bar-component
-@progress-bar-width:16rem;
-@progress-bar-height:0.5rem;
-@progress-circle-radius:2.4rem;
-
-
+@progress-bar-width: 16rem;
+@progress-bar-height: 0.5rem;
+@progress-circle-radius: 2.4rem;
 //component
-.block-center-align{
+.block-center-align {
   width: 100%;
   max-width: 120rem;
   margin: 0 auto;
+  @media screen and (min-width: 769px) and (max-width:1200px) {
+    width: 95%;
+  }
+  @media screen and (min-width:426px) and (max-width:768px) {
+    width: 95%;
+  }
+  @media screen and (min-width:301px) and (max-width:425px) {
+    width: 100%;
+  }
 }
-.abs-ver-align{
+
+.abs-ver-align {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
-.abs-hzt-align{
+
+.abs-hzt-align {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
-.rel-ver-align{
+
+.rel-ver-align {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
 }
-.space-between{
+
+.space-between {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.clear-format{
-  border:0;
+
+.clear-format {
+  border: 0;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
 
-html{
-  font-size:62.5%;
+.clearfix {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+    visibility: hidden;
+    height: 0;
+  }
 }
 
-header{
+html {
+  font-size: 62.5%;
+}
+
+header {
   background-color: @blue;
 }
 
-.header-wrap{
+.header-wrap {
   .space-between;
   .block-center-align;
   color: white;
   font-size: @normal-size;
-  .login{
+  .login {
     .clear-format;
     padding: 1rem 2rem;
     background-color: @blue;
   }
-
-  .register{
+  .register {
     .clear-format;
     padding: 1rem 2rem;
     background-color: white;
@@ -78,44 +100,70 @@ header{
   }
 }
 
-
-.collapse{
+.collapse {
   .block-center-align;
   background-color: @nav-gray;
 }
 
-.navbar-nav{
-
+//add nav label hover effect
+.navbar-nav {
   float: right;
-
-  a{
+  a {
     margin: 2.8rem;
     border-radius: 0.5rem;
-    color: black!important;
+    color: black !important;
     font-size: @normal-size;
     background-color: white;
     box-shadow: 2px 2px 5px rgb(57, 57, 57);
-    &:hover{
-      background-color: @blue!important;
-      color: white!important;
+    transition: background-color 1s ease, color 0.5s ease, transform 0.5s ease 0.5s;
+    &:hover {
+      background-color: @blue !important;
+      color: white !important;
+      transform: rotate(180deg);
     }
   }
 }
 
-
-.my-progress-body{
+.my-progress-body {
   .block-center-align;
+  position: relative;
   display: flex;
   justify-content: flex-end;
+  top:2rem;
+  @media screen and (min-width: 769px) and (max-width:1200px) {
+
+  }
+  @media screen and (min-width:426px) and (max-width:768px) {
+    display: block;
+    text-align: center;
+  }
+  @media screen and (min-width:301px) and (max-width:425px) {
+    display: block;
+    text-align: center;
+  }
 }
 
-
-.my-progress-wrap{
+.my-progress-wrap {
   float: left;
   text-align: center;
+  @media screen and (min-width: 769px) and (max-width:1200px) {
+
+  }
+  @media screen and (min-width:426px) and (max-width:768px) {
+    float: left;
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+  }
+  @media screen and (min-width:301px) and (max-width:425px) {
+    float: none;
+    display: inline-block;
+  }
 }
 
-.my-progress-bar{
+//draw progress bar and circle and add hover effect
+.my-progress-bar {
+  display: inline-block;
   position: relative;
   width: @progress-bar-width;
   height: @progress-bar-height;
@@ -124,7 +172,8 @@ header{
   color: white;
   font-size: @normal-size;
   text-align: center;
-  &::before{
+
+  &::before {
     content: "";
     .abs-ver-align;
     left: @progress-bar-width / 2 - @progress-circle-radius / 2;
@@ -133,17 +182,16 @@ header{
     border-radius: 50%;
     background-color: @progress-color;
   }
-  &:hover{
+  &:hover {
     background-color: @progress-active-color;
-    &::before{
+    &::before {
       background-color: @progress-active-color;
     }
   }
-  &:hover+span{
+  &:hover+span {
     color: @progress-active-color;
   }
-
-  span{
+  span {
     position: relative;
     left: 0px;
     bottom: 8px;
@@ -151,48 +199,294 @@ header{
   }
 }
 
-.progress-text{
-  display: inline-block;
+.progress-text {
+  display: block;
   margin: 3rem 0;
   font-size: @normal-size;
   color: @progress-color;
 }
 
-.step-title{
+.step-title {
   .block-center-align;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
   border-left: 4px solid @blue;
   font-size: @big-size;
 }
-section.step{
-  .block-center-align;
 
-  .row-title{
+section.step {
+  .block-center-align;
+  border: 1px solid @border-color;
+  .row-title {
     padding: 1.5rem;
     background-color: @title-gray;
-  }
-  .group{
-    padding: 3.6rem 0;
+    color: @blue;
     font-size: @normal-size;
+    * {
+      vertical-align: middle;
+    }
+  }
+  .group {
+    position: relative;
+    padding: 3.6rem;
+    font-size: @normal-size;
+    background-color: @content-color; //vertical align the select component
+    @media screen and (min-width: 769px) and (max-width:1200px) {
+
+    }
+    @media screen and (min-width:426px) and (max-width:768px) {
+      padding: 3.6rem 2rem;
+    }
+    @media screen and (min-width:301px) and (max-width:425px) {
+      text-align: center;
+    }
+    select {
+      .clear-format;
+      width: 13rem;
+      height: 4rem;
+      border: 1px solid @border-color;
+      padding: 0 1%;
+      background-image: url(../resource/box-assets/select.png);
+      background-repeat: no-repeat;
+      background-position: 10rem 0.5rem;
+    }
+  }
+  .outer-radius,
+  .inner-radius {
+    margin: 2.5rem 0;
+    @media screen and (min-width: 769px) and (max-width:1200px) {
+
+    }
+    @media screen and (min-width:426px) and (max-width:768px) {
+
+    }
+    @media screen and (min-width:301px) and (max-width:426px) {
+      text-align: center;
+    }
+  }
+  .input {
+    margin: 0 3rem;
+    @media screen and (min-width: 769px) and (max-width:1200px) {
+
+    }
+    @media screen and (min-width:426px) and (max-width:768px) {
+      display: block;
+    }
+    @media screen and (min-width:301px) and (max-width:425px) {
+
+    }
+
   }
 }
 
+#select-box {
+  label{
+    @media screen and (min-width: 769px) and (max-width:1200px) {
+
+    }
+    @media screen and (min-width:426px) and (max-width:768px) {
+
+    }
+    @media screen and (min-width:301px) and (max-width:426px) {
+      display: block;
+      margin: 2rem;
+    }
+  }
+  select {
+    position: relative;
+    float: right;
+    top: -1rem;
+    @media screen and (min-width: 769px) and (max-width:1200px) {
+
+    }
+    @media screen and (min-width:426px) and (max-width:768px) {
+
+    }
+    @media screen and (min-width:301px) and (max-width:426px) {
+      position: relative;
+      float: none;
+      top: 1.5rem;
+    }
+  }
+}
+
+#ruler-group {
+  .input {
+    display: inline-block;
+  }
+  label{
+    @media screen and (min-width: 769px) and (max-width:1200px) {
+
+    }
+    @media screen and (min-width:426px) and (max-width:768px) {
+
+    }
+    @media screen and (min-width:301px) and (max-width:426px) {
+      display: inline-block;
+    }
+  }
+  select {
+    position: relative;
+    float: right;
+    top: -9rem;
+    @media screen and (min-width: 769px) and (max-width:1200px) {
+
+    }
+    @media screen and (min-width:426px) and (max-width:768px) {
+
+    }
+    @media screen and (min-width:301px) and (max-width:425px) {
+      position: relative;
+      float: none;
 
 
+      top: 50%;
+    }
+  }
 
+}
 
+#select-material {
+  .input {
+    display: inline-block;
+  }
+  select {
+    position: relative;
+    float: right;
+    top: -4rem;
+    @media screen and (min-width: 769px) and (max-width:1200px) {
+      top: -9rem;
+    }
+    @media screen and (min-width:426px) and (max-width:768px) {
+      top: -9rem;
+    }
+    @media screen and (min-width:301px) and (max-width:425px) {
+      position: relative;
+      float: none;
+      top:50%;
 
+    }
+  }
+  label {
+    margin: 1rem 2rem;
 
+    @media screen and (min-width: 769px) and (max-width:1200px) {
+      display: inline-block;
+      width:33.33vw;
+    }
+    @media screen and (min-width:426px) and (max-width:768px) {
+      display: inline-block;
+      width:33.33vw;
+    }
+    @media screen and (min-width:301px) and (max-width:425px) {
+      width: 100%;
+    }
+  }
+}
 
+.btn-wrap {
+  text-align: center;
+  input[type="submit"] {
+    .clear-format;
+    padding: 2rem 5.4rem;
+    margin: 14rem 0;
+    transform: translateX(50%);
+    border-radius: 1rem;
+    color: white;
+    background-color: @button-color;
+    font-size: 2.4rem;
+  }
+}
 
+footer {
+  margin-top: 6rem;
+  color: @text-color;
+  background-color: @nav-gray;
+  .footer-wrap {
+    .block-center-align;
+    overflow: hidden;
+  }
+  .footer-title {
+    display: inline-block;
+    padding: 6rem 0;
+    margin-right: 16rem;
+    font-size: @big-size;
+  }
+  .link {
+    display: inline-block;
+    font-size: 1.4rem;
+    width: 30rem;
+    vertical-align: middle;
+    a {
+      display: inline-block;
+      color: @text-color;
+      margin: 0.5rem 1rem;
+    }
+  }
+  .barcode {
+    position: relative;
+    display: inline-block;
+    text-align: justify;
+    float: right;
+    top: 3rem;
+    right: 2rem;
+  }
+  .contact {
+    float: left;
+    div {
+      margin: 0.5rem 0;
+    }
+  }
+}
 
+.copyright {
+  text-align: center;
+  padding: 0.5rem 0;
+  background-color: @blue;
+  color: white;
+}
 
-
-[type="number"]{
+// cancel the input box focus effect
+[type="number"] {
   width: 7rem;
   height: 3rem;
   outline: none;
-  &::-webkit-inner-spin-button,::-webkit-outer-spin-button{
+  &::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button {
     appearance: none;
     -webkit-appearance: none;
+  }
+  @media screen and (min-width: 769px) and (max-width:1200px) {
+
+  }
+  @media screen and (min-width:426px) and (max-width:768px) {
+
+  }
+  @media screen and (min-width:301px) and (max-width:426px) {
+    width: 90%;
+  }
+}
+
+//optimize the radio cosmetic
+[type="radio"] {
+  display: none;
+  &:checked+label::before {
+    border: 5px solid @blue;
+  }
+}
+
+//draw custom radio button
+label {
+  position: relative;
+  margin: 0rem 2rem;
+  &::before {
+    position: absolute;
+    content: "\a0";
+    width: 1.6rem;
+    height: 1.6rem;
+    left: -2rem;
+    border: 1px solid @border-color;
+    border-radius: 50%;
+    background-color: white;
   }
 }
