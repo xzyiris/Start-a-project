@@ -64,6 +64,7 @@ header {
   margin: 0 auto;
   border-left: 4px solid #1d7ad9;
   padding: 0 6px;
+  margin-top: 80px;
   margin-bottom: 5px;
 }
 .step {
@@ -116,10 +117,10 @@ header {
   border: 1px solid #d6d6d6;
   text-indent: .15em;
   line-height: 1;
+  box-sizing: border-box;
 }
 .step [type="radio"]:checked + label::before {
-  background-image: url(../resource/box-assets/selected.png);
-  background-size: cover;
+  border: 5.5px solid #1d7ad9;
 }
 .step .group {
   position: relative;
@@ -205,11 +206,11 @@ ul a {
 }
 ul a:hover {
   background-color: #1d7ad9;
-  color: white!important;
+  color: white !important;
 }
 ul .ul-active {
   background-color: #1d7ad9;
-  color: white!important;
+  color: white !important;
 }
 input {
   margin: 0 5px;
@@ -423,7 +424,11 @@ footer a:hover {
 }
 .progress-bar span {
   position: relative;
-  top: -1px;
+  top: 23px;
+  font-size: 1.8rem;
+}
+.progress-bar span.progress-text {
+  color: #afafaf;
 }
 .progress-bar::before {
   position: absolute;
@@ -434,11 +439,16 @@ footer a:hover {
   left: 68px;
   content: "";
 }
+.progress-bar:hover,
+.progress-bar:hover::before {
+  background-color: #ff7f02;
+}
+.progress-bar:hover span.progress-text {
+  color: #ff7f02;
+}
 .my-progress-text {
   display: inline-block;
   float: right;
-  color: #afafaf;
-  font-size: 1.8rem;
 }
 @media screen and (max-width: 767px) {
   .my-progress-text {

@@ -94,6 +94,7 @@ header {
   .block-center-align;
   border-left: 4px solid #1d7ad9;
   padding: 0 6px;
+  margin-top: 80px;
   margin-bottom: 5px;
 }
 
@@ -145,11 +146,11 @@ header {
     border: 1px solid #d6d6d6;
     text-indent: .15em;
     line-height: 1;
+    box-sizing: border-box;
   }
   [type="radio"]:checked {
     +label::before {
-      background-image: url(../resource/box-assets/selected.png);
-      background-size: cover;
+      border: 5.5px solid #1d7ad9;
     }
   }
   .group {
@@ -203,7 +204,7 @@ section {
       border-radius: 10px;
       box-shadow: @box-shadow-1;
       cursor: pointer;
-      &:hover{
+      &:hover {
         .active;
       }
     }
@@ -220,13 +221,13 @@ ul {
   a {
     display: block;
     padding: 10px;
-    &:hover{
+    &:hover {
       .ul-active;
     }
   }
-  .ul-active{
+  .ul-active {
     background-color: @backcolor;
-    color: white!important;
+    color: white !important;
   }
 }
 
@@ -248,17 +249,20 @@ input {
   border: 0;
   display: none;
 }
-[type="submit"]{
+
+[type="submit"] {
   cursor: pointer;
 }
-.select-material{
+
+.select-material {
   border-bottom: 1px solid @border-color;
-  .group > div{
+  .group>div {
     @media screen and (min-width: 767px) and(max-width:1024px) {
       width: 62%;
     }
   }
 }
+
 .blank-box {
   display: inline-block;
   width: 50px;
@@ -266,7 +270,7 @@ input {
   @media screen and (max-width: 767px) {
     display: none;
   }
-  @media screen and (min-width: 600px) and (max-width:1024px){
+  @media screen and (min-width: 600px) and (max-width:1024px) {
     width: 20px;
   }
 }
@@ -277,7 +281,7 @@ input {
   @media screen and (max-width: 767px) {
     margin: 10px 0;
   }
-  @media screen and (min-width: 600px) and (max-width:1024px){
+  @media screen and (min-width: 600px) and (max-width:1024px) {
     margin: 30px 0;
   }
 }
@@ -313,13 +317,14 @@ footer {
         bottom: 15px;
         right: 20px;
         font-size: 12px;
-        img{
+        img {
           width: 80%;
           height: 80%;
         }
-        .contact,img{
+        .contact,
+        img {
           display: block;
-          div{
+          div {
             margin: 2px;
           }
         }
@@ -329,18 +334,18 @@ footer {
         bottom: 30px;
         right: 50px;
         font-size: 14px;
-        img{
+        img {
           width: 80%;
           height: 80%;
         }
-        .contact,img{
+        .contact,
+        img {
           display: block;
-          div{
+          div {
             margin: 2px;
           }
         }
       }
-
     }
     .contact,
     .barcode,
@@ -348,7 +353,6 @@ footer {
       display: inline-block;
       color: @text-color;
     }
-
   }
   .footer-title {
     float: left;
@@ -358,7 +362,6 @@ footer {
     @media screen and(max-width: 1024px) {
       width: 100%;
       margin: 10px;
-
     }
   }
   a {
@@ -378,7 +381,7 @@ footer {
   color: white;
   font-size: 1.4rem;
   background-color: @backcolor;
-  @media screen and(max-width:767px) {
+  @media screen and(max-width: 767px) {
     font-size: 12px;
   }
 }
@@ -390,7 +393,7 @@ footer {
       margin: 10px;
       display: block;
     }
-    br{
+    br {
       display: none;
     }
   }
@@ -423,7 +426,11 @@ footer {
   background-color: @progress-background-color;
   span {
     position: relative;
-    top: -1px;
+    top: 23px;
+    font-size: 1.8rem;
+  }
+  span.progress-text{
+    color: @text-color;
   }
 }
 
@@ -437,11 +444,17 @@ footer {
   content: "";
 }
 
+.progress-bar:hover,
+.progress-bar:hover::before {
+  background-color: @progress-active-color;
+}
+.progress-bar:hover span.progress-text{
+  color: @progress-active-color;
+}
+
 .my-progress-text {
   display: inline-block;
   float: right;
-  color: @text-color;
-  font-size: 1.8rem;
   @media screen and (max-width: 767px) {
     width: 100%;
   }
