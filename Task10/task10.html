@@ -9,77 +9,88 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
   <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-  <script src="../bootstrap/jquery-3.3.1.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
   <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以  根据需要只加载单个插件。 -->
   <script src="../bootstrap/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="./CSS/task10.css" />
   <link rel="icon" href="./resource/timg.png" type="img/x-icon">
   <style>
+
+
   </style>
 </head>
 
 <body>
   <header>
     <div class="header-wrap">
-      <div class="hotline">客服热线: 010-594-78634</div>
-      <div class="login">
-        <span >登陆</span>
-        <span class="active">注册</span>
+      <div class="hotline"><span>客服热线: 010-594-78634</span></div>
+      <div class="button">
+        <button class="login">登陆</button>
+        <button class="register">注册</button>
       </div>
-
-      <div class="clearfix"></div>
     </div>
   </header>
-  <main>
-    <section class="switch">
-      <div class="label">
-        <span class="active">首页</span>
-        <span>在线定制</span>
-        <span>标准版</span>
-        <span style="margin-right: 5px;">品质保障</span>
-      </div>
-      <div class="label-xs">
-        <ul>
-          <a class="ul-active">首页</a>
-          <a>在线定制</a>
-          <a>标准版</a>
-          <a>品质保障</a>
-        </ul>
-      </div>
-    </section>
-    <div class="my-progress-wrap">
-      <div class="progress-body">
-        <div class="progress-bar" id="active">
-          <span>1</span>
-          <br>
-          <span class="progress-text-active">1.定制纸箱</span>
-        </div>
-        <div class="progress-bar">
-          <span>2</span>
-          <br>
-          <span class="progress-text">2.选择数量</span>
-        </div>
-        <div class="progress-bar">
-          <span>3</span>
-          <br>
-          <span class="progress-text">3.上传附件</span>
-        </div>
-        <div class="progress-bar">
-          <span>4</span>
-          <br>
-          <span class="progress-text">4.确认下单</span>
-        </div>
+  <nav class="navbar navbar-default" role="navigation">
+
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+          <span class="sr-only"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
 
       </div>
-      <div class="clearfix"></div>
-      <div class="my-progress-text">
-          <span class="progress-text-active">1.定制纸箱</span>
-          <span class="progress-text">2.选择数量</span>
-          <span class="progress-text">3.上传附件</span>
-          <span class="progress-text">4.确认下单</span>
-      </div>
-      <div class="clearfix"></div>
     </div>
+    <div class="collapse navbar-collapse" id="example-navbar-collapse" style="">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="">首页</a>
+        </li>
+        <li>
+          <a href="">在线定制</a>
+        </li>
+        <li>
+          <a href="">标准箱</a>
+        </li>
+        <li>
+          <a href="" id="quality-assure">品质保障</a>
+        </li>
+      </ul>
+
+    </div>
+    </div>
+  </nav>
+  <main>
+    <div class="clearfix my-progress-body">
+
+      <div class="my-progress-wrap">
+        <div class="my-progress-bar" id="active">
+          <span>1</span>
+        </div>
+        <span class="progress-text">1.定制纸箱</span>
+      </div>
+      <div class="my-progress-wrap">
+        <div class="my-progress-bar">
+          <span>2</span>
+        </div>
+        <span class="progress-text">2.选择数量</span>
+      </div>
+      <div class="my-progress-wrap">
+        <div class="my-progress-bar">
+          <span>3</span>
+        </div>
+        <span class="progress-text">3.上传附件</span>
+      </div>
+      <div class="my-progress-wrap">
+        <div class="my-progress-bar">
+          <span>4</span>
+        </div>
+        <span class="progress-text">4.确认下单</span>
+      </div>
+    </div>
+
 
     <div class="step-title">
       请您按照以下步骤来定制您的纸箱
@@ -97,13 +108,13 @@
           <div class="group">
             <input type="radio" name="box" id="dk-box" checked>
             <label for="dk-box">对口箱</label>
-            <div class="blank-box"></div>
+
             <input type="radio" name="box" id="plane-box">
             <label for="plane-box">飞机盒</label>
-            <div class="blank-box"></div>
-            <input type="radio" name="box" id="sky-box" >
+
+            <input type="radio" name="box" id="sky-box">
             <label for="sky-box">天地盖</label>
-            <div class="blank-box"></div>
+
             <select name="select-box">
               <option>查看详情</option>
             </select>
@@ -118,39 +129,39 @@
             <div class="outer-radius">
               <input type="radio" name="radius" id="outer-radius" checked>
               <label for="outer-radius">外径</label>
-              <div class="blank-box"></div>
+
               <div class="input">
                 长
-                <input type="text" name="length">mm
+                <input type="number" name="length">mm
               </div>
-              <div class="blank-box"></div>
+
               <div class="input">
                 宽
-                <input type="text" name="length">mm
+                <input type="number" name="length">mm
               </div>
-              <div class="blank-box"></div>
+
               <div class="input">
                 高
-                <input type="text" name="length">mm
+                <input type="number" name="length">mm
               </div>
             </div>
             <div class="inner-radius">
               <input type="radio" name="radius" id="inner-radius">
               <label for="inner-radius">内径</label>
-              <div class="blank-box"></div>
+
               <div class="input">
                 长
-                <input type="text" name="length">mm
+                <input type="number" name="length">mm
               </div>
-              <div class="blank-box"></div>
+
               <div class="input">
                 宽
-                <input type="text" name="length">mm
+                <input type="number" name="length">mm
               </div>
-              <div class="blank-box"></div>
+
               <div class="input">
                 高
-                <input type="text" name="length">mm
+                <input type="number" name="length">mm
               </div>
             </div>
 
@@ -169,21 +180,16 @@
           </div>
           <div class="group">
             <div>
-            <input type="radio" name="material" id="material-1" checked>
-            <label for="material-1">三层A瓦材质</label>
-            <div class="blank-box"></div>
-            <input type="radio" name="material" id="material-2">
-            <label for="material-2" >三层A瓦材质</label>
-            <div class="blank-box"></div>
-            <input type="radio" name="material" id="material-3">
-            <label for="material-3">三层A瓦材质</label>
-            <div class="blank-box"></div>
-            <input type="radio" name="material" id="material-4">
-            <label for="material-4">三层A瓦材质</label>
-            <div class="blank-box"></div>
-            <input type="radio" name="material" id="material-5">
-            <label for="material-5">三层A瓦材质</label>
-            <div class="blank-box"></div>
+              <input type="radio" name="material" id="material-1" checked>
+              <label for="material-1">三层A瓦材质</label>
+              <input type="radio" name="material" id="material-2">
+              <label for="material-2">三层A瓦材质</label>
+              <input type="radio" name="material" id="material-3">
+              <label for="material-3">三层A瓦材质</label>
+              <input type="radio" name="material" id="material-4">
+              <label for="material-4">三层A瓦材质</label>
+              <input type="radio" name="material" id="material-5">
+              <label for="material-5">三层A瓦材质</label>
             </div>
             <select name="select-box">
               <option>查看详情</option>
@@ -203,14 +209,15 @@
         <a>关于我们</a>
         <a>配送进程</a>
         <a>联系我们</a>
-        <br>
         <a>下载指南</a>
         <a>媒体介绍</a>
       </div>
       <div class="barcode">
         <div class="contact">
           <div>TEL：400-0000-000</div>
+          <br>
           <div>企业QQ：123456789</div>
+          <br>
           <div>微信号：XXXXXXX</div>
         </div>
         <img src="./resource/box-assets/barcode.png">
