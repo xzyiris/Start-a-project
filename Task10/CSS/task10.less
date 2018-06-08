@@ -96,6 +96,9 @@ header {
   padding: 0 6px;
   margin-top: 80px;
   margin-bottom: 5px;
+  @media screen and(max-width:767px){
+    margin-top: 0;
+  }
 }
 
 .step {
@@ -453,9 +456,10 @@ footer {
 }
 
 .my-progress-text {
-  display: inline-block;
+  display: none;
   float: right;
   @media screen and (max-width: 767px) {
+    display: block;
     width: 100%;
   }
   span {

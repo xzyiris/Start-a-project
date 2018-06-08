@@ -67,6 +67,11 @@ header {
   margin-top: 80px;
   margin-bottom: 5px;
 }
+@media screen and (max-width: 767px) {
+  .step-title {
+    margin-top: 0;
+  }
+}
 .step {
   max-width: 120rem;
   margin: 0 auto;
@@ -447,11 +452,12 @@ footer a:hover {
   color: #ff7f02;
 }
 .my-progress-text {
-  display: inline-block;
+  display: none;
   float: right;
 }
 @media screen and (max-width: 767px) {
   .my-progress-text {
+    display: block;
     width: 100%;
   }
 }
