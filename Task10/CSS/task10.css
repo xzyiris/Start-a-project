@@ -57,7 +57,7 @@ header {
   color: black;
 }
 .switch {
-  background-color: #f9f9f9;
+  background-color: #f2f2f2;
 }
 .step-title {
   max-width: 120rem;
@@ -69,11 +69,14 @@ header {
 .step {
   max-width: 120rem;
   margin: 0 auto;
+  border: 1px solid #afafaf;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .step .row-title {
   vertical-align: middle;
   padding: 13px;
-  background-color: #f9f9f9;
+  background-color: #f2f2f2;
 }
 .step .row-title * {
   vertical-align: middle;
@@ -229,6 +232,9 @@ input {
 [type="submit"] {
   cursor: pointer;
 }
+.select-material {
+  border-bottom: 1px solid #e7e7e7;
+}
 @media screen and (min-width: 767px) and (max-width: 1024px) {
   .select-material .group > div {
     width: 62%;
@@ -236,7 +242,7 @@ input {
 }
 .blank-box {
   display: inline-block;
-  width: 60px;
+  width: 50px;
   height: 1px;
 }
 @media screen and (max-width: 767px) {
@@ -251,7 +257,7 @@ input {
 }
 .btn-wrap {
   text-align: center;
-  margin: 150px 0;
+  margin: 100px 0;
 }
 @media screen and (max-width: 767px) {
   .btn-wrap {
@@ -272,6 +278,7 @@ input[type="submit"] {
   font-size: 2rem;
 }
 footer {
+  margin-top: 100px;
   background-color: #f5f5f5;
 }
 footer .footer-wrap {
