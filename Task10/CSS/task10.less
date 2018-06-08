@@ -8,7 +8,7 @@
 @form-row-color: #f5f5f5;
 @radio-color: #f8f9fb;
 @row-background-color: #f9f9f9;
-@border-color:#e7e7e7;
+@border-color: #e7e7e7;
 @input-width: 7rem;
 @input-height: 3rem;
 @max-width: 120rem;
@@ -19,10 +19,10 @@
 @progress-background-color: #cccccc;
 @progress-active-color: #ff7f02;
 @text-padding: 5px;
-@text-color:#afafaf;
-@text-active-color:#1d7ad9;
+@text-color: #afafaf;
+@text-active-color: #1d7ad9;
 @box-shadow-1: 1px 1px 1px #999;
-@group-padding:35px;
+@group-padding: 35px;
 .block-center-align {
   max-width: @max-width;
   margin: 0 auto;
@@ -33,12 +33,14 @@
   justify-content: flex-end;
   align-items: center;
 }
-.abs-ver-align{
+
+.abs-ver-align {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
-.rel-ver-align{
+
+.rel-ver-align {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -57,26 +59,26 @@ header {
   background-color: @backcolor;
 }
 
-
-.header-wrap{
+.header-wrap {
   .block-center-align;
   color: white;
   .hotline {
     display: inline-block;
     float: left;
     padding: 10px 36px;
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
   }
   .login {
     display: inline-block;
     float: right;
-
   }
-  span{
+  span {
     display: inline-block;
     padding: 10px 36px;
-
   }
-  span.active{
+  span.active {
     display: inline-block;
     padding: 10px 36px;
     background-color: white;
@@ -92,26 +94,25 @@ header {
   .block-center-align;
   border-left: 4px solid #1d7ad9;
   padding: 0 6px;
-  margin-bottom:5px;
-
+  margin-bottom: 5px;
 }
+
 .step {
   .block-center-align;
   .row-title {
     vertical-align: middle;
     padding: 13px;
     background-color: @row-background-color;
-    *{
+    * {
       vertical-align: middle;
     }
-    img{
+    img {
       margin: 0 5px;
     }
   }
-
   select {
     float: right;
-    border:none;
+    border: none;
     width: auto;
     height: 37px;
     width: 130px;
@@ -124,12 +125,16 @@ header {
     background-repeat: no-repeat;
     background-position: 100px;
   }
-
-  label::before{
+  label {
+    @media screen and (max-width: 767px) {
+      display: block;
+      margin: 10px 0;
+    }
+  }
+  label::before {
     content: "\a0";
     display: inline-block;
     vertical-align: middle;
-    font-size: 18px;
     width: 1em;
     height: 1em;
     margin-right: .4em;
@@ -139,24 +144,40 @@ header {
     line-height: 1;
   }
   [type="radio"]:checked {
-    + label::before{
-    background-image: url(../resource/box-assets/selected.png);
-    background-size: cover;
+    +label::before {
+      background-image: url(../resource/box-assets/selected.png);
+      background-size: cover;
     }
   }
-
   .group {
+    position: relative;
+    vertical-align: middle;
     padding: @group-padding;
     background-color: #fbfcff;
-    vertical-align: middle;
-    *{
+    @media screen and (max-width: 767px) {
+      padding: 30px 13px;
+    }
+    select {
+      .abs-ver-align;
+      right: @group-padding;
+      @media screen and (max-width: 767px) {
+        top: 30px;
+        right: 10px;
+      }
+    }
+    * {
       vertical-align: middle;
     }
     .outer-radius,
     .inner-radius {
       margin: 30px 0;
+      @media screen and (max-width: 767px) {}
       .input {
         display: inline-block;
+        @media screen and (max-width: 767px) {
+          display: block;
+          margin: 10px 0;
+        }
       }
     }
   }
@@ -164,6 +185,9 @@ header {
 
 section {
   .label {
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
     .flex-end;
     .block-center-align;
     .active {
@@ -175,43 +199,86 @@ section {
       margin: 3rem;
       border-radius: 10px;
       box-shadow: @box-shadow-1;
+      cursor: pointer;
+      &:hover{
+        .active;
+      }
     }
   }
 }
 
-input {
+ul {
+  text-align: center;
+  padding: 0;
+  display: none;
+  @media screen and (max-width: 767px) {
+    display: block;
+  }
+  a {
+    display: block;
+    padding: 10px;
+    &:hover{
+      .ul-active;
+    }
+  }
+  .ul-active{
+    background-color: @backcolor;
+    color: white!important;
+  }
+}
 
+input {
   margin: 0 5px;
 }
 
-
-[type="text"]{
-  width:70px;
+[type="text"] {
+  width: 70px;
   height: 30px;
+  @media screen and (max-width: 767px) {
+    width: 60%;
+  }
 }
-[type="radio"]{
+
+[type="radio"] {
   width: 16px;
   height: 16px;
   border: 0;
   display: none;
 }
-.blank-box{
+[type="submit"]{
+  cursor: pointer;
+}
+.select-material{
+  .group > div{
+    @media screen and (min-width: 767px) and(max-width:1024px) {
+      width: 62%;
+    }
+  }
+}
+.blank-box {
   display: inline-block;
   width: 60px;
   height: 1px;
-}
-.group{
-  position: relative;
-  select{
-    .abs-ver-align;
-    right: @group-padding;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+  @media screen and (min-width: 600px) and (max-width:1024px){
+    width: 20px;
   }
 }
-.btn-wrap{
+
+.btn-wrap {
   text-align: center;
   margin: 150px 0;
+  @media screen and (max-width: 767px) {
+    margin: 10px 0;
+  }
+  @media screen and (min-width: 600px) and (max-width:1024px){
+    margin: 30px 0;
+  }
 }
-input[type="submit"]{
+
+input[type="submit"] {
   width: 180px;
   height: 50px;
   border: 0;
@@ -219,76 +286,143 @@ input[type="submit"]{
   color: white;
   font-size: 2rem;
 }
-footer{
+
+footer {
   background-color: @form-row-color;
-  .footer-wrap{
+  .footer-wrap {
     position: relative;
     padding: 60px 20px;
     .block-center-align;
-    .barcode{
+    @media screen and(max-width: 1024px) {
+      padding: 10px;
+    }
+    .barcode {
       float: right;
       position: relative;
       bottom: 20px;
-
-      *{
+      * {
         vertical-align: middle;
       }
+      @media screen and(max-width:767px) {
+        position: absolute;
+        bottom: 15px;
+        right: 20px;
+        font-size: 12px;
+        img{
+          width: 80%;
+          height: 80%;
+        }
+        .contact,img{
+          display: block;
+          div{
+            margin: 2px;
+          }
+        }
+      }
+      @media screen and (min-width:767px) and (max-width:1024px) {
+        position: absolute;
+        bottom: 30px;
+        right: 50px;
+        font-size: 14px;
+        img{
+          width: 80%;
+          height: 80%;
+        }
+        .contact,img{
+          display: block;
+          div{
+            margin: 2px;
+          }
+        }
+      }
+
     }
-    .contact,.barcode,img{
+    .contact,
+    .barcode,
+    img {
       display: inline-block;
       color: @text-color;
     }
+
   }
-  .footer-title{
+  .footer-title {
     float: left;
     margin-right: 180px;
     font-size: 1.8rem;
     color: @text-color;
-  }
+    @media screen and(max-width: 1024px) {
+      width: 100%;
+      margin: 10px;
 
-  a{
+    }
+  }
+  a {
     margin: 1rem;
     font-size: 1.4rem;
-    color: @text-color!important;
+    color: @text-color  !important;
     cursor: pointer;
   }
-  a:hover{
+  a:hover {
     color: @text-active-color;
   }
 }
-.copyright{
+
+.copyright {
   padding: 5px;
   text-align: center;
   color: white;
   font-size: 1.4rem;
   background-color: @backcolor;
+  @media screen and(max-width:767px) {
+    font-size: 12px;
+  }
 }
-.link{
+
+.link {
   display: inline-block;
+  @media screen and(max-width: 1024px) {
+    a {
+      margin: 10px;
+      display: block;
+    }
+    br{
+      display: none;
+    }
+  }
 }
-.my-progress-wrap{
+
+.my-progress-wrap {
   .block-center-align;
   margin: 30px auto;
+  @media screen and (max-width: 767px) {
+    margin: 10px auto;
+  }
 }
-.progress-body{
+
+.progress-body {
   display: inline-block;
   position: relative;
   float: right;
   height: 50px;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 }
-.progress-bar{
+
+.progress-bar {
   float: left;
   position: relative;
   .rel-ver-align;
   width: @progress-bar-width;
   height: @progress-bar-height;
   background-color: @progress-background-color;
-  span{
+  span {
     position: relative;
     top: -1px;
   }
 }
-.progress-bar::before{
+
+.progress-bar::before {
   position: absolute;
   width: @progress-circle-radius;
   height: @progress-circle-radius;
@@ -297,23 +431,35 @@ footer{
   left: @progress-bar-width/2 - @progress-circle-radius/2;
   content: "";
 }
-.my-progress-text{
+
+.my-progress-text {
   display: inline-block;
   float: right;
   color: @text-color;
   font-size: 1.8rem;
-
-  span{
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+  span {
     float: left;
     display: inline-block;
     width: @progress-bar-width;
     text-align: center;
     font-size: 1.8rem;
+    @media screen and (max-width: 767px) {
+      display: block;
+      position: relative;
+      width: 100%;
+      font-size: 14px;
+    }
   }
 }
-#active,#active::before{
+
+#active,
+#active::before {
   background-color: @progress-active-color;
 }
-.progress-text-active{
+
+.progress-text-active {
   color: @progress-active-color;
 }

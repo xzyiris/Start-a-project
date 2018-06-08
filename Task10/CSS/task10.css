@@ -37,6 +37,11 @@ header {
   float: left;
   padding: 10px 36px;
 }
+@media screen and (max-width: 767px) {
+  .header-wrap .hotline {
+    display: none;
+  }
+}
 .header-wrap .login {
   display: inline-block;
   float: right;
@@ -91,11 +96,16 @@ header {
   background-repeat: no-repeat;
   background-position: 100px;
 }
+@media screen and (max-width: 767px) {
+  .step label {
+    display: block;
+    margin: 10px 0;
+  }
+}
 .step label::before {
   content: "\a0";
   display: inline-block;
   vertical-align: middle;
-  font-size: 18px;
   width: 1em;
   height: 1em;
   margin-right: .4em;
@@ -109,9 +119,27 @@ header {
   background-size: cover;
 }
 .step .group {
+  position: relative;
+  vertical-align: middle;
   padding: 35px;
   background-color: #fbfcff;
-  vertical-align: middle;
+}
+@media screen and (max-width: 767px) {
+  .step .group {
+    padding: 30px 13px;
+  }
+}
+.step .group select {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 35px;
+}
+@media screen and (max-width: 767px) {
+  .step .group select {
+    top: 30px;
+    right: 10px;
+  }
 }
 .step .group * {
   vertical-align: middle;
@@ -124,12 +152,24 @@ header {
 .step .group .inner-radius .input {
   display: inline-block;
 }
+@media screen and (max-width: 767px) {
+  .step .group .outer-radius .input,
+  .step .group .inner-radius .input {
+    display: block;
+    margin: 10px 0;
+  }
+}
 section .label {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   max-width: 120rem;
   margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+  section .label {
+    display: none;
+  }
 }
 section .label .active {
   background-color: #1d7ad9;
@@ -140,6 +180,33 @@ section .label span {
   margin: 3rem;
   border-radius: 10px;
   box-shadow: 1px 1px 1px #999;
+  cursor: pointer;
+}
+section .label span:hover {
+  background-color: #1d7ad9;
+  color: white;
+}
+ul {
+  text-align: center;
+  padding: 0;
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  ul {
+    display: block;
+  }
+}
+ul a {
+  display: block;
+  padding: 10px;
+}
+ul a:hover {
+  background-color: #1d7ad9;
+  color: white!important;
+}
+ul .ul-active {
+  background-color: #1d7ad9;
+  color: white!important;
 }
 input {
   margin: 0 5px;
@@ -148,29 +215,53 @@ input {
   width: 70px;
   height: 30px;
 }
+@media screen and (max-width: 767px) {
+  [type="text"] {
+    width: 60%;
+  }
+}
 [type="radio"] {
   width: 16px;
   height: 16px;
   border: 0;
   display: none;
 }
+[type="submit"] {
+  cursor: pointer;
+}
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+  .select-material .group > div {
+    width: 62%;
+  }
+}
 .blank-box {
   display: inline-block;
   width: 60px;
   height: 1px;
 }
-.group {
-  position: relative;
+@media screen and (max-width: 767px) {
+  .blank-box {
+    display: none;
+  }
 }
-.group select {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 35px;
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .blank-box {
+    width: 20px;
+  }
 }
 .btn-wrap {
   text-align: center;
   margin: 150px 0;
+}
+@media screen and (max-width: 767px) {
+  .btn-wrap {
+    margin: 10px 0;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .btn-wrap {
+    margin: 30px 0;
+  }
 }
 input[type="submit"] {
   width: 180px;
@@ -189,6 +280,11 @@ footer .footer-wrap {
   max-width: 120rem;
   margin: 0 auto;
 }
+@media screen and (max-width: 1024px) {
+  footer .footer-wrap {
+    padding: 10px;
+  }
+}
 footer .footer-wrap .barcode {
   float: right;
   position: relative;
@@ -196,6 +292,46 @@ footer .footer-wrap .barcode {
 }
 footer .footer-wrap .barcode * {
   vertical-align: middle;
+}
+@media screen and (max-width: 767px) {
+  footer .footer-wrap .barcode {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    font-size: 12px;
+  }
+  footer .footer-wrap .barcode img {
+    width: 80%;
+    height: 80%;
+  }
+  footer .footer-wrap .barcode .contact,
+  footer .footer-wrap .barcode img {
+    display: block;
+  }
+  footer .footer-wrap .barcode .contact div,
+  footer .footer-wrap .barcode img div {
+    margin: 2px;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+  footer .footer-wrap .barcode {
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+    font-size: 14px;
+  }
+  footer .footer-wrap .barcode img {
+    width: 80%;
+    height: 80%;
+  }
+  footer .footer-wrap .barcode .contact,
+  footer .footer-wrap .barcode img {
+    display: block;
+  }
+  footer .footer-wrap .barcode .contact div,
+  footer .footer-wrap .barcode img div {
+    margin: 2px;
+  }
 }
 footer .footer-wrap .contact,
 footer .footer-wrap .barcode,
@@ -208,6 +344,12 @@ footer .footer-title {
   margin-right: 180px;
   font-size: 1.8rem;
   color: #afafaf;
+}
+@media screen and (max-width: 1024px) {
+  footer .footer-title {
+    width: 100%;
+    margin: 10px;
+  }
 }
 footer a {
   margin: 1rem;
@@ -225,19 +367,43 @@ footer a:hover {
   font-size: 1.4rem;
   background-color: #1d7ad9;
 }
+@media screen and (max-width: 767px) {
+  .copyright {
+    font-size: 12px;
+  }
+}
 .link {
   display: inline-block;
+}
+@media screen and (max-width: 1024px) {
+  .link a {
+    margin: 10px;
+    display: block;
+  }
+  .link br {
+    display: none;
+  }
 }
 .my-progress-wrap {
   max-width: 120rem;
   margin: 0 auto;
   margin: 30px auto;
 }
+@media screen and (max-width: 767px) {
+  .my-progress-wrap {
+    margin: 10px auto;
+  }
+}
 .progress-body {
   display: inline-block;
   position: relative;
   float: right;
   height: 50px;
+}
+@media screen and (max-width: 767px) {
+  .progress-body {
+    display: none;
+  }
 }
 .progress-bar {
   float: left;
@@ -267,12 +433,25 @@ footer a:hover {
   color: #afafaf;
   font-size: 1.8rem;
 }
+@media screen and (max-width: 767px) {
+  .my-progress-text {
+    width: 100%;
+  }
+}
 .my-progress-text span {
   float: left;
   display: inline-block;
   width: 160px;
   text-align: center;
   font-size: 1.8rem;
+}
+@media screen and (max-width: 767px) {
+  .my-progress-text span {
+    display: block;
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+  }
 }
 #active,
 #active::before {
