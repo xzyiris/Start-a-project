@@ -25,6 +25,7 @@
 }
 .clear-format {
   border: 0;
+  background: white;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -54,6 +55,7 @@ header {
 }
 .header-wrap .login {
   border: 0;
+  background: white;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -62,6 +64,7 @@ header {
 }
 .header-wrap .register {
   border: 0;
+  background: white;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -183,6 +186,7 @@ section.step .group > div {
 }
 section.step .group select {
   border: 0;
+  background: white;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -230,6 +234,7 @@ section.step .input {
 }
 .btn-wrap input[type="submit"] {
   border: 0;
+  background: white;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
