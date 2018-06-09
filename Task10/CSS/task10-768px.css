@@ -78,6 +78,17 @@ header {
 .navbar-nav {
   float: right;
 }
+@media screen and (max-width: 768px) {
+  .navbar-nav {
+    float: none;
+  }
+}
+.navbar-nav ul {
+  text-align: center;
+}
+.navbar-nav li {
+  text-align: center;
+}
 .navbar-nav a {
   margin: 2.8rem;
   border-radius: 0.5rem;
@@ -85,12 +96,10 @@ header {
   font-size: 1.6rem;
   background-color: white;
   box-shadow: 2px 2px 5px #393939;
-  transition: background-color 1s ease, color 0.5s ease, transform 0.5s ease 0.5s;
 }
 .navbar-nav a:hover {
   background-color: #1d7ad9 !important;
   color: white !important;
-  transform: rotate(180deg);
 }
 .my-progress-body {
   width: 95%;

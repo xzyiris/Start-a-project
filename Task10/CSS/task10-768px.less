@@ -97,8 +97,18 @@ header {
 }
 
 //add nav label hover effect
+//add nav label hover effect
 .navbar-nav {
   float: right;
+  @media screen and (max-width:768px) {
+    float: none;
+  }
+  ul{
+    text-align: center;
+  }
+  li{
+    text-align: center;
+  }
   a {
     margin: 2.8rem;
     border-radius: 0.5rem;
@@ -106,11 +116,9 @@ header {
     font-size: @normal-size;
     background-color: white;
     box-shadow: 2px 2px 5px rgb(57, 57, 57);
-    transition: background-color 1s ease, color 0.5s ease, transform 0.5s ease 0.5s;
     &:hover {
       background-color: @blue !important;
       color: white !important;
-      transform: rotate(180deg);
     }
   }
 }
