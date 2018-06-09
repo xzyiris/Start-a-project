@@ -323,3 +323,10 @@ label::before {
   border-radius: 50%;
   background-color: white;
 }
+#active,
+#active::before {
+  background-color: #ff7f02;
+}
+#active + span {
+  color: #ff7f02;
+}
