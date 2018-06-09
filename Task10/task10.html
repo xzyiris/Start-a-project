@@ -10,9 +10,12 @@
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
   <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
   <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-  <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以  根据需要只加载单个插件。 -->
+  <!-- 加载 Bootstrap 的所有 JavaScript 插件`你也可以  根据需要只加载单个插件。 -->
   <script src="../bootstrap/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" media="screen" href="./CSS/task10.css" />
+  <link rel="stylesheet" type="text/css" media="screen and (min-width:1300px)" href="./CSS/task10-1440px.css" />
+  <link rel="stylesheet" type="text/css" media="screen and (max-width:1300px) and (min-width:900px)" href="./CSS/task10-1024px.css" />
+  <link rel="stylesheet" type="text/css" media="screen and (max-width:901px) and (min-width:600px)" href="./CSS/task10-768px.css" />
+  <link rel="stylesheet" type="text/css" media="screen and (max-width:601px) and (min-width:300px)" href="./CSS/task10-425px.css" />
   <link rel="icon" href="./resource/timg.png" type="img/x-icon">
   <style>
 
@@ -106,14 +109,20 @@
             <span>选择箱型</span>
           </div>
           <div class="group">
+            <div>
             <input type="radio" name="box" id="dk-box" checked>
             <label for="dk-box">对口箱</label>
+            </div>
 
+            <div>
             <input type="radio" name="box" id="plane-box">
             <label for="plane-box">飞机盒</label>
+            </div>
 
+            <div>
             <input type="radio" name="box" id="sky-box">
             <label for="sky-box" class="clearfix">天地盖</label>
+            </div>
 
             <select name="select-box">
               <option>查看详情</option>

@@ -1,22 +1,6 @@
 .block-center-align {
-  width: 100%;
-  max-width: 120rem;
+  width: 95%;
   margin: 0 auto;
-}
-@media screen and (min-width: 769px) and (max-width: 1200px) {
-  .block-center-align {
-    width: 95%;
-  }
-}
-@media screen and (min-width: 426px) and (max-width: 768px) {
-  .block-center-align {
-    width: 95%;
-  }
-}
-@media screen and (min-width: 301px) and (max-width: 425px) {
-  .block-center-align {
-    width: 100%;
-  }
 }
 .abs-ver-align {
   position: absolute;
@@ -61,26 +45,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  max-width: 120rem;
+  width: 95%;
   margin: 0 auto;
   color: white;
   font-size: 1.6rem;
-}
-@media screen and (min-width: 769px) and (max-width: 1200px) {
-  .header-wrap {
-    width: 95%;
-  }
-}
-@media screen and (min-width: 426px) and (max-width: 768px) {
-  .header-wrap {
-    width: 95%;
-  }
-}
-@media screen and (min-width: 301px) and (max-width: 425px) {
-  .header-wrap {
-    width: 100%;
-  }
 }
 .header-wrap .login {
   border: 0;
@@ -100,25 +68,9 @@ header {
   color: black;
 }
 .collapse {
-  width: 100%;
-  max-width: 120rem;
+  width: 95%;
   margin: 0 auto;
   background-color: #f9f9f9;
-}
-@media screen and (min-width: 769px) and (max-width: 1200px) {
-  .collapse {
-    width: 95%;
-  }
-}
-@media screen and (min-width: 426px) and (max-width: 768px) {
-  .collapse {
-    width: 95%;
-  }
-}
-@media screen and (min-width: 301px) and (max-width: 425px) {
-  .collapse {
-    width: 100%;
-  }
 }
 .navbar-nav {
   float: right;
@@ -138,58 +90,16 @@ header {
   transform: rotate(180deg);
 }
 .my-progress-body {
-  width: 100%;
-  max-width: 120rem;
+  width: 95%;
   margin: 0 auto;
   position: relative;
   display: flex;
   justify-content: flex-end;
   top: 2rem;
 }
-@media screen and (min-width: 769px) and (max-width: 1200px) {
-  .my-progress-body {
-    width: 95%;
-  }
-}
-@media screen and (min-width: 426px) and (max-width: 768px) {
-  .my-progress-body {
-    width: 95%;
-  }
-}
-@media screen and (min-width: 301px) and (max-width: 425px) {
-  .my-progress-body {
-    width: 100%;
-  }
-}
-@media screen and (min-width: 426px) and (max-width: 768px) {
-  .my-progress-body {
-    display: block;
-    text-align: center;
-  }
-}
-@media screen and (min-width: 301px) and (max-width: 425px) {
-  .my-progress-body {
-    display: block;
-    text-align: center;
-  }
-}
 .my-progress-wrap {
   float: left;
   text-align: center;
-}
-@media screen and (min-width: 426px) and (max-width: 768px) {
-  .my-progress-wrap {
-    float: left;
-    display: inline-block;
-    width: 50%;
-    text-align: center;
-  }
-}
-@media screen and (min-width: 301px) and (max-width: 425px) {
-  .my-progress-wrap {
-    float: none;
-    display: inline-block;
-  }
 }
 .my-progress-bar {
   display: inline-block;
@@ -235,49 +145,17 @@ header {
   color: #cccccc;
 }
 .step-title {
-  width: 100%;
-  max-width: 120rem;
+  width: 95%;
   margin: 0 auto;
   margin-bottom: 1rem;
   padding-left: 1rem;
   border-left: 4px solid #1d7ad9;
   font-size: 1.8rem;
 }
-@media screen and (min-width: 769px) and (max-width: 1200px) {
-  .step-title {
-    width: 95%;
-  }
-}
-@media screen and (min-width: 426px) and (max-width: 768px) {
-  .step-title {
-    width: 95%;
-  }
-}
-@media screen and (min-width: 301px) and (max-width: 425px) {
-  .step-title {
-    width: 100%;
-  }
-}
 section.step {
-  width: 100%;
-  max-width: 120rem;
+  width: 95%;
   margin: 0 auto;
   border: 1px solid #d6d6d6;
-}
-@media screen and (min-width: 769px) and (max-width: 1200px) {
-  section.step {
-    width: 95%;
-  }
-}
-@media screen and (min-width: 426px) and (max-width: 768px) {
-  section.step {
-    width: 95%;
-  }
-}
-@media screen and (min-width: 301px) and (max-width: 425px) {
-  section.step {
-    width: 100%;
-  }
 }
 section.step .row-title {
   padding: 1.5rem;
@@ -290,19 +168,12 @@ section.step .row-title * {
 }
 section.step .group {
   position: relative;
-  padding: 3.6rem;
+  padding: 3.6rem 2.4rem;
   font-size: 1.6rem;
   background-color: #fbfcff;
 }
-@media screen and (min-width: 426px) and (max-width: 768px) {
-  section.step .group {
-    padding: 3.6rem 2rem;
-  }
-}
-@media screen and (min-width: 301px) and (max-width: 425px) {
-  section.step .group {
-    text-align: center;
-  }
+section.step .group > div {
+  display: inline-block;
 }
 section.step .group select {
   border: 0;
@@ -321,57 +192,21 @@ section.step .outer-radius,
 section.step .inner-radius {
   margin: 2.5rem 0;
 }
-@media screen and (min-width: 301px) and (max-width: 426px) {
-  section.step .outer-radius,
-  section.step .inner-radius {
-    text-align: center;
-  }
-}
 section.step .input {
-  margin: 0 3rem;
-}
-@media screen and (min-width: 426px) and (max-width: 768px) {
-  section.step .input {
-    display: block;
-  }
-}
-@media screen and (min-width: 301px) and (max-width: 426px) {
-  #select-box label {
-    display: block;
-    margin: 2rem;
-  }
+  margin: 0 1rem;
 }
 #select-box select {
   position: relative;
   float: right;
   top: -1rem;
 }
-@media screen and (min-width: 301px) and (max-width: 426px) {
-  #select-box select {
-    position: relative;
-    float: none;
-    top: 1.5rem;
-  }
-}
 #ruler-group .input {
   display: inline-block;
-}
-@media screen and (min-width: 301px) and (max-width: 426px) {
-  #ruler-group label {
-    display: inline-block;
-  }
 }
 #ruler-group select {
   position: relative;
   float: right;
   top: -9rem;
-}
-@media screen and (min-width: 301px) and (max-width: 425px) {
-  #ruler-group select {
-    position: relative;
-    float: none;
-    top: 50%;
-  }
 }
 #select-material .input {
   display: inline-block;
@@ -379,44 +214,10 @@ section.step .input {
 #select-material select {
   position: relative;
   float: right;
-  top: -4rem;
-}
-@media screen and (min-width: 769px) and (max-width: 1200px) {
-  #select-material select {
-    top: -9rem;
-  }
-}
-@media screen and (min-width: 426px) and (max-width: 768px) {
-  #select-material select {
-    top: -9rem;
-  }
-}
-@media screen and (min-width: 301px) and (max-width: 425px) {
-  #select-material select {
-    position: relative;
-    float: none;
-    top: 50%;
-  }
+  top: -6rem;
 }
 #select-material label {
-  margin: 1rem 2rem;
-}
-@media screen and (min-width: 769px) and (max-width: 1200px) {
-  #select-material label {
-    display: inline-block;
-    width: 33.33vw;
-  }
-}
-@media screen and (min-width: 426px) and (max-width: 768px) {
-  #select-material label {
-    display: inline-block;
-    width: 33.33vw;
-  }
-}
-@media screen and (min-width: 301px) and (max-width: 425px) {
-  #select-material label {
-    width: 100%;
-  }
+  margin: 1rem 4rem;
 }
 .btn-wrap {
   text-align: center;
@@ -440,29 +241,13 @@ footer {
   background-color: #f9f9f9;
 }
 footer .footer-wrap {
-  width: 100%;
-  max-width: 120rem;
+  width: 95%;
   margin: 0 auto;
   overflow: hidden;
 }
-@media screen and (min-width: 769px) and (max-width: 1200px) {
-  footer .footer-wrap {
-    width: 95%;
-  }
-}
-@media screen and (min-width: 426px) and (max-width: 768px) {
-  footer .footer-wrap {
-    width: 95%;
-  }
-}
-@media screen and (min-width: 301px) and (max-width: 425px) {
-  footer .footer-wrap {
-    width: 100%;
-  }
-}
 footer .footer-title {
   display: inline-block;
-  padding: 6rem 0;
+  padding: 2rem 0;
   margin-right: 16rem;
   font-size: 1.8rem;
 }
@@ -482,7 +267,7 @@ footer .barcode {
   display: inline-block;
   text-align: justify;
   float: right;
-  top: 3rem;
+  top: -3rem;
   right: 2rem;
 }
 footer .contact {
@@ -506,11 +291,6 @@ footer .contact div {
 [type="number"] ::-webkit-outer-spin-button {
   appearance: none;
   -webkit-appearance: none;
-}
-@media screen and (min-width: 301px) and (max-width: 426px) {
-  [type="number"] {
-    width: 90%;
-  }
 }
 [type="radio"] {
   display: none;
