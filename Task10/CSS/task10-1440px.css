@@ -212,7 +212,7 @@ section.step .input {
 #ruler-group select {
   position: relative;
   float: right;
-  top: -9rem;
+  top: -3rem;
 }
 #select-material .input {
   display: inline-block;
@@ -220,7 +220,7 @@ section.step .input {
 #select-material select {
   position: relative;
   float: right;
-  top: -4rem;
+  top: 0rem;
 }
 #select-material label {
   margin: 1rem 2rem;
