@@ -35,7 +35,7 @@ header img {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 35%;
+  left: 25rem;
   color: white;
 }
 .banner .intro .name {
@@ -104,7 +104,7 @@ main .self-intro {
   margin: 13% 0 5% 0;
 }
 .button button {
-  width: 30rem;
+  width: 45%;
   padding: 3.8% 0;
   border: 1px solid #5fc0cd;
   border-radius: 0.2em;
