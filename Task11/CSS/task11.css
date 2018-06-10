@@ -92,3 +92,6 @@ button {
   font-size: 3.2rem;
   color: #5fc0cd;
 }
+input::-webkit-input-placeholder {
+  color: #eaedee;
+}
