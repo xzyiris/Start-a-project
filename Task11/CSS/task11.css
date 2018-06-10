@@ -4,11 +4,6 @@ html {
   max-width: 960px;
   margin: 0 auto;
 }
-@media screen and (max-width: 426px) {
-  html {
-    font-size: 31.25%;
-  }
-}
 body {
   margin: 0;
   padding: 0;
@@ -44,7 +39,7 @@ section i {
   transform: translateY(-50%);
   height: 1em;
   width: 1em;
-  margin: 0 8%;
+  margin: 0 6%;
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -57,7 +52,7 @@ section .icon-password {
 section .border {
   position: absolute;
   top: 50%;
-  left: 20%;
+  left: 15%;
   transform: translateY(-50%);
   height: 1.8em;
   width: 1px;
@@ -66,7 +61,7 @@ section .border {
 section input {
   box-sizing: border-box;
   width: 100%;
-  padding-left: 22%;
+  padding-left: 20%;
   padding-top: 2.7%;
   padding-bottom: 2.7%;
   font-size: 3.2rem;
