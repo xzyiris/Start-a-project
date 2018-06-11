@@ -37,7 +37,7 @@ main {
 }
 .banner {
   position: relative;
-  padding: 10% 5%;
+  padding: 8rem 4rem;
   background-image: url(../resource/backgroundImage.png);
   background-size: cover;
 }
