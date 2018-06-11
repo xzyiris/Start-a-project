@@ -23,8 +23,10 @@ body {
 }
 
 header {
-  position: relative;
-  padding: 3%;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  padding: 2rem;
   background-color: @header-color;
   text-align: center;
   span {
@@ -37,6 +39,14 @@ header {
     top: 50%;
     transform: translateY(-50%);
   }
+}
+main{
+  position: absolute;
+  top: 88px;
+  bottom: 14rem;
+  width: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .banner {
@@ -85,7 +95,7 @@ header {
   border-bottom: 1px solid @border-color;
 }
 
-main {
+.main {
   padding: 0 5%;
   .row-intro,
   .row-label {
@@ -117,14 +127,22 @@ main {
     text-align: justify;
   }
 }
+footer{
+  position: absolute;
+  bottom:0;
+  padding: 2rem 5%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 
 .button {
   display: flex;
   justify-content: space-between;
-  margin: 13% 0 5% 0;
+
   button {
     width: 45%;
-    padding: 3.8% 0;
+    padding: 2.7rem 0;
     border: 1px solid @header-color;
     border-radius: 0.2em;
     font-size: @button-text;
