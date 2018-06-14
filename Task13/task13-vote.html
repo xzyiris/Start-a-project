@@ -5,12 +5,13 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Task13</title>
-  <meta name="viewport" content="width=640px">
+  <meta name="viewport" content="width=640">
   <link rel="stylesheet" type="text/css" media="screen" href="./CSS/task13.css" />
   <link rel="icon" type="img/x-icon" href="./resource/timg.png">
 </head>
 
 <body>
+
   <header>
     <div class="title">
       <div class="title-button">
@@ -219,70 +220,88 @@
 
     </div>
     <div class="identify-row">
-        <div class="identify-col">
-          <div class="identify-unit">
-            <div class="identify-head">
-              <div class="identify-name">
-                水民
-              </div>
-              <div class="identify-number">
-                10号
-              </div>
+      <div class="identify-col">
+        <div class="identify-unit">
+          <div class="identify-head">
+            <div class="identify-name">
+              水民
             </div>
-
-            <div class="sprite-wrapper">
-              <span class="sprite sprite-1"></span>
-              <span class="sprite sprite-2"></span>
-              <span class="sprite sprite-3"></span>
-              <span class="sprite sprite-4"></span>
+            <div class="identify-number">
+              10号
             </div>
           </div>
-        </div>
-        <div class="identify-col">
-          <div class="identify-unit">
-            <div class="identify-head">
-              <div class="identify-name">
-                水民
-              </div>
-              <div class="identify-number">
-                11号
-              </div>
-            </div>
 
-            <div class="sprite-wrapper">
-              <span class="sprite sprite-1"></span>
-              <span class="sprite sprite-2"></span>
-              <span class="sprite sprite-3"></span>
-              <span class="sprite sprite-4"></span>
-            </div>
+          <div class="sprite-wrapper">
+            <span class="sprite sprite-1"></span>
+            <span class="sprite sprite-2"></span>
+            <span class="sprite sprite-3"></span>
+            <span class="sprite sprite-4"></span>
           </div>
         </div>
-        <div class="identify-col">
-          <div class="identify-unit">
-            <div class="identify-head">
-              <div class="identify-name">
-                水民
-              </div>
-              <div class="identify-number">
-                12号
-              </div>
-            </div>
-
-            <div class="sprite-wrapper">
-              <span class="sprite sprite-1"></span>
-              <span class="sprite sprite-2"></span>
-              <span class="sprite sprite-3"></span>
-              <span class="sprite sprite-4"></span>
-            </div>
-          </div>
-        </div>
-
       </div>
+      <div class="identify-col">
+        <div class="identify-unit">
+          <div class="identify-head">
+            <div class="identify-name">
+              水民
+            </div>
+            <div class="identify-number">
+              11号
+            </div>
+          </div>
+
+          <div class="sprite-wrapper">
+            <span class="sprite sprite-1"></span>
+            <span class="sprite sprite-2"></span>
+            <span class="sprite sprite-3"></span>
+            <span class="sprite sprite-4"></span>
+          </div>
+        </div>
+      </div>
+      <div class="identify-col">
+        <div class="identify-unit">
+          <div class="identify-head">
+            <div class="identify-name">
+              水民
+            </div>
+            <div class="identify-number">
+              12号
+            </div>
+          </div>
+
+          <div class="sprite-wrapper">
+            <span class="sprite sprite-1"></span>
+            <span class="sprite sprite-2"></span>
+            <span class="sprite sprite-3"></span>
+            <span class="sprite sprite-4"></span>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer>
-    <button><a href="./task13-result.html">投死</a></button>
+    <button>
+      <a href="./task13-result.html">投死</a>
+    </button>
   </footer>
+
+  <audio id="audios" autoplay="autoplay" preload="auto" loop="loop">
+
+    <source src="./resource/fortuneFreedom.mp3" type="audio/mpeg">
+  </audio>
+
+  </div>
+  <script>
+    document.addEventListener('WeixinJSBridgeReady', function () {
+      document.getElementById('audios').play()
+    })
+
+    document.addEventListener('touchstart', function () {
+      document.getElementById('audios').play()
+    })
+
+  </script>
 
 </body>
 
