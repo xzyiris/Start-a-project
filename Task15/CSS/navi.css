@@ -7,7 +7,7 @@ body {
   background-color: white;
 }
 nav {
-  background-color: #3aad87;
+  background-color: #1ba36e;
 }
 li {
   font-size: 1.6rem;
@@ -42,11 +42,11 @@ a {
 }
 .nav {
   position: relative;
-  background-color: #3aad87;
+  background-color: #1ba36e;
 }
 .nav .nav-header {
   min-height: 60px;
-  background-color: #3aad87;
+  background-color: #1ba36e;
 }
 .nav .nav-logo {
   position: relative;
@@ -128,7 +128,7 @@ a {
   }
   nav ul.drop-down li:hover a {
     background: white;
-    color: #3aad87;
+    color: #1ba36e;
   }
   nav ul.drop-down li:hover {
     background-color: white;
