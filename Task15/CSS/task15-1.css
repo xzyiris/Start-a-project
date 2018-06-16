@@ -766,6 +766,12 @@ main {
     width: 20%;
     margin: 5px 0;
   }
+  #switch1 {
+    left: 45%;
+  }
+  #switch2 {
+    left: 55%;
+  }
 }
 .clearfix::after {
   content: "";
@@ -1012,5 +1018,11 @@ main {
   .link__list li {
     width: 20%;
     margin: 5px 0;
+  }
+  #switch1 {
+    left: 45%;
+  }
+  #switch2 {
+    left: 55%;
   }
 }
