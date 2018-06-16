@@ -762,6 +762,10 @@ main {
     position: absolute;
     right: 2%;
   }
+  .link__list li {
+    width: 20%;
+    margin: 5px 0;
+  }
 }
 .clearfix::after {
   content: "";
@@ -1004,5 +1008,9 @@ main {
   .learn__arrow {
     position: absolute;
     right: 2%;
+  }
+  .link__list li {
+    width: 20%;
+    margin: 5px 0;
   }
 }
