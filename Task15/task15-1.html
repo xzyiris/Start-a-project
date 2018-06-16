@@ -5,13 +5,24 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
-  <meta name="viewport" content="width=1920">
+  <meta name="viewport" content="width=device-width,initial-scle=1.0">
   <link rel="stylesheet" type="text/css" media="screen" href="./CSS/task15-1.css" />
   <link rel="icon" type="img/x-icon" href="./resource/timg.png">
 </head>
 
 <body>
-
+  <header>
+    <div class="service">
+    <div class="service__number">
+      客服热线：010-594-78634
+    </div>
+    <div class="service__icon">
+      <img src="../Task8_PCWeb/task8-1-assets/wx.png">
+      <img src="../Task8_PCWeb/task8-1-assets/qq.png">
+      <img src="../Task8_PCWeb/task8-1-assets/weibo.png">
+    </div>
+    </div>
+  </header>
   <nav>
     <div class="nav clearfix">
       <div class="nav-header">
@@ -84,8 +95,8 @@
   </div>
   <main>
     <div class="mycontainer specialty">
-      <div class="myrow">
-        <div class="mycol-sm-3">
+      <div class="myrow text-center">
+        <div class="mycol-sm-3 specialty__unit">
           <div class="specialty__icon">
             <img src="../Task8_PCWeb/task8-1-assets/rocket.png">
           </div>
@@ -96,7 +107,7 @@
             将五到七年的成长时间，缩短到一年到三年。
           </div>
         </div>
-        <div class="mycol-sm-3">
+        <div class="mycol-sm-3 specialty__unit">
           <div class="specialty__icon">
             <img src="../Task8_PCWeb/task8-1-assets/archive.png">
           </div>
@@ -107,7 +118,7 @@
             标准的实战教程，不会走弯路
           </div>
         </div>
-        <div class="mycol-sm-3">
+        <div class="mycol-sm-3 specialty__unit">
           <div class="specialty__icon">
             <img src="../Task8_PCWeb/task8-1-assets/relation.png">
           </div>
@@ -118,20 +129,22 @@
             同班好友，同院学长，技术大师，入学就混入职脉圈，为以后铺平道路。
           </div>
         </div>
-        <div class="mycol-sm-3">
-          <div class="specialty__statistics">
-            <img src="../Task8_PCWeb/task8-1-assets/user.png">
-            <span class="specialty__number">12400</span>
-          </div>
-          <div class="specialty__text">
-            累计在线学习人数
-          </div>
-          <div class="specialty__statistics">
-            <img src="../Task8_PCWeb/task8-1-assets/user.png">
-            <span class="specialty__number">12400</span>
-          </div>
-          <div class="specialty__text">
-            学员已经找到满意工作
+        <div class="mycol-sm-3 specialty__unit" id="statistics">
+          <div class="specialty__statistics text-left">
+            <div class="">
+              <img src="../Task8_PCWeb/task8-1-assets/user.png">
+              <span class="specialty__number">12400</span>
+            </div>
+            <div class="specialty__text">
+              累计在线学习人数
+            </div>
+            <div class="">
+              <img src="../Task8_PCWeb/task8-1-assets/user.png">
+              <span class="specialty__number">12400</span>
+            </div>
+            <div class="specialty__text" style="margin-bottom: 0;">
+              学员已经找到满意工作
+            </div>
           </div>
         </div>
       </div>
@@ -239,70 +252,197 @@
 
     <div class="mycontainer student">
       <div class="myrow">
-        <div class="mycol-sm-12 text-center">
+        <div class="mycol-sm-12 text-center student__title">
           优秀学员展示
         </div>
       </div>
-      <div class="myrow">
-        <div class="mycol-sm-3">
-          <div class="student__unit text-center">
-            <div class="student__head">
-              <img src="../Task8_PCWeb/task8-1-assets/head-1.png">
-            </div>
-            <div class="student__name">
-              技术顾问：罗大佑
-            </div>
-            <div class="student__intro">
-              百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。
-            </div>
+      <div class="slide-click">
+          <input class="slide__input" type="radio" id="picture1" name="switch" checked>
+          <label class="switch__mark" for="picture1" id="switch1"> </label>
+          <input class="slide__input" type="radio" id="picture2" name="switch">
+          <label class="switch__mark" for="picture2" id="switch2"> </label>
+          <div class="slide__wrapper clearfix">
+            <ul class="slide__sets">
+              <li class="slide__item">
+                <div class="myrow">
+                  <div class="mycol-sm-3">
+                    <div class="student__unit text-center">
+                      <div class="student__head">
+                        <img src="../Task8_PCWeb/task8-1-assets/head-1.png">
+                      </div>
+                      <div class="student__name">
+                        技术顾问：罗大佑
+                      </div>
+                      <div class="student__intro">
+                        百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mycol-sm-3">
+                    <div class="student__unit text-center">
+                      <div class="student__head">
+                        <img src="../Task8_PCWeb/task8-1-assets/head-2.png">
+                      </div>
+                      <div class="student__name">
+                        技术顾问：罗大佑
+                      </div>
+                      <div class="student__intro">
+                        百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mycol-sm-3">
+                    <div class="student__unit text-center">
+                      <div class="student__head">
+                        <img src="../Task8_PCWeb/task8-1-assets/head-3.png">
+                      </div>
+                      <div class="student__name">
+                        技术顾问：罗大佑
+                      </div>
+                      <div class="student__intro">
+                        百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mycol-sm-3">
+                    <div class="student__unit text-center">
+                      <div class="student__head">
+                        <img src="../Task8_PCWeb/task8-1-assets/head-4.png">
+                      </div>
+                      <div class="student__name">
+                        技术顾问：罗大佑
+                      </div>
+                      <div class="student__intro">
+                        百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="slide__item">
+                <div class="myrow">
+                  <div class="mycol-sm-3">
+                    <div class="student__unit text-center">
+                      <div class="student__head">
+                        <img src="../Task8_PCWeb/task8-1-assets/head-1.png">
+                      </div>
+                      <div class="student__name">
+                        技术顾问：罗大佑
+                      </div>
+                      <div class="student__intro">
+                        百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mycol-sm-3">
+                    <div class="student__unit text-center">
+                      <div class="student__head">
+                        <img src="../Task8_PCWeb/task8-1-assets/head-2.png">
+                      </div>
+                      <div class="student__name">
+                        技术顾问：罗大佑
+                      </div>
+                      <div class="student__intro">
+                        百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mycol-sm-3">
+                    <div class="student__unit text-center">
+                      <div class="student__head">
+                        <img src="../Task8_PCWeb/task8-1-assets/head-3.png">
+                      </div>
+                      <div class="student__name">
+                        技术顾问：罗大佑
+                      </div>
+                      <div class="student__intro">
+                        百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mycol-sm-3">
+                    <div class="student__unit text-center">
+                      <div class="student__head">
+                        <img src="../Task8_PCWeb/task8-1-assets/head-4.png">
+                      </div>
+                      <div class="student__name">
+                        技术顾问：罗大佑
+                      </div>
+                      <div class="student__intro">
+                        百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
+
+
         </div>
-        <div class="mycol-sm-3">
-          <div class="student__unit text-center">
-            <div class="student__head">
-              <img src="../Task8_PCWeb/task8-1-assets/head-2.png">
-            </div>
-            <div class="student__name">
-              技术顾问：罗大佑
-            </div>
-            <div class="student__intro">
-              百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。
-            </div>
-          </div>
-        </div>
-        <div class="mycol-sm-3">
-          <div class="student__unit text-center">
-            <div class="student__head">
-              <img src="../Task8_PCWeb/task8-1-assets/head-3.png">
-            </div>
-            <div class="student__name">
-              技术顾问：罗大佑
-            </div>
-            <div class="student__intro">
-              百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。
-            </div>
-          </div>
-        </div>
-        <div class="mycol-sm-3">
-          <div class="student__unit text-center">
-            <div class="student__head">
-              <img src="../Task8_PCWeb/task8-1-assets/head-4.png">
-            </div>
-            <div class="student__name">
-              技术顾问：罗大佑
-            </div>
-            <div class="student__intro">
-              百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <div class="mycontainer coperation">
       <div class="myrow coperation__title">
-        <div class="mycol-sm-12">
+        <div class="mycol-sm-12 text-center">
           战略合作企业
+        </div>
+      </div>
+      <div class="myrow coperation__sets">
+        <div class="mycol-tsm-2">
+          <img class="coperation__logo" src="../Task8_PCWeb/task8-1-assets/ali.png">
+        </div>
+        <div class="mycol-tsm-2">
+          <img class="coperation__logo" src="../Task8_PCWeb/task8-1-assets/jinshan.png">
+        </div>
+        <div class="mycol-tsm-2">
+          <img class="coperation__logo" src="../Task8_PCWeb/task8-1-assets/huanxin.png">
+        </div>
+        <div class="mycol-tsm-2">
+          <img class="coperation__logo" src="../Task8_PCWeb/task8-1-assets/ronglianyun.png">
+        </div>
+        <div class="mycol-tsm-2">
+          <img class="coperation__logo" src="../Task8_PCWeb/task8-1-assets/qiniuyun.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="mycontainer link">
+      <div class="myrow link__title">
+        <div class="mycol-sm-12 text-center">
+          友情链接
+        </div>
+      </div>
+      <div class="myrow">
+        <div class="mycol-sm-12">
+          <ul class="link__list clearfix">
+            <li>手机软件</li>
+            <li>教师招聘</li>
+            <li>找工作</li>
+            <li>教师招聘</li>
+            <li>找工作</li>
+            <li>手机软件</li>
+            <li>教师招聘</li>
+            <li>找工作</li>
+            <li>教师招聘</li>
+            <li>找工作</li>
+          </ul>
+        </div>
+      </div>
+      <div class="myrow">
+        <div class="mycol-sm-12">
+          <ul class="link__list clearfix">
+            <li>手机软件</li>
+            <li>教师招聘</li>
+            <li>找工作</li>
+            <li>教师招聘</li>
+            <li>找工作</li>
+            <li>手机软件</li>
+            <li>教师招聘</li>
+            <li>找工作</li>
+            <li>教师招聘</li>
+            <li>找工作</li>
+          </ul>
         </div>
       </div>
     </div>

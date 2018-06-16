@@ -16,7 +16,8 @@ body{
   text-align: right;
 }
 .mycontainer{
-  width: 90%;
+  width: 100%;
+  max-width: 120rem;
   margin: 0 auto;
 }
 .myrow {
@@ -133,7 +134,17 @@ body{
   .mycol-sm-9,
   .mycol-sm-10,
   .mycol-sm-11,
-  .mycol-sm-12 {
+  .mycol-sm-12,
+  .mycol-tsm-1,
+  .mycol-tsm-2,
+  .mycol-tsm-3,
+  .mycol-tsm-4,
+  .mycol-tsm-5,
+  .mycol-tsm-6,
+  .mycol-tsm-7,
+  .mycol-tsm-8,
+  .mycol-tsm-9,
+  .mycol-tsm-10{
     float: left;
     padding: 0 15px;
     box-sizing: border-box;
@@ -152,10 +163,25 @@ body{
   .mycol-sm-9,
   .mycol-sm-10,
   .mycol-sm-11,
-  .mycol-sm-12 {
-    display: block;
+  .mycol-sm-12,
+  .mycol-tsm-1,
+  .mycol-tsm-2,
+  .mycol-tsm-3,
+  .mycol-tsm-4,
+  .mycol-tsm-5,
+  .mycol-tsm-6,
+  .mycol-tsm-7,
+  .mycol-tsm-8,
+  .mycol-tsm-9,
+  .mycol-tsm-10{
     width: 100%;
     padding: 15px;
     box-sizing: border-box;
+
+  &:after{
+    content: "";
+    clear: both;
+    display: block;
+  }
   }
 }

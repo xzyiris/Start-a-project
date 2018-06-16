@@ -12,7 +12,8 @@ body {
   text-align: right;
 }
 .mycontainer {
-  width: 90%;
+  width: 100%;
+  max-width: 120rem;
   margin: 0 auto;
 }
 .myrow {
@@ -104,7 +105,17 @@ body {
   .mycol-sm-9,
   .mycol-sm-10,
   .mycol-sm-11,
-  .mycol-sm-12 {
+  .mycol-sm-12,
+  .mycol-tsm-1,
+  .mycol-tsm-2,
+  .mycol-tsm-3,
+  .mycol-tsm-4,
+  .mycol-tsm-5,
+  .mycol-tsm-6,
+  .mycol-tsm-7,
+  .mycol-tsm-8,
+  .mycol-tsm-9,
+  .mycol-tsm-10 {
     float: left;
     padding: 0 15px;
     box-sizing: border-box;
@@ -122,10 +133,45 @@ body {
   .mycol-sm-9,
   .mycol-sm-10,
   .mycol-sm-11,
-  .mycol-sm-12 {
-    display: block;
+  .mycol-sm-12,
+  .mycol-tsm-1,
+  .mycol-tsm-2,
+  .mycol-tsm-3,
+  .mycol-tsm-4,
+  .mycol-tsm-5,
+  .mycol-tsm-6,
+  .mycol-tsm-7,
+  .mycol-tsm-8,
+  .mycol-tsm-9,
+  .mycol-tsm-10 {
     width: 100%;
     padding: 15px;
     box-sizing: border-box;
+  }
+  .mycol-sm-1:after,
+  .mycol-sm-2:after,
+  .mycol-sm-3:after,
+  .mycol-sm-4:after,
+  .mycol-sm-5:after,
+  .mycol-sm-6:after,
+  .mycol-sm-7:after,
+  .mycol-sm-8:after,
+  .mycol-sm-9:after,
+  .mycol-sm-10:after,
+  .mycol-sm-11:after,
+  .mycol-sm-12:after,
+  .mycol-tsm-1:after,
+  .mycol-tsm-2:after,
+  .mycol-tsm-3:after,
+  .mycol-tsm-4:after,
+  .mycol-tsm-5:after,
+  .mycol-tsm-6:after,
+  .mycol-tsm-7:after,
+  .mycol-tsm-8:after,
+  .mycol-tsm-9:after,
+  .mycol-tsm-10:after {
+    content: "";
+    clear: both;
+    display: block;
   }
 }
