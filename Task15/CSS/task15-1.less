@@ -164,12 +164,15 @@ main {
 
 .link__list {
   padding: 1rem;
+
   li {
     float: left;
     position: relative;
     width: 10%;
     font-size: @small-size;
     text-align: center;
+    box-sizing: border-box;
+    border-bottom: 1px solid transparent;
     &::before {
       content: "";
       position: absolute;
@@ -179,6 +182,9 @@ main {
       height: 5px;
       border-radius: 50%;
       background-color: black;
+    }
+    &:hover{
+      border-bottom: 1px solid @main-color;
     }
   }
 }
@@ -217,5 +223,13 @@ main {
   }
   #switch2{
     left: 55%;
+  }
+}
+
+@media screen and (max-width:376px){
+  .link__list{
+    li{
+      width: 50%;
+    }
   }
 }
