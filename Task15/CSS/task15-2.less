@@ -91,6 +91,7 @@ main {
   font-size: @small-size;
   color: @main-color;
   text-align: left;
+  cursor: pointer;
   &::before {
     content: "";
     position: absolute;
@@ -100,6 +101,12 @@ main {
     height: 8px;
     border: 1px solid @yellow;
     border-radius: 50%;
+  }
+  &:hover{
+    color: @yellow;
+  }
+  &:hover::before{
+    background-color: @yellow;
   }
 }
 
@@ -118,7 +125,9 @@ main {
 .intro__logo {
   float: left;
 }
-
+.intro__content-brief{
+  line-height: 3rem;
+}
 section.content {
   padding: 0 8rem;
 }
@@ -126,6 +135,7 @@ section.content {
 .content__paragraph {
   margin: 3.8rem 0;
   text-indent: 2*@small-size;
+  line-height: 3rem;
 }
 
 @media screen and (max-width:768px) {
