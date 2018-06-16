@@ -13,6 +13,7 @@
   border-radius: 50%;
   font-size: @title-size;
   color: @main-color;
+  background-color: white;
   box-shadow: 0 3px 8px #999;
 }
 
@@ -48,7 +49,7 @@ header .service {
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 5px 15px;
   max-width: 120rem;
   color: @main-color;
   font-size: @small-size;
@@ -59,7 +60,8 @@ header .service {
 }
 
 main {
-  padding: 20px
+  padding: 20px;
+  background-color: darken(#fafafa,5%);
 }
 
 .learn__title,
@@ -102,7 +104,7 @@ main {
 
 .specialty__statistics {
   position: absolute;
-  .vertical-center;
+  .all-center;
   font-size: @normal-size;
 }
 
@@ -127,6 +129,7 @@ main {
 
 .student__unit {
   padding: 3rem;
+  background-color: white;
   box-shadow: 0 2px 5px #999;
 }
 
@@ -147,6 +150,7 @@ main {
 }
 
 .coperation__sets {
+  background-color: white;
   box-shadow: 0 0 10px #999;
 }
 
@@ -187,6 +191,10 @@ main {
       border-bottom: 1px solid @main-color;
     }
   }
+}
+
+#statistics{
+  border-left: 1px dashed #999999;
 }
 
 @media screen and (max-width:768px) {

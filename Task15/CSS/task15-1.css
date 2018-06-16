@@ -593,6 +593,7 @@ input {
   border-radius: 50%;
   font-size: 1.8rem;
   color: #1db176;
+  background-color: white;
   box-shadow: 0 3px 8px #999;
 }
 .myrow {
@@ -620,7 +621,7 @@ header .service {
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 5px 15px;
   max-width: 120rem;
   color: #1db176;
   font-size: 1.4rem;
@@ -630,6 +631,7 @@ header .service {
 }
 main {
   padding: 20px;
+  background-color: #ededed;
 }
 .learn__title,
 .student__title,
@@ -668,7 +670,8 @@ main {
 .specialty__statistics {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 1.6rem;
 }
 .specialty__number {
@@ -689,6 +692,7 @@ main {
 }
 .student__unit {
   padding: 3rem;
+  background-color: white;
   box-shadow: 0 2px 5px #999;
 }
 .student__name {
@@ -705,6 +709,7 @@ main {
   overflow: visible;
 }
 .coperation__sets {
+  background-color: white;
   box-shadow: 0 0 10px #999;
 }
 .coperation__logo {
@@ -744,6 +749,9 @@ main {
 }
 .link__list li:hover {
   border-bottom: 1px solid #1db176;
+}
+#statistics {
+  border-left: 1px dashed #999999;
 }
 @media screen and (max-width: 768px) {
   .specialty__statistics {
@@ -856,6 +864,7 @@ main {
   border-radius: 50%;
   font-size: 1.8rem;
   color: #1db176;
+  background-color: white;
   box-shadow: 0 3px 8px #999;
 }
 .myrow {
@@ -883,7 +892,7 @@ header .service {
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 5px 15px;
   max-width: 120rem;
   color: #1db176;
   font-size: 1.4rem;
@@ -893,6 +902,7 @@ header .service {
 }
 main {
   padding: 20px;
+  background-color: #ededed;
 }
 .learn__title,
 .student__title,
@@ -931,7 +941,8 @@ main {
 .specialty__statistics {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 1.6rem;
 }
 .specialty__number {
@@ -952,6 +963,7 @@ main {
 }
 .student__unit {
   padding: 3rem;
+  background-color: white;
   box-shadow: 0 2px 5px #999;
 }
 .student__name {
@@ -968,6 +980,7 @@ main {
   overflow: visible;
 }
 .coperation__sets {
+  background-color: white;
   box-shadow: 0 0 10px #999;
 }
 .coperation__logo {
@@ -1007,6 +1020,9 @@ main {
 }
 .link__list li:hover {
   border-bottom: 1px solid #1db176;
+}
+#statistics {
+  border-left: 1px dashed #999999;
 }
 @media screen and (max-width: 768px) {
   .specialty__statistics {
