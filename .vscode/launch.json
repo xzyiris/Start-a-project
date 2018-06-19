@@ -4,12 +4,18 @@
   // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
-
     {
-      "type": "node",
-      "request": "launch",
-      "name": "启动程序",
-      "program": "${file}"
+      "name": "使用本机 Chrome 调试",
+            "type": "chrome",
+            "request": "launch",
+             "file": "${workspaceRoot}/../javascript/js-demo/debug.html",
+        //  "url": "http://mysite.com/index.html", //使用外部服务器时,请注释掉 file, 改用 url, 并将 useBuildInServer 设置为 false "http://mysite.com/index.html
+
+            "sourceMaps": true,
+            "webRoot": "${workspaceRoot}",
+        //  "preLaunchTask":"build",
+
+            "port":5433
     }
   ]
 }
