@@ -1,19 +1,42 @@
+body{
+  margin: 0;
+  padding: 0;
+  max-width:720px;
+  margin: 0 auto;
+}
+
 .unit{
   float: left;
-  width: 31%;
+  width: 32%;
   padding-bottom: 30%;
   margin: 0.5%;
   border-radius: 5%;
   background-color: #ffa600;
 }
-.myrow{
 
-}
 .myrow::after{
   content: "";
   clear: both;
   display: block;
 }
-body{
-  margin: 0;
+
+button{
+  width: 98.5%;
+  padding: 1rem;
+  border: none;
+  margin: 1rem 0;
+  border-radius: 10px;
+  font-size: 2rem;
+
 }
+
+.start{
+  background-color: #ffa600;
+  color: white;
+}
+.stop{
+  border: 1px solid #ffa600;
+  background-color: white;
+  color: #ffa600;
+}
+
