@@ -1,10 +1,11 @@
-body {
+body{
   margin: 0;
   padding: 0;
-  max-width: 720px;
+  max-width:720px;
   margin: 0 auto;
 }
-.unit {
+
+.unit{
   float: left;
   width: 32%;
   padding-bottom: 30%;
@@ -12,12 +13,14 @@ body {
   border-radius: 5%;
   background-color: #ffa600;
 }
-.myrow::after {
+
+.myrow::after{
   content: "";
   clear: both;
   display: block;
 }
-button {
+
+button{
   width: 98.5%;
   padding: 1rem;
   border: none;
@@ -25,16 +28,19 @@ button {
   border-radius: 10px;
   font-size: 2rem;
 }
-.start {
+
+.start{
   background-color: #ffa600;
   color: white;
+  &:active{
+    background-color: darken(#ffa600,2%);
+    box-shadow: 0 0 10px rgba(255, 166, 0, 0.8) inset
+  }
 }
-.start:active {
-  background-color: #f59f00;
-  box-shadow: 0 0 10px rgba(255, 166, 0, 0.8) inset;
-}
-.stop {
+
+.stop{
   border: 1px solid #ffa600;
   background-color: white;
   color: #ffa600;
 }
+
