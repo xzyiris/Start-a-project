@@ -39,21 +39,26 @@ function isContain(num, array) {
   return false;
 }
 
+//shuffle
+function shuffle(a){
+  var length = a.length;
+  var shuffled = Array(length);
+
+  for(var index = 0,rand;index < length;index++){
+    rand = (Math.floor(Math.random() * (index+1)));
+    if(rand !== index){
+      shuffled[index] = shuffled[rand];
+    }
+    shuffled[rand] = a[index];
+  }
+  return shuffled;
+}
+
 //randomly select 3 div
 function select() {
-  var unitsId = new Array();
   var units = new Array();
-  unitsId.push(random());
-  for (var i = 1; i < 3;) {
-    var tmp = random()
-    if (isContain(tmp, unitsId)) {
-      continue;
-    } else {
-      unitsId.push(tmp);
-      i++;
-    }
-  }
-  return unitsId;
+  units = document.getElementsByClassName("unit");
+
 }
 
 function changecolor() {
@@ -101,6 +106,7 @@ function start(){
     return;
   }
 }
+
 //stop event
 function stop(){
   window.clearTimeout(t);
@@ -110,3 +116,5 @@ function stop(){
   }
 }
 
+var a= [1,2,3,4,5,6,7,8,9,10];
+console.log(shuffle(a));
