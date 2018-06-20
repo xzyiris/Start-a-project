@@ -1,4 +1,6 @@
-function shuffle(a){
+
+//shuffle 乱序/洗牌
+unction shuffle(a){
   var length = a.length;
   var shuffled = new Array(length);
   for(var i = 0,rand;i<length;i++){
@@ -10,7 +12,8 @@ function shuffle(a){
   }
   return shuffled;
 }
-
+//generate random color
+//生成随机颜色
 function randomlyColor(){
   var red,blue,green;
   red = Math.floor(Math.random() * 256);
@@ -22,21 +25,25 @@ function randomlyColor(){
 function changeColor(){
   var units = new Array();
   //initial colors
+  //初始化颜色
   var i;
   units = document.getElementsByClassName("unit");
   for(i = 0;i<units.length;i++){
     units[i].style.backgroundColor = "rgb(255, 166, 0)";
   }
   //randomly select 3 div
+  //随机选取3个盒子
   units = shuffle(document.getElementsByClassName("unit")).slice(0,3);
 
   //assign color
+  //分配随机颜色
   for(i in units){
     units[i].style.backgroundColor = randomlyColor();
   }
   units = document.getElementsByClassName("unit");
-
 }
+
+
 function Timer(){
   changeColor();
   t = setTimeout("Timer()",1000);
@@ -61,5 +68,6 @@ function stop(){
     units[i].style.backgroundColor = "rgb(255, 166, 0)";
   }
 }
+
 var status = 0;
 
