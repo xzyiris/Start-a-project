@@ -1,6 +1,6 @@
 
 //shuffle 乱序/洗牌
-unction shuffle(a){
+function shuffle(a){
   var length = a.length;
   var shuffled = new Array(length);
   for(var i = 0,rand;i<length;i++){
