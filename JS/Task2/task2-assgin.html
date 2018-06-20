@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>发放身份</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="./CSS/assign.css" />
+
+</head>
+
+<body>
+  <header class="header">
+    <img src="./resource/back-left.png">
+    <span class="header__title">参数设置</span>
+    <img src="./resource/help-circle.png">
+  </header>
+  <main>
+    <div class="proportion">
+      <div class="proportion__title"><span>玩家配比</span></div>
+      <div class="proportion__content">
+        <!--js动态生成-->
+        <div class="proportion__identities">
+          <div class="proportion__identity">杀&nbsp&nbsp手</div>
+          <div class="proportion__identity">杀&nbsp&nbsp手</div>
+          <div class="proportion__identity">医&nbsp&nbsp生</div>
+          <div class="proportion__identity">医&nbsp&nbsp生</div>
+        </div>
+        <div class="proportion__setting">
+          <span>点击设置</span>
+          <img src="./resource/pencil.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="words">
+      <div class="words__shuimin">
+        水民词组
+      </div>
+      <div class="words__ghost">
+        幽灵词组
+      </div>
+    </div>
+
+    <div class="players">
+      <div class="players__number">
+        <span>玩家人数</span>
+        <span id="totle-player">18</span>
+      </div>
+      <div class="players__slide">
+        <input type="range">
+      </div>
+    </div>
+  </main>
+  <footer>
+    <button class="assign">去发牌</button>
+  </footer>
+  <script>
+    var slide = document.getElementsByTagName("input")[0];
+    var slide_before = window.getComputedStyle(slide,":before");
+    console.log(slide_before.getPropertyValue("width"));
+  </script>
+</body>
+
+</html>
