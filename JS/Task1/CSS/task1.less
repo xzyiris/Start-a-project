@@ -29,18 +29,21 @@ button{
   font-size: 1.5rem;
 }
 
-.start{
-  background-color: #ffa600;
-  color: white;
+.start,
+.stop{
+  border: 1px solid #ffa600;
+  background-color: white;
+  color: #ffa600;
+  cursor: pointer;
+  outline: none;
+  &:hover{
+    background-color: #ffa600;
+    color: white;
+  }
   &:active{
     background-color: darken(#ffa600,2%);
     box-shadow: 0 0 10px rgba(255, 166, 0, 0.8) inset
   }
 }
 
-.stop{
-  border: 1px solid #ffa600;
-  background-color: white;
-  color: #ffa600;
-}
 

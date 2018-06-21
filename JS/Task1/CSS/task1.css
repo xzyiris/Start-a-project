@@ -25,16 +25,21 @@ button {
   border-radius: 10px;
   font-size: 1.5rem;
 }
-.start {
-  background-color: #ffa600;
-  color: white;
-}
-.start:active {
-  background-color: #f59f00;
-  box-shadow: 0 0 10px rgba(255, 166, 0, 0.8) inset;
-}
+.start,
 .stop {
   border: 1px solid #ffa600;
   background-color: white;
   color: #ffa600;
+  cursor: pointer;
+  outline: none;
+}
+.start:hover,
+.stop:hover {
+  background-color: #ffa600;
+  color: white;
+}
+.start:active,
+.stop:active {
+  background-color: #f59f00;
+  box-shadow: 0 0 10px rgba(255, 166, 0, 0.8) inset;
 }
