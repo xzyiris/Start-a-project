@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="./drop-btn.css" />
+
+</head>
+<body>
+  <div class="dropbtn">
+    <button class="dropbtn__button" onclick="displayList(this)">
+      下拉列表菜单
+    </button>
+    <ul class="dropbtn__list">
+      <li>Web</li>
+      <li>Java</li>
+      <li>PM</li>
+    </ul>
+  </div>
+  <script>
+    var click_count = 0;
+    function displayList() {
+      click_count++;
+      console.log(this);
+      if(click_count % 2 == 1){
+        document.getElementsByClassName("dropbtn__list")[0].style.display = "none";
+      }
+      else if(click_count % 2 == 0){
+        document.getElementsByClassName("dropbtn__list")[0].style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>

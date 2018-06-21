@@ -49,7 +49,8 @@
         <span id="totle-player">18</span>
       </div>
       <div class="players__slide">
-        <input type="range">
+        <input type="range" onmousedown="changeNumber()">
+        <div class="players__slide-active"></div>
       </div>
     </div>
   </main>
@@ -57,9 +58,10 @@
     <button class="assign">去发牌</button>
   </footer>
   <script>
-    var slide = document.getElementsByTagName("input")[0];
-    var slide_before = window.getComputedStyle(slide,":before");
-    console.log(slide_before.getPropertyValue("width"));
+    function changeNumber() {
+      console.log(123);
+
+    }
   </script>
 </body>
 
