@@ -1,10 +1,8 @@
 (function () {
   var maxBoudray = document.body.clientWidth* 0.7;
   var thumbWidth = 56;
-  //set player
-  var maxPlayers = 20;
-  var minPlayers = 0;
-  var step = Math.floor(maxBoudray / maxPlayers);
+
+
   //获取滑块、滑动条、填充条元素
   var slideBarActive = document.getElementsByClassName("slide__bar-active")[0];
   var slideThumb = document.getElementsByClassName("slide__thumb")[0];
@@ -12,6 +10,12 @@
   var players__number = document.getElementById("totle-player");
   var btnSub = document.getElementsByClassName("sub")[0];
   var btnAdd = document.getElementsByClassName("add")[0];
+
+  //set player
+  var maxPlayers = 18;
+  var minPlayers = 0;
+  var step = (maxBoudray - slideThumb.offsetLeft) / maxPlayers;
+  console.log(step);
 
   //initialize 初始化 设定默认值
   slideBar.setAttribute("style", "width:" + maxBoudray + "px;background-color:transparent;border:1px solid #999");
@@ -93,7 +97,7 @@
       slideBarActive.setAttribute("style", "width:" + (slideThumb.offsetLeft + thumbWidth / 2) + "px");
 
       //绑定数值
-      players__number.value = Math.round(distance / step);
+      players__number.value = Math.ceil(distance / step);
     }
     document.ontouchend = function () {
 
