@@ -2,6 +2,13 @@
   display: inline-block;
   position: relative;
 }
+.dropbtn__button {
+  width: 10rem;
+  padding: 1rem 0;
+  background-color: antiquewhite;
+  border-radius: 5px;
+  border: 1px solid white;
+}
 .dropbtn__list {
   display: block;
   position: absolute;
@@ -13,4 +20,5 @@
 .dropbtn__list li {
   border-bottom: 1px solid #7d7d7d;
   text-align: center;
+  cursor: pointer;
 }

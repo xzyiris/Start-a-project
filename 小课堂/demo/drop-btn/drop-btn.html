@@ -6,31 +6,85 @@
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="./drop-btn.css" />
-
+  <style>
+    body{
+      height: 120vh;
+    }
+    .dropbtn__list{
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <div class="dropbtn">
-    <button class="dropbtn__button" onclick="displayList(this)">
+    <button class="dropbtn__button">
       下拉列表菜单
     </button>
     <ul class="dropbtn__list">
-      <li>Web</li>
-      <li>Java</li>
-      <li>PM</li>
+      <li onclick="changeText(this)">Web</li>
+      <li onclick="changeText(this)">Java</li>
+      <li onclick="changeText(this)">PM</li>
     </ul>
   </div>
+  <div id="test" style="margin-top: 20rem;">test</div>
   <script>
-    var click_count = 0;
-    function displayList() {
-      click_count++;
-      console.log(this);
-      if(click_count % 2 == 1){
-        document.getElementsByClassName("dropbtn__list")[0].style.display = "none";
+
+    document.onclick = function(){
+      var keys = new Array();
+      if(event.shiftKey){
+        keys.push("shift");
       }
-      else if(click_count % 2 == 0){
-        document.getElementsByClassName("dropbtn__list")[0].style.display = "block";
+      if(event.ctrlKey){
+        keys.push("ctrl");
       }
+      if(event.altKey){
+        keys.push("alt");
+      }
+      if(event.metaKey){
+        key.push("meta");
+      }
+      console.log("X:" + event.clientX + " Y: " + event.clientY);
+      console.log("X:" + event.screenX + " Y: " + event.screenY);
     }
+    document.mousewheel = function(){
+      console.log(event.wheelDelta);
+    };
+
+
+    var click_count = 0;
+    var dropbtn = document.getElementsByClassName("dropbtn")[0];
+    var button = document.getElementsByClassName("dropbtn__button")[0];
+    var btn_list = document.getElementsByClassName("dropbtn__list")[0];
+
+    button.addEventListener("click",function(){
+      click_count++;
+      if(click_count % 2 == 1){
+        btn_list.style.display = "block";
+      }
+      else{
+        btn_list.style.display = "none";
+      }
+
+    });
+
+    dropbtn.addEventListener("mouseleave",function(){
+      btn_list.style.display = "none";
+      click_count = 0;
+    });
+
+    function changeText(_this) {
+      var string = _this.innerHTML;
+      var button = document.getElementsByClassName("dropbtn__button")[0];
+      button.innerHTML = string;
+      click_count++;
+      document.getElementsByClassName("dropbtn__list")[0].style.display = "none";
+    }
+
+    var test = document.getElementById("test");
+    test.onclick = function(){
+      console.log((event.currentTarget).style.marginTop);
+    }
+
   </script>
 </body>
 </html>

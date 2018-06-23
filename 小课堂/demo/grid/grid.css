@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+  padding: 0;
+}
 .myrow {
   margin: 0 -15px;
 }
@@ -18,7 +22,6 @@
 .mycol-sm-10 {
   float: left;
   padding: 0 15px;
-  width: 10%;
   box-sizing: border-box;
 }
 .mycol-sm-1 {
