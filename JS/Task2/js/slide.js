@@ -132,8 +132,11 @@
 
   btnAdd.onclick = function(){
     left = slideThumb.offsetLeft;
-    if(left <= (maxBoudray-thumbWidth-step)){
+    if(left <= (maxBoudray-thumbWidth)){
       left += step;
+      if(left > maxBoudray-thumbWidth){
+        left = maxBoudray - thumbWidth;
+      }
     }
     else{
       return;
