@@ -1,5 +1,5 @@
 html {
-  font-size: 7px;
+  font-size: 10px;
 }
 * {
   margin: 0;
@@ -33,21 +33,30 @@ body {
   font-size: 3.6rem;
 }
 main {
+  position: absolute;
+  top: 88px;
+  bottom: 0;
+  width: 100%;
+  max-width: 720px;
   text-align: center;
   background-color: #29bde0;
+  overflow: auto;
+}
+main::-webkit-scrollbar {
+  display: none;
 }
 .prompt {
   display: inline-block;
   position: relative;
   width: 80%;
-  padding: 7rem 0;
-  margin: 8rem 0;
+  margin: 10rem 0;
   border: 8px solid white;
   background-color: #ffedc5;
 }
 .prompt__img {
   display: inline-block;
   width: 70%;
+  margin: 18rem 0;
 }
 .prompt__img img {
   width: 100%;
@@ -69,6 +78,32 @@ main {
   color: #f56b81;
   font-size: 4rem;
   font-weight: bold;
+}
+.identity {
+  padding: 0 5rem;
+  margin: 15rem 0;
+  display: none;
+}
+.identity__img {
+  margin: 5rem 0;
+}
+.identity__name,
+.identity__words {
+  margin: 2rem 0;
+  font-size: 4rem;
+}
+.identity__name {
+  color: #29bde0;
+}
+.identity__words {
+  color: #f56b81;
+}
+.identity__tips {
+  margin: 6rem 0;
+  color: #ee9f1b;
+  font-size: 2.6rem;
+  text-align: left;
+  letter-spacing: 2px;
 }
 .check {
   display: inline-block;

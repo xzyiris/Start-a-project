@@ -11,7 +11,7 @@
 @button-font-size: 4rem;
 //base rules
 html {
-  font-size: 7px;
+  font-size: 10px;
 }
 
 * {
@@ -50,21 +50,30 @@ body {
 }
 
 main{
+  position: absolute;
+  top: 88px;
+  bottom: 0;
+  width: 100%;
+  max-width: 720px;
   text-align: center;
   background-color: @header-color;
+  overflow: auto;
+  &::-webkit-scrollbar{
+    display: none;
+  }
 }
 .prompt{
   display: inline-block;
   position: relative;
   width: 80%;
-  padding: 7rem 0;
-  margin: 8rem 0;
+  margin: 10rem 0;
   border: 8px solid white;
   background-color: @head-color;
 }
 .prompt__img{
   display: inline-block;
   width: 70%;
+  margin: 18rem 0;
   img{
     width: 100%;
   }
@@ -87,6 +96,33 @@ main{
   font-size: 4rem;
   font-weight: bold;
 }
+.identity{
+  padding: 0 5rem;
+  margin: 15rem 0;
+  display: none;
+}
+.identity__img{
+  margin: 5rem 0;
+}
+.identity__name,
+.identity__words{
+  margin: 2rem 0;
+  font-size: @button-font-size;
+}
+.identity__name{
+  color: @header-color;
+}
+.identity__words{
+  color: #f56b81;
+}
+.identity__tips{
+  margin: 6rem 0;
+  color: @yellow;
+  font-size: @normal-size;
+  text-align: left;
+  letter-spacing: 2px;
+}
+
 .check{
   display: inline-block;
   width: 85%;

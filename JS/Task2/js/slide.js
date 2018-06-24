@@ -7,25 +7,25 @@
   var slideBarActive = document.getElementsByClassName("slide__bar-active")[0];
   var slideThumb = document.getElementsByClassName("slide__thumb")[0];
   var slideBar = document.getElementsByClassName("slide__bar")[0];
-  var players__number = document.getElementById("totle-player");
+  var playersNumber = document.getElementById("totle-player");
   var btnSub = document.getElementsByClassName("sub")[0];
   var btnAdd = document.getElementsByClassName("add")[0];
 
   //set player
   var maxPlayers = 18;
-  var minPlayers = 0;
-  var step = (maxBoudray - slideThumb.offsetLeft) / maxPlayers;
+  var minPlayers = 3;
+  var step = (maxBoudray - slideThumb.offsetLeft) / (maxPlayers-minPlayers);
   console.log(step);
 
   //initialize 初始化 设定默认值
-  slideBar.setAttribute("style", "width:" + maxBoudray + "px;background-color:transparent;border:1px solid #999");
+  slideBar.setAttribute("style", "width:" + maxBoudray + "px;backgceil-color:transparent;border:1px solid #999");
   slideThumb.setAttribute("style", "left:" + (maxBoudray-thumbWidth)/2 + "px");
-  players__number.value = Math.round(slideThumb.offsetLeft / step);
+  playersNumber.value = Math.ceil(slideThumb.offsetLeft / step + minPlayers);
   slideBarActive.setAttribute("style", "width:" + (slideThumb.offsetLeft + thumbWidth / 2) + "px");
 
   window.onresize= function(){
     maxBoudray = document.body.clientWidth* 0.7;
-    slideBar.setAttribute("style", "width:" + maxBoudray + "px;background-color:transparent;border:1px solid #999");
+    slideBar.setAttribute("style", "width:" + maxBoudray + "px;backgceil-color:transparent;border:1px solid #999");
 
   }
 
@@ -56,7 +56,7 @@
       slideBarActive.setAttribute("style", "width:" + (slideThumb.offsetLeft + thumbWidth / 2) + "px");
 
       //绑定数值
-      players__number.value = Math.round(distance / step);
+      playersNumber.value = Math.ceil(distance / step + minPlayers);
 
     }
 
@@ -72,7 +72,7 @@
     //获取event的兼容性写法
     var oEvent = evt || event;
     //获取触摸点的初始位置，这里和获取鼠标位置的方法不大一样。
-    var initX = Math.round(oEvent.changedTouches[0].clientX, 0);
+    var initX = Math.ceil(oEvent.changedTouches[0].clientX, 0);
     var left = slideThumb.getAttribute("style");
     var numberPattern = /\d+/;
 
@@ -80,7 +80,7 @@
 
     document.ontouchmove = function (evt) {
       var oEvent = evt || event;
-      var currentX = Math.round(oEvent.changedTouches[0].clientX, 0);
+      var currentX = Math.ceil(oEvent.changedTouches[0].clientX, 0);
       var distance = currentX - initX + leftNumber;
 
       //检测是否超出滑动条边界
@@ -97,7 +97,7 @@
       slideBarActive.setAttribute("style", "width:" + (slideThumb.offsetLeft + thumbWidth / 2) + "px");
 
       //绑定数值
-      players__number.value = Math.ceil(distance / step);
+      playersNumber.value = Math.ceil(distance / step + minPlayers);
     }
     document.ontouchend = function () {
 
@@ -106,14 +106,14 @@
     }
   }
 
-  players__number.onchange = function () {
-    var value = players__number.value;
-    if(value <= 0 || value > 18){
+  playersNumber.onchange = function () {
+    var value = playersNumber.value;
+    if(value <= 2 || value > 18){
       alert("请输入3~18的数字！")
-      players__number.value = "";
+      playersNumber.value = "";
       return;
     }
-    slideThumb.setAttribute("style","left:" + value * step + "px");
+    slideThumb.setAttribute("style","left:" + (value-minPlayers) * step + "px");
     slideBarActive.setAttribute("style", "width:" + (slideThumb.offsetLeft + thumbWidth / 2) + "px");
   }
 
@@ -123,11 +123,11 @@
       left -= step;
     }
     else{
-      return;
+      left = 0;
     }
     slideThumb.style.left = left + "px";
     slideBarActive.setAttribute("style", "width:" + (slideThumb.offsetLeft + thumbWidth / 2) + "px");
-    players__number.value = Math.round(left / step);
+    playersNumber.value = Math.ceil(left / step + minPlayers);
   }
 
   btnAdd.onclick = function(){
@@ -143,6 +143,6 @@
     }
     slideThumb.style.left = left + "px";
     slideBarActive.setAttribute("style", "width:" + (slideThumb.offsetLeft + thumbWidth / 2) + "px");
-    players__number.value = Math.round(left / step);
+    playersNumber.value = Math.ceil(left / step + minPlayers);
   }
 })();

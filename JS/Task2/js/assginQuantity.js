@@ -1,3 +1,4 @@
+var myurl;
 
 function setting() {
   var quantities = document.getElementById("totle-player").value;
@@ -12,12 +13,19 @@ function setting() {
     killerNum = 3;
   } else if (quantities >= 16 && quantities <= 18) {
     killerNum = 4;
-  } else{
+  } else {
     alert("人数必须在3~18之间")
     killerNum = 0;
   }
   killer.innerHTML = killerNum;
   citizen.innerHTML = quantities - killerNum;
+  myurl = "./task2-identity.html?kn=" + killerNum + "&cn=" + (quantities - killerNum);
+  console.log(myurl);
+
+}
+
+function dispatcher() {
+  window.location = myurl;
 }
 
 setting();
