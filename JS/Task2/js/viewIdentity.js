@@ -15,7 +15,7 @@ var Number = document.getElementById("number");
 var button = document.getElementsByClassName("check")[0];
 
 //获取上个页面传入的参数
-var params = location.href.split("?")[1].split("&");
+var params = (location.href.split("?")[1]).split("&");
 var numPattern = /\d+/;
 var killNum = parseInt(numPattern.exec(params[0]));
 var citizenNum = parseInt(numPattern.exec(params[1]));

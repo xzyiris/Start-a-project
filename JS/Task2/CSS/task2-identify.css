@@ -87,7 +87,7 @@ main::-webkit-scrollbar {
   font-weight: bold;
 }
 .identity {
-  padding: 0 5rem;
+  padding: 0 2em;
   margin: 8rem 0;
   display: none;
 }
