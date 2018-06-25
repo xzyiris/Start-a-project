@@ -78,7 +78,7 @@
 
     leftNumber = parseInt(numberPattern.exec(left)[0]);
 
-    document.ontouchmove = function (evt) {
+    slideThumb.ontouchmove = function (evt) {
       var oEvent = evt || event;
       var currentX = Math.ceil(oEvent.changedTouches[0].clientX, 0);
       var distance = currentX - initX + leftNumber;

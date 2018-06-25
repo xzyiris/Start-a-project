@@ -12,6 +12,9 @@
 //base rules
 html {
   font-size: 10px;
+  @media screen and (max-width:600px) {
+   font-size: 7px;
+  }
 }
 
 * {
@@ -34,12 +37,14 @@ body {
   display: flex;
   display: -webkit-flex;
   max-width: 720px;
+  min-height: 88px;
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
   color: white;
   background-color: @header-color;
+  box-sizing: border-box;
   img{
     height: 3rem;
   }
@@ -66,14 +71,14 @@ main{
   display: inline-block;
   position: relative;
   width: 80%;
-  margin: 10rem 0;
+  margin: 5rem 0;
   border: 8px solid white;
   background-color: @head-color;
 }
 .prompt__img{
   display: inline-block;
   width: 70%;
-  margin: 18rem 0;
+  margin: 9rem 0;
   img{
     width: 100%;
   }
@@ -98,7 +103,7 @@ main{
 }
 .identity{
   padding: 0 5rem;
-  margin: 15rem 0;
+  margin: 8rem 0;
   display: none;
 }
 .identity__img{
