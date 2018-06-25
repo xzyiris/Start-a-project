@@ -7,12 +7,15 @@ function shuffle(a) {
   }
 }
 
-
+var promptWrapper = document.getElementsByClassName("prompt")[0];
 var prompt = document.getElementsByClassName("prompt__img")[0];
 var identity = document.getElementsByClassName("identity")[0];
 var identityName = document.getElementById("name");
 var Number = document.getElementById("number");
 var button = document.getElementsByClassName("check")[0];
+var promptHeight = promptWrapper.offsetHeight;
+promptWrapper.style.height = promptHeight + "px";
+console.log(promptHeight);
 
 //获取上个页面传入的参数
 var params = (location.href.split("?")[1]).split("&");
@@ -34,8 +37,6 @@ shuffle(totle);
 
 var count = 0;
 var clickCount = 0;
-console.log(totle.length);
-
 button.onclick = function () {
   console.log(count);
   console.log("clickCount= "+  clickCount);
@@ -67,10 +68,5 @@ button.onclick = function () {
     button.innerHTML = "查看" + (count + 2) + "号身份";
     count++;
   }
-
-//  if (count == totle.length - 1) {
- //   button.innerHTML = "身份已查看完毕";
-  //  return;
- // }
   clickCount++;
 }
