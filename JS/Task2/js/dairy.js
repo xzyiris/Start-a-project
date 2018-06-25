@@ -9,6 +9,7 @@ var col = '<div class="col">' +
   '<div class="identity__name">水民</div>' +
   '<div class="identity__number">1号</div>' +
   '</div>' +
+  '<div class="identity__kill"><img src=./resource/kill.png></div>' +
   '</div>';
 
 var main = $("main");

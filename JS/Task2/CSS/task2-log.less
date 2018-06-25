@@ -60,7 +60,7 @@ main{
   overflow: auto;
 }
 .row{
-  margin: 10em 0;
+  margin: 5em 0;
   &::after{
     content: "";
     display: block;
@@ -80,7 +80,9 @@ main{
   width: 5em;
   height: 5em;
   border: 2px solid white;
-
+  &:hover + .identity__kill{
+    visibility: visible;
+  }
 }
 .identity__name{
   padding: 1.2em 0;
@@ -94,7 +96,10 @@ main{
   font-size: @number-font-size;
   background-color: #3ca4c4;
 }
-
+.identity__kill{
+  margin: 1em 0 -1em 0;
+  visibility: hidden;
+}
 
 footer{
   position: fixed;
