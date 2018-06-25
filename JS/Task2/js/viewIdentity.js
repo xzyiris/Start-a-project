@@ -32,34 +32,36 @@ for (var i = 0; i < totle.length; i++) {
   }
 }
 shuffle(totle);
+sessionStorage.totle = totle;
+console.log(totle);
 
 
 
 var count = 0;
 var clickCount = 0;
 button.onclick = function () {
-  console.log(count);
-  console.log("clickCount= "+  clickCount);
+ // console.log(count);
+ // console.log("clickCount= "+  clickCount);
 
-
-  if (clickCount == totle.length * 2 - 1) {
-    alert("身份已查看完毕！");
-    return;
-  }
   if (totle[count] == 0) {
     identityName.innerHTML = "杀手";
   } else {
     identityName.innerHTML = "水民";
   }
 
+  if (clickCount >= totle.length*2 -1) {
+    location.href = "./task2-log.html";
+    //alert("身份已查看完毕！");
+    return;
+  }
+
   if(clickCount % 2 == 0) {
     prompt.style.display = "none";
     identity.style.display = "block";
-    if(clickCount == totle.length * 2 - 2){
-      button.innerHTML = "身份查看完毕";
-      return;
-    }
     button.innerHTML = "隐藏并传递给" + (count + 2) + "号";
+    if(clickCount == totle.length * 2 - 2){
+      button.innerHTML = "法官查看";
+    }
   }
   else{
     prompt.style.display = "inline-block";
@@ -68,5 +70,7 @@ button.onclick = function () {
     button.innerHTML = "查看" + (count + 2) + "号身份";
     count++;
   }
+
   clickCount++;
+
 }
