@@ -48,7 +48,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 20%;
-  min-height: 45rem;
+  min-height: 20rem;
   border-right: 1px solid #d9d9d9;
   writing-mode: vertical-lr;
   font-size: 3.6rem;
@@ -63,7 +63,7 @@ body {
   position: relative;
   float: left;
   width: 80%;
-  min-height: 45rem;
+  min-height: 20rem;
   background-color: #fbfbfb;
   box-sizing: border-box;
 }

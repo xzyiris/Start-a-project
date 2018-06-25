@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Task2-home</title>
-  <meta name="viewport" content="width=720 ">
+  <meta name="viewport" content="width=720">
   <link rel="stylesheet" type="text/css" media="screen" href="./CSS/task2-home.css" />
 
 </head>
@@ -63,17 +63,28 @@
 </body>
 <script>
   var status = 0;
-  function display(){
+
+  function display() {
     var aside = document.getElementsByTagName("aside")[0];
-    if(status % 2 == 0){
+    if (status % 2 == 0) {
       aside.style.width = "40%";
       status++;
-    }
-    else{
+    } else {
       aside.style.width = "0";
       status++;
     }
-
   }
+
+  function setViewport(){
+    var viewport = document.getElementsByName("viewport")[0];
+    var clientWidth = window.screen.width;
+    if (clientWidth >= 768) {
+      viewport.setAttribute("content", "width=" + clientWidth);
+    }
+  }
+  window.onresize = setViewport;
+  window.onload = setViewport;
+
 </script>
+
 </html>
