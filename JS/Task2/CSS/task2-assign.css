@@ -6,7 +6,7 @@ html {
   padding: 0;
 }
 body {
-  max-width: 720px;
+  max-width: 640px;
   margin: 0 auto;
   background-color: #f0f0f0;
 }
@@ -18,7 +18,7 @@ body {
 .header {
   display: flex;
   display: -webkit-flex;
-  max-width: 720px;
+  max-width: 640px;
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
