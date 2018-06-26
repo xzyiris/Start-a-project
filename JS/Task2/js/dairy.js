@@ -1,11 +1,11 @@
 var index = 0;
 var totle = sessionStorage.totle.split(",");
-// console.log(totle);
 
+var id = 1;
 var number = totle.length;
 var mod = number % 3;
 var col = '<div class="col">' +
-  '<div class="identity">' +
+  '<div class="identity id="identity' + id++ + '">' +
   '<div class="identity__name">水民</div>' +
   '<div class="identity__number">1号</div>' +
   '</div>' +
