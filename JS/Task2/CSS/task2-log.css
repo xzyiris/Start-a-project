@@ -64,7 +64,7 @@ main {
   height: 5em;
   border: 2px solid white;
 }
-.identity:hover + .identity__kill {
+.identity__hover:hover + .identity__kill {
   visibility: visible;
 }
 .identity__name {
@@ -83,6 +83,79 @@ main {
   margin: 1em 0 -1em 0;
   visibility: hidden;
 }
+.date {
+  padding: 24px;
+  border: 1px solid #999;
+  margin: 10px 0;
+  background-color: white;
+  font-size: 3rem;
+  color: #3ca4c4;
+  text-align: center;
+}
+.prompt {
+  position: relative;
+  padding-right: 10px;
+  border: 1px solid #999;
+  background-color: white;
+  text-align: center;
+  overflow: hidden;
+}
+.prompt__line {
+  position: absolute;
+  width: 1px;
+  background-color: #999;
+}
+.prompt__content {
+  overflow: hidden;
+}
+.prompt__day,
+.prompt__night,
+.prompt__normal {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  padding-left: 50px;
+}
+.prompt__day::after,
+.prompt__night::after,
+.prompt__normal::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+.killer__log {
+  float: right;
+  position: relative;
+  width: 80%;
+  padding-right: 2em;
+  font-size: 2.6rem;
+  color: balck;
+}
+.prompt__dialog {
+  float: right;
+  position: relative;
+  width: 80%;
+  padding: 0.5em 0;
+  font-size: 3rem;
+  background-color: #24a7c6;
+  color: white;
+}
+.prompt__dialog::before {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -15px;
+  content: "";
+  width: 0;
+  height: 0;
+  border-right: 16px solid #24a7c6;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+.prompt__disable::before {
+  border-right: 16px solid gray;
+}
 footer {
   position: fixed;
   width: 100%;
@@ -93,11 +166,42 @@ footer {
   text-align: center;
   box-sizing: border-box;
 }
-footer .start {
+footer .btngroup {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+footer .confirm,
+footer .start,
+footer .end,
+footer .log {
   width: 12em;
   border: none;
   padding: 0.5em 0;
   background-color: #ee9f1b;
   color: white;
   font-size: 4rem;
+}
+footer .end,
+footer .log {
+  width: 6em;
+  display: none;
+}
+footer .confirm {
+  display: none;
+}
+.circle {
+  float: left;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #999;
+  border-radius: 50%;
+  background-color: white;
+}
+.circle img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

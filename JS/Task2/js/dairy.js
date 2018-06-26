@@ -1,3 +1,10 @@
+var postFixPattern = /\?.*/;
+var postFix = postFixPattern.exec(location.href);
+
+function redirect(){
+  location.href = "./task2-identity.html" + postFix;
+}
+
 var index = 0;
 var totle = sessionStorage.totle.split(",");
 
@@ -5,14 +12,14 @@ var id = 1;
 var number = totle.length;
 var mod = number % 3;
 var col = '<div class="col">' +
-  '<div class="identity id="identity' + id++ + '">' +
-  '<div class="identity__name">水民</div>' +
+  '<div class="identity">' +
+  '<div class="identity__name" id="identity' + id++ + '">水民</div>' +
   '<div class="identity__number">1号</div>' +
   '</div>' +
   '<div class="identity__kill"><img src=./resource/kill.png></div>' +
   '</div>';
 
-var main = $("main");
+var main = $("main.kill");
 for (var i = 0; i < Math.floor(number / 3); i++) {
   main.append($('<div class="row"></div>'));
   var lastRow = $(".row").last();

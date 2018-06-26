@@ -23,6 +23,11 @@ var numPattern = /\d+/;
 var killNum = parseInt(numPattern.exec(params[0]));
 var citizenNum = parseInt(numPattern.exec(params[1]));
 var totle = new Array(killNum + citizenNum);
+var postFixPattern = /\?.*/;
+var postFix = postFixPattern.exec(location.href);
+
+
+
 
 for (var i = 0; i < totle.length; i++) {
   if (i < killNum) {
@@ -50,7 +55,7 @@ button.onclick = function () {
   }
 
   if (clickCount >= totle.length*2 -1) {
-    location.href = "./task2-log.html";
+    location.href = "./task2-log.html" + postFix;
     //alert("身份已查看完毕！");
     return;
   }
