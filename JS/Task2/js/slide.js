@@ -14,8 +14,8 @@
   //set player
   var maxPlayers = 18;
   var minPlayers = 3;
-  var step = (maxBoudray - slideThumb.offsetLeft) / (maxPlayers-minPlayers);
-  console.log(step);
+  var step = Math.round((maxBoudray - slideThumb.offsetLeft) / (maxPlayers-minPlayers));
+  //console.log(step);
 
   //initialize 初始化 设定默认值
   slideBar.setAttribute("style", "width:" + maxBoudray + "px;backgceil-color:transparent;border:1px solid #999");

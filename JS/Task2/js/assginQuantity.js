@@ -5,22 +5,16 @@ function setting() {
   var killer = document.getElementById("killer");
   var citizen = document.getElementById("citizen");
   var killerNum;
-  if (quantities >= 3 && quantities < 9) {
-    killerNum = 1;
-  } else if (quantities >= 9 && quantities < 12) {
-    killerNum = 2;
-  } else if (quantities >= 12 && quantities < 16) {
-    killerNum = 3;
-  } else if (quantities >= 16 && quantities <= 18) {
-    killerNum = 4;
-  } else {
-    alert("人数必须在3~18之间")
-    killerNum = 0;
+  if(quantities < 3 || quantities > 18){
+    alert("请输入3~18之间的数字！");
+  }
+  else{
+    killerNum = Math.round(quantities * 1/4);
   }
   killer.innerHTML = killerNum;
   citizen.innerHTML = quantities - killerNum;
   myurl = "./task2-identity.html?kn=" + killerNum + "&cn=" + (quantities - killerNum);
-  console.log(myurl);
+  // console.log(myurl);
 }
 function dispatcher() {
   window.location = myurl;

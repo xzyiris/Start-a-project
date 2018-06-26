@@ -1,6 +1,6 @@
 var index = 0;
 var totle = sessionStorage.totle.split(",");
-console.log(totle);
+// console.log(totle);
 
 var number = totle.length;
 var mod = number % 3;

@@ -15,7 +15,7 @@ var Number = document.getElementById("number");
 var button = document.getElementsByClassName("check")[0];
 var promptHeight = promptWrapper.offsetHeight;
 promptWrapper.style.height = promptHeight + "px";
-console.log(promptHeight);
+// console.log(promptHeight);
 
 //获取上个页面传入的参数
 var params = (location.href.split("?")[1]).split("&");
@@ -33,7 +33,7 @@ for (var i = 0; i < totle.length; i++) {
 }
 shuffle(totle);
 sessionStorage.totle = totle;
-console.log(totle);
+// console.log(totle);
 
 
 
