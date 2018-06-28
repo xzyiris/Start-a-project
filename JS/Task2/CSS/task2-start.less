@@ -61,61 +61,10 @@ main {
   bottom: 18em;
   width: 100%;
   max-width: 640px;
-  background-color: @header-color;
+  background-color: #e4e4e4;
   overflow: auto;
 }
-main.lawyer{
-  display:none;
-}
-.row {
-  margin: 5em 0;
-  &::after {
-    content: "";
-    display: block;
-    clear: both;
-  }
-}
 
-.col {
-  float: left;
-  width: 33%;
-  text-align: center;
-  font-size: @normal-size;
-  color: white;
-}
-
-.identity {
-  position: relative;
-  display: inline-block;
-  width: 5em;
-  height: 5em;
-  border: 2px solid white;
-}
-
-.identity__hover {
-  &:hover+.identity__kill {
-    visibility: visible;
-  }
-}
-
-.identity__name {
-  padding: 1.2em 0;
-  background-color: #eebd69;
-}
-
-.identity__number {
-  position: absolute;
-  top: 97px;
-  bottom: 0;
-  width: 100%;
-  font-size: @number-font-size;
-  background-color: #3ca4c4;
-}
-
-.identity__kill {
-  margin: 1em 0 -1em 0;
-  visibility: hidden;
-}
 
 .date {
   padding: 24px;
@@ -190,6 +139,7 @@ main.lawyer{
   }
 }
 .prompt__disable{
+  background-color: gray;
   &::before{
     border-right:16px solid gray;
   }
@@ -224,12 +174,8 @@ footer {
   .end,
   .log {
     width: 6em;
-    display: none;
   }
-  .confirm,
-  .return{
-    display: none;
-  }
+
 }
 
 

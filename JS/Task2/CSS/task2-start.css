@@ -40,52 +40,8 @@ main {
   bottom: 18em;
   width: 100%;
   max-width: 640px;
-  background-color: #29bde0;
+  background-color: #e4e4e4;
   overflow: auto;
-}
-main.lawyer {
-  display: none;
-}
-.row {
-  margin: 5em 0;
-}
-.row::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-.col {
-  float: left;
-  width: 33%;
-  text-align: center;
-  font-size: 2.6rem;
-  color: white;
-}
-.identity {
-  position: relative;
-  display: inline-block;
-  width: 5em;
-  height: 5em;
-  border: 2px solid white;
-}
-.identity__hover:hover + .identity__kill {
-  visibility: visible;
-}
-.identity__name {
-  padding: 1.2em 0;
-  background-color: #eebd69;
-}
-.identity__number {
-  position: absolute;
-  top: 97px;
-  bottom: 0;
-  width: 100%;
-  font-size: 2.2rem;
-  background-color: #3ca4c4;
-}
-.identity__kill {
-  margin: 1em 0 -1em 0;
-  visibility: hidden;
 }
 .date {
   padding: 24px;
@@ -157,6 +113,9 @@ main.lawyer {
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
 }
+.prompt__disable {
+  background-color: gray;
+}
 .prompt__disable::before {
   border-right: 16px solid gray;
 }
@@ -190,11 +149,6 @@ footer .log {
 footer .end,
 footer .log {
   width: 6em;
-  display: none;
-}
-footer .confirm,
-footer .return {
-  display: none;
 }
 .circle {
   float: left;
