@@ -99,7 +99,6 @@ $(".confirm").click(function (e) {
     log.identity = persons[selectedId - 1].identity;
     logArray.push(log);
     if(sessionStorage.phase == "vote"){
-
       state.step = "1";
       state.day = parseInt(state.day)+1;
     }
@@ -107,7 +106,7 @@ $(".confirm").click(function (e) {
     sessionStorage.logArray = JSON.stringify(logArray);
     sessionStorage.state = JSON.stringify(state);
 
-    //杀死人过后立刻检查平民是否还有存活，如没有存活，跳转到结果页面
+    //杀死人过后检查平民/杀手是否还有存活，如没有存活，跳转到结果页面
     var isCitizenAliveCount = 0;
     var isKillerAliveCount = 0;
     for(i = 0;i<persons.length;i++){
@@ -120,6 +119,7 @@ $(".confirm").click(function (e) {
     }
     sessionStorage.killerRemain = isKillerAliveCount;
     sessionStorage.citizenRemain = isCitizenAliveCount;
+
     if(isCitizenAliveCount == 0){
       sessionStorage.win = "killer";
       location.assign("./task2-result.html");

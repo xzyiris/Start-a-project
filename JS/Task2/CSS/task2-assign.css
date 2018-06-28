@@ -90,22 +90,17 @@ body {
   padding: 1rem 0 1rem 2rem;
   box-sizing: border-box;
 }
-.proportion__identity::before,
-.proportion__identity-3::before {
-  position: absolute;
-  top: 50%;
-  left: 0.5rem;
-  transform: translateY(-50%);
-  content: "";
-  width: 1rem;
-  height: 1rem;
-  background-color: #ee9f1b;
-}
 .proportion__identity #killer,
 .proportion__identity-3 #killer,
 .proportion__identity #citizen,
 .proportion__identity-3 #citizen {
   margin: 0 1rem;
+}
+.proportion__identity img,
+.proportion__identity-3 img {
+  width: 3.4rem;
+  height: 3.4rem;
+  vertical-align: bottom;
 }
 .proportion__identity-2 {
   position: relative;

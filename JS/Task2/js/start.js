@@ -95,7 +95,7 @@ if(state.step == "2"){
 
   //折叠标签
   $(".date").next().hide();
-$(".date").last().next().show();
+  $(".date").last().next().show();
 
 //添加toggle效果
 for (i = 0; i < day; i++) {

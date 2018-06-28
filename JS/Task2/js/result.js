@@ -15,13 +15,11 @@ $(".remain__citizen").html("平民： " + sessionStorage.citizenRemain + " 人")
 //动态生成内容
 for(var i = 0;i<state.day - 1;i++){
 
-  console.log(i);
 var listItem =  '<div class="list-item">' +
 '<div class="list-date">'+
 '  <span class="list-day">'+
 '    第'+(i+1)+'天'+
 '  </span>'+
-''+
 '</div>'+
 '<div class="list-night">'+
 '  晚上：'+logArray[2*i].kill +'号被杀手杀死，'+logArray[2*i].kill+'号是水民'+
@@ -32,7 +30,6 @@ var listItem =  '<div class="list-item">' +
 '</div>'
 
 $(".list").append(listItem);
-
 }
 
 

@@ -20,7 +20,6 @@ var Person = function (identity, isAlive, id) {
 var day;
 var index = 0;
 var selectedId;
-//是杀手杀人页面为true，是投票页面为false;
 var status;
 var col = '<div class="col">' +
   '<div class="identity">' +
@@ -29,6 +28,7 @@ var col = '<div class="col">' +
   '</div>' +
   '<div class="identity__kill"><img src=./resource/kill.png></div>' +
   '</div>';
+
 $(".confirm").hide();
 $(".return").hide();
 

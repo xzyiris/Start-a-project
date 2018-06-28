@@ -108,19 +108,24 @@ body {
   width: 100%;
   padding: 1rem 0 1rem 2rem;
   box-sizing: border-box;
-  &::before{
-    position: absolute;
-    top: 50%;
-    left: 0.5rem;
-    transform: translateY(-50%);
-    content: "";
-    width: 1rem;
-    height: 1rem;
-    background-color: @yellow;
-  }
+  // &::before{
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 0.5rem;
+  //   transform: translateY(-50%);
+  //   content: "";
+  //   width: 1rem;
+  //   height: 1rem;
+  //   background-color: @yellow;
+  // }
   #killer,
   #citizen{
     margin: 0 1rem;
+  }
+  img{
+    width: @header-font-size;
+    height: @header-font-size;
+    vertical-align: bottom;
   }
 }
 .proportion__identity-2{
