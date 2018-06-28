@@ -29,6 +29,9 @@ var col = '<div class="col">' +
   '</div>' +
   '<div class="identity__kill"><img src=./resource/kill.png></div>' +
   '</div>';
+$(".confirm").hide();
+$(".return").hide();
+
 
 //如果是第一次打开游戏，则从上一个页面获取分配的数据来生成persons
 if (!sessionStorage.persons || sessionStorage.totle) {
@@ -42,14 +45,14 @@ if (!sessionStorage.persons || sessionStorage.totle) {
 //如果是从法官台本返回，则直接读取sessionStorage的内容
 else {
   var persons = JSON.parse(sessionStorage.persons);
-  if (sessionStorage.reStart = "true") {
+  if (sessionStorage.reStart == "true") {
     $(".start").show();
     $(".return").hide();
-    $("header img").css("visibility", "visible");
+    $(".arrow-left").css("visibility", "visible");
   } else {
     $(".start").hide();
     $(".return").show();
-    $("header img").css("visibility", "hidden");
+    $(".arrow-left").css("visibility", "hidden");
   }
 }
 
@@ -110,6 +113,7 @@ sessionStorage.removeItem("totle");
 
 //开始游戏
 $(".start").click(function () {
+  sessionStorage.reStart = "false";
   location.href = "./task2-start.html";
 });
 

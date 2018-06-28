@@ -9,65 +9,12 @@ function redirect() {
     persons[i].isAlive = 1;
   }
   sessionStorage.persons = JSON.stringify(persons);
-  sessionsStorage.reStart = "true";
+  sessionStorage.reStart = "true";
+  sessionStorage.removeItem("logArray");
+  sessionStorage.removeItem("state");
   location.href = "./task2-log.html";
 }
 
-function Fsm() {
-  this.fsm = new StateMachine({
-    init: "first",
-    transitions: [{
-      name: "kill",
-      from: "first",
-      to: "second"
-    }, {
-      name: "deathSpeak",
-      from: "second",
-      to: "third"
-    }, {
-      name: "otherSpeak",
-      from: "third",
-      to: "forth"
-    }, {
-      name: "vote",
-      from: "forth",
-      to: "fifth"
-    }],
-    methods: {
-      onKill: function () {
-        $(".prompt__dialog").eq(4 * (day - 1)).css("background-color", "gray");
-        $(".prompt__dialog").eq(4 * (day - 1)).addClass("prompt__disable");
-        stateArray.push(fsm);
-        sessionStorage.states = stateArray;
-        console.log(sessionStorage.states);
-
-
-        // location.href = "./task2-kill.html" + getParams();
-      },
-      onDeathSpeak: function () {
-        alert("请死者亮明身份并发表遗言");
-        $(".prompt__dialog").eq(4 * dateCount + 1).css("background-color", "gray");
-        $(".prompt__dialog").eq(4 * dateCount + 1).addClass("prompt__disable");
-      },
-      onOtherSpeak: function () {
-        alert("玩家依次发言讨论");
-        $(".prompt__dialog").eq(4 * dateCount + 2).css("background-color", "gray");
-        $(".prompt__dialog").eq(4 * dateCount + 2).addClass("prompt__disable");
-      },
-      onVote: function () {
-        $("main.kill").css("display", "block");
-        $("main.lawyer").css("display", "none");
-        $(".header__title").html("投票");
-        $(".header").children("img[src='./resource/back-left.png']").css("visibility", "hidden");
-        $(".identity").addClass("identity__hover");
-        $(".btngroup").css("display", "none");
-        $(".confirm").css("display", "inline-block");
-        $(".prompt__dialog").eq(4 * dateCount + 3).css("background-color", "gray");
-        $(".prompt__dialog").eq(4 * dateCount + 3).addClass("prompt__disable");
-      }
-    }
-  });
-}
 
 
 if (!sessionStorage.state) {
@@ -264,10 +211,9 @@ $(".prompt__vote").click(function (e) {
 
 //点击法官日志按钮事件
 $(".log").click(function (e) {
-
   sessionStorage.state = JSON.stringify(state);
+  sessionStorage.reStart = "false";
   location.href = "./task2-log.html";
-
 });
 
 
