@@ -79,3 +79,13 @@ button.onclick = function () {
   clickCount++;
 
 }
+//点击关闭按钮
+$(".close").click(function() {
+  var s = confirm("结束本轮游戏吗?");
+  if(s == true){
+    location.href = "./task2-home.html";
+  }
+  else{
+    return;
+  }
+});

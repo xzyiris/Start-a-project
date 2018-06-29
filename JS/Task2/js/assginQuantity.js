@@ -16,6 +16,7 @@ function setting() {
   myurl = "./task2-identity.html?kn=" + killerNum + "&cn=" + (quantities - killerNum);
   // console.log(myurl);
 }
+
 function dispatcher() {
   window.location = myurl;
 }

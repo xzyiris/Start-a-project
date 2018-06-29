@@ -120,7 +120,7 @@ $(".confirm").click(function (e) {
     sessionStorage.killerRemain = isKillerAliveCount;
     sessionStorage.citizenRemain = isCitizenAliveCount;
 
-    if(isCitizenAliveCount == 0){
+    if(isCitizenAliveCount == 0 || (isKillerAliveCount >= isCitizenAliveCount && sessionStorage.phase == "vote")){
       sessionStorage.win = "killer";
       location.assign("./task2-result.html");
       return;
@@ -131,6 +131,17 @@ $(".confirm").click(function (e) {
       return;
     }
 
-    location.href = "./task2-start.html";
+    location.href = "./task2-start.html" + getParams();
 
+});
+
+//点击关闭按钮
+$(".close").click(function() {
+  var s = confirm("结束本轮游戏吗?");
+  if(s == true){
+    location.href = "./task2-home.html";
+  }
+  else{
+    return;
+  }
 });

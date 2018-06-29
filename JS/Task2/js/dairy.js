@@ -10,6 +10,8 @@ function getParams() {
   return postFixPattern.exec(location.href);
 }
 
+
+
 //创建一个构造函数来生成每个人的示例，用于保存身份，存活情况和id
 var Person = function (identity, isAlive, id) {
   this.identity = identity;
@@ -49,7 +51,7 @@ else {
     $(".start").show();
     $(".return").hide();
     $(".arrow-left").css("visibility", "visible");
-  } else {
+  } else if (sessionStorage.reStart == "false"){
     $(".start").hide();
     $(".return").show();
     $(".arrow-left").css("visibility", "hidden");
@@ -104,9 +106,20 @@ for (i = 0; i < persons.length; i++) {
 
 //点击返回按钮事情
 $(".return").click(function (e) {
-  location.href = "./task2-start.html";
+  location.href = "./task2-start.html" + getParams();
 });
 
+//点击关闭按钮
+
+$(".close").click(function() {
+  var s = confirm("结束本轮游戏吗?");
+  if(s == true){
+    location.href = "./task2-home.html";
+  }
+  else{
+    return;
+  }
+});
 
 //清除sessionStorage中的totle来确保能正确显示人数
 sessionStorage.removeItem("totle");
@@ -114,7 +127,7 @@ sessionStorage.removeItem("totle");
 //开始游戏
 $(".start").click(function () {
   sessionStorage.reStart = "false";
-  location.href = "./task2-start.html";
+  location.href = "./task2-start.html" + getParams();
 });
 
 
