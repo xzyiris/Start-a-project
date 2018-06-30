@@ -1,3 +1,4 @@
+
 function redirect() {
   var postFixPattern = /\?.*/;
   var postFix = postFixPattern.exec(location.href);
@@ -110,7 +111,6 @@ $(".return").click(function (e) {
 });
 
 //点击关闭按钮
-
 $(".close").click(function() {
   var s = confirm("结束本轮游戏吗?");
   if(s == true){
