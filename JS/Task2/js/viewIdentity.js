@@ -55,7 +55,8 @@ button.onclick = function () {
   }
 
   if (clickCount >= totle.length*2 -1) {
-    location.href = "./task2-log.html" + postFix;
+    // location.href = "./task2-log.html" + postFix;
+    window.open("./task2-log.html" + postFix,"game","location=no,resizable=yes,menubar=no,height=800,width=800")
     //alert("身份已查看完毕！");
     return;
   }
