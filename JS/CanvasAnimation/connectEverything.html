@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=1000, initial-scale=1">
+
+</head>
+
+<body>
+  <canvas id="canvas" width="1000px" height="500px"></canvas>
+</body>
+<script src="../../resource/jquery-3.3.1.min.js"></script>
+<script>
+  /** @type {HTMLCanvasElement} */
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+  var w = canvas.width;
+  var h = canvas.height;
+  var opts = {
+    particleColor: "rgb(200,200,200)",
+    lineColor: "rgb(200,200,200)",
+    particleAmount: 30,
+    speed: 0.5,
+    variantSpeed: 1,
+    radius: 2,
+    variantRadius: 2,
+    linkRadius: 180,
+  };
+  var Particle = function (xPos, yPos) {
+    //在画布的随机位置产生一个点
+    this.x = Math.random() * w;
+    this.y = Math.random() * h;
+    //这个点的初始速度
+    this.speed = opts.speed + Math.random() * opts.variantSpeed;
+    //这个点的大小
+    this.radius = opts.radius + Math.random() * opts.variantRadius;
+    //颜色
+    this.color = opts.particleColor;
+    //确定初始方向与y轴的角度
+    this.directionAngle = Math.floor(Math.random() * 360);
+    //利用x和y方向的速度分量来确定点的运动方向
+    this.vector = {
+      x: Math.cos(this.directionAngle) * this.speed,
+      y: Math.sin(this.directionAngle) * this.speed,
+    };
+
+    this.isTouchBorder = function () {
+      if (this.x >= w || this.x <= 0) {
+        this.vector.x = -this.vector.x;
+      }
+      if (this.y >= h || this.y <= 0) {
+        this.vector.y = -this.vector.y;
+      }
+      //确保点能完全触碰到边界
+      if (this.x > w) {
+        this.x = w;
+      }
+      if (this.x < 0) {
+        this.x = 0;
+      }
+      if (this.y > h) {
+        this.y = h;
+      }
+      if (this.y < 0) {
+        this.y = 0;
+      }
+    };
+
+    this.update = function () {
+      this.isTouchBorder();
+      this.x += this.vector.x;
+      this.y += this.vector.y;
+    };
+    this.draw = function () {
+      ctx.beginPath();
+      ctx.arc(this.x,this.y,this.radius,0,Math.PI * 2);
+      ctx.closePath();
+      ctx.fillStyle = this.color;
+      ctx.fill();
+    };
+  };
+
+  //计算两点距离
+  function checkDistance(x1,y1,x2,y2){
+    return Math.sqrt(Math.pow(x1-x2,2) + Math.pow(y1-y2,2));
+  }
+
+  //连接两点
+  function linkPoints(point,particles) {
+    for(let i = 0;i<particles.length;i++){
+      //计算这个点与其他所有点的距离
+      let distance = checkDistance(point.x,point.y,particles[i].x,particles[i].y);
+      //这个点与其他点的连线的透明度随着距离的增加而增加，距离超过linkRadius时变为完全透明
+      let opacity = 1 - distance / opts.linkRadius;
+
+      if(opacity > 0){
+        ctx.width = 0.5;
+        ctx.strokeStyle = `rgba(200,200,200,0.2)`;
+        ctx.beginPath();
+        ctx.moveTo(point.x,point.y);
+        ctx.lineTo(particles[i].x,particles[i].y);
+        ctx.closePath();
+        ctx.stroke();
+      }
+    }
+  }
+
+  function loop() {
+    ctx.clearRect(0,0,w,h);
+    cursorParticles.draw();
+    for(let i=1;i<particles.length;i++){
+      particles[i].draw();
+      particles[i].update();
+    }
+    for(let i=1;i<particles.length;i++){
+      linkPoints(particles[i],particles);
+    }
+    requestAnimationFrame(loop);
+  }
+
+  function loading(num){
+    for(let i=0;i<num;i++){
+      particles.push(new Particle());
+    }
+  }
+
+  $("#canvas").on("mousemove", function (e) {
+    var point = {
+      x:e.clientX,
+      y:e.clientY,
+    }
+    cursorParticles.x = e.clientX - 10;
+    cursorParticles.y = e.clientY - 10;
+  });
+
+  var cursorParticles = new Particle();
+  cursorParticles.color = "transparent";
+  var particles = new Array();
+  particles.push(cursorParticles);
+  loading(45);
+  loop();
+</script>
+
+</html>
