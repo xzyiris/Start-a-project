@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+  <div id="x"></div>
+  <div id="y"></div>
+</body>
+<script>
+  /** @type {HTMLCanvasElement} */
+  let canvas = document.getElementById("canvas");
+  let width = 500;
+  let height = 500;
+  canvas.width = width;
+  canvas.height = height;
+  let ctx = canvas.getContext("2d");
+  let coordinate = {
+    lineWidth: 1,
+    strokeStyle: "#666666",
+    draw: function () {
+      let drawer = new Path2D();
+      drawer.moveTo(0, height / 2);
+      drawer.lineTo(width, height / 2);
+      drawer.lineTo(width - 10, height / 2 - 5);
+      drawer.moveTo(width - 10, height / 2 + 5);
+      drawer.lineTo(width, height / 2);
+      drawer.moveTo(width / 2, height);
+      drawer.lineTo(width / 2, 0);
+      drawer.lineTo(width / 2 - 5, 10);
+      drawer.moveTo(width / 2 + 5, 10);
+      drawer.lineTo(width / 2, 0);
+      ctx.lineWidth = this.lineWidth;
+      ctx.strokeStyle = this.strokeStyle;
+      ctx.stroke(drawer);
+    }
+  }
+  coordinate.draw();
+
+  let inputFunc = function (x) {
+    x /= scale;
+    return scale * (Math.pow(0.5*x,2) + 2*x -20);
+  }
+
+  let scale = 10;
+  let left = -20;
+  let x = left*scale;
+  let right = 10;
+  right = right*scale;
+  let y = inputFunc(x);
+  let lastXPos = x;
+  let lastYPos = y;
+  ctx.translate(width/2,height/2);
+  ctx.strokeStyle = "#0099FF";
+  function loop() {
+    x = x;
+    let y =  inputFunc(x);
+    ctx.beginPath();
+    ctx.moveTo(lastXPos,-lastYPos);
+    ctx.lineTo(x,-y);
+    ctx.stroke();
+    lastXPos = x;
+    lastYPos = y;
+    x = x +1;
+    if(x >= right){
+      cancelAnimationFrame(raf);
+      return;
+    }
+    raf = setTimeout(() => {
+      loop();
+    }, 1000/500);
+
+  }
+  loop();
+
+  canvas.onmousemove = function (e) {
+    let x = e.clientX/scale - width/2/scale
+    let y = - e.clientY/scale + height/2/scale
+    if(x>left && x<right){
+      if(y*scale < inputFunc(x*scale) + 100 && y*scale > inputFunc(x*scale) - 100){
+        document.getElementById("x").innerHTML = "x:" + Math.round(x*100)/100;
+        document.getElementById("y").innerHTML = "y:" + Math.round(inputFunc(x*scale) * 100/scale)/100;
+      }
+    }
+    }
+</script>
+
+</html>
