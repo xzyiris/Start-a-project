@@ -4,7 +4,8 @@
 canvas/
 小课堂/
 svg/
-AngularTutorial/
+AngularTutorial/example
+AngularTutorial/t*.*
 TypeScript/
 gulpfile.js
 JStask6-10*
