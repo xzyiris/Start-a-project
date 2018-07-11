@@ -1,0 +1,8 @@
+{
+  "/carrots-admin-ajax":{
+    "target": "http://localhost"
+  },
+  "/JS": {
+    "target": "http://localhost"
+  }
+}
