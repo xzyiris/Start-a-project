@@ -26,6 +26,4 @@ sportStore.constant("productListActiveClass","btn-primary")
   $scope.addProductToCart = function (product) {
     cart.addProduct(product.id,product.name,product.price);
   }
-
-
 });
