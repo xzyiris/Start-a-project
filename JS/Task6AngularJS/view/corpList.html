@@ -1,12 +1,12 @@
 <div  ng-controller="corpCtrl">
   <div class="condition">
-    <form action="">
+    <form action="" name="corpForm">
       <div class="row">
         <div class="col-sm-1 text-center">
           公司名称
         </div>
         <div class="col-sm-3 text-center">
-          <input type="text" class="form-control">
+          <input type="text" name="corpName" class="form-control" ng-pattern="[A-Za-z]">
         </div>
         <div class="col-sm-1 text-center">
           公司行业

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+  <script src="https://cdn.bootcss.com/angular.js/1.5.8/angular-messages.min.js"></script>
+  <style>
+    form .ng-invalid.ng-dirty{
+
+    }
+    form .ng-invalid.ng-pristine+div{
+      display: none;
+    }
+  </style>
+</head>
+<body ng-app="myApp">
+    <form name="form1" novalidate ng-submit="signupForm()" ng-controller="signupController">
+        <label>Your name</label>
+        <input type="text" placeholder="Name" ng-model="name" name="name" ng-minlength="3"
+               ng-maxlength="20" required >
+
+        <div class="error" ng-messages="form1.name.$error" >
+            <div ng-messages="form1.name.$error"></div>
+            <div ng-message="required">请输入用户名</div>
+            <div ng-message="minlength">少于3位</div>
+            <div ng-message="maxlength">多余20位</div>
+        </div>
+        <label for="">地址</label>
+        <input type="text" placeholder="Name" ng-model="location"  name="location" required>
+        <div ng-show="form1.location.$error.required" ng-dirty ng-pristine>地址不能为空！</div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+    </form>
+    </body>
+    <script>
+      angular.module('myApp',['ngMessages']).controller('signupController',function () {  });
+    </script>
+</html>

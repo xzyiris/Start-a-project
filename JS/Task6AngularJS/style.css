@@ -65,9 +65,13 @@ aside {
   font-size: 1.5rem;
   box-sizing: border-box;
 }
-aside div{
-  padding: 1rem;
+aside>div>div>div{
+  padding: 1rem 0;
+  border-bottom: 1px solid white;
   cursor: pointer;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 2rem;
 }
 main{
   position: absolute;
@@ -87,12 +91,16 @@ section {
   box-sizing: border-box;
 }
 ul{
-  padding-left: 30px;
+  padding-left: 0;
   margin: 0;
 }
 li{
   padding: 0.5rem 0;
+  border-bottom: 1px solid white;
+  margin: 1rem 0;
+  font-size: 1.5rem;
   list-style: none;
+  text-align: center;
 }
 .myCollapse{
   position: relative;
@@ -123,11 +131,15 @@ li{
   border-left: 6px solid transparent;
 }
 .active{
+  border-left: 3px solid #58b2fc;
+  background-color: rgb(255, 181, 129);
+  outline: none;
+}
+.liActive{
   border: none;
   background-color: rgb(255, 181, 129);
   outline: none;
 }
-
 
 .result-title{
   display: flex;
@@ -201,4 +213,14 @@ li{
 #manipulate{
   display: flex;
   justify-content: space-between;
+}
+ul a{
+  color: white;
+  text-decoration: none !important;
+}
+.active{
+  background-color: #ffc186;
+}
+a:hover{
+  color: white;
 }

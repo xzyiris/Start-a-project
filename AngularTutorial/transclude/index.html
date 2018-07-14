@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.bootcss.com/angular.js/1.6.8/angular.min.js"></script>
+</head>
+<body ng-controller="MyController as vm">
+
+    <h1 ng-bind="vm.title"></h1>
+
+    <h2>指令one-transclude 内部含有元素</h2>
+    <!--  指令one-transclude 内部含有元素-->
+    <one-transclude class="one-transclude-self">
+        <div class="one-transclude-self__footer">$AAAAAA $我是指令[one-transclude]元素内部的内容</div>
+    </one-transclude>
+
+
+    <h2>指令one-transclude 内部不含有元素</h2>
+    <!-- 指令one-transclude 内部不含有元素 -->
+    <one-transclude class="one-transclude-self"></one-transclude>
+
+    <h2>指令mutil-transclude</h2>
+    <!-- 指令mutil-transclude -->
+    <multi-transclude>
+        <multi-transclude-title>我是指令元素内部的title</multi-transclude-title>
+        <multi-transclude-body>我是指令元素内部的body</multi-transclude-body>
+        <multi-transclude-footer>我是指令元素内部的footer</multi-transclude-footer>
+    </multi-transclude>
+
+    </body>
+    <script>
+    (function() {
+angular.module('app', [])
+    .controller('MyController', myController)
+    .directive('oneTransclude', oneTransclude)
+    .directive('multiTransclude', multiTransclude);
+
+myController.$inject = [];
+
+function myController() {
+    var vm = this;
+    vm.title = 'ng-transclude';
+}
+
+function oneTransclude() {
+    return {
+        restrict: 'AE',
+        transclude: true,
+        templateUrl: 'one-transclude.html'
+    };
+}
+
+function multiTransclude() {
+    return {
+        restrict: 'AE',
+        transclude: {
+            'title': 'multiTranscludeTitle',
+            'body': 'multiTranscludeBody',
+            'footer': '?multiTranscludeFooter'
+        },
+        templateUrl: 'multi-transclude.html'
+    };
+}
+})();
+    </script>
+</html>

@@ -17,7 +17,7 @@ $(".login").click(function (e) {
       } else if (status.code == 0) {
         $(".prompt").css("color", "green");
         $(".prompt").html(status.message);
-        location.href = "http://dev.admin.carrots.ptteng.com";
+        location.href = "http://localhost/JS/Task6AngularJS/index.html";
       }
     }
   });
@@ -48,3 +48,9 @@ $(".login").click(function (e) {
 //   xhr.open("POST","/carrots-admin-ajax/a/login",true);
 //   xhr.send(formData);
 });
+
+angular.module('app',['ngMessages']).controller('myCtrl',MainCtrl);
+
+function MainCtrl() {
+
+}

@@ -168,9 +168,9 @@ angular.module("app").filter("typeFilter", function () {
 }).filter("statusFilter", function () {
   return function (input) {
     switch (input) {
-      case 1:
-        return '上架';
       case 2:
+        return '上架';
+      case 1:
         return '下架';
       default:
         break;
@@ -187,6 +187,17 @@ angular.module("app").filter("typeFilter", function () {
         return '找精英Banner';
       case 3:
         return '行业大图';
+      default:
+        break;
+    }
+  }
+}).filter("inverseStatusFilter",function () {
+  return function (input) {
+    switch (input) {
+      case 1:
+        return '上架';
+      case 2:
+        return '下架';
       default:
         break;
     }
@@ -218,12 +229,9 @@ angular.module("app").filter("typeFilter", function () {
       } else {
         return $filter("limitTo")(data.slice(start_index), size);
       }
-
     }
     else{
-
       return data;
     }
   }
 })
-i = 1;
