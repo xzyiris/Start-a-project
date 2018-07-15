@@ -1,14 +1,19 @@
 angular.module("app").controller("articleCtrl",
-  function ($scope, $http, $filter) {
+  function ($scope, $http, $filter,$location) {
     $scope.pageSize = 5;
     $scope.status = [1, 2];
     $scope.type = [0, 1, 2, 3];
+    $scope.industry = [0, 1, 2, 3, 4, 5, 6];
+    $scope.img;
+    $scope.url = null;
+    $scope.title = null;
     $scope.selectedType = null;
     $scope.list = null;
-    $scope.selectedStartTime;
-    $scope.selectedEndTime;
-    $scope.selectedStatus;
-    $scope.selectedPage;
+    $scope.selectedStartTime = null;
+    $scope.selectedEndTime = null;
+    $scope.selectedStatus = null;
+    $scope.selectedPage = null;
+    $scope.selectedIndustry = null;
     $scope.expander = [
     {
       title: '信息管理',
@@ -50,6 +55,9 @@ angular.module("app").controller("articleCtrl",
     $scope.search = function () {
       let selectedStartTime = Date.parse($scope.selectedStartTime);
       let selectedEndTime = Date.parse($scope.selectedEndTime);
+      // $location.search("type",$scope.selectedType);
+      // $location.search("startAt",selectedStartTime);
+      // $location.search("endAt",selectedEndTime);
       $http({
         method: 'get',
         url: '/carrots-admin-ajax/a/article/search',
@@ -76,5 +84,34 @@ angular.module("app").controller("articleCtrl",
         }
       );
     }
+
+    $scope.uploadFile = function () {
+      let form = new FormData();
+      let file = document.getElementById('upload');
+      form.append("img", $scope.img);
+      form.append("title", $scope.title);
+      form.append('type',$scope.selectedType);
+      form.append('status', 2);
+      form.append('url',$scope.url);
+      if($scope.selectedIndustry){
+        form.append('industry',$scope.selectedIndustry);
+      }
+
+      $http({
+        method: 'POST',
+        url:'/carrots-admin-ajax/a/u/article',
+        headers:{'Content-Type': 'application/x-www-form-urlencoded'},
+        data: form,
+      }).then( (data) => {
+        console.log(data);
+      },
+    (err) => {
+      console.error(err);
+    }).then( ()=>{
+        console.log("complete");
+      })
+    }
     $scope.init();
+    console.log(1);
+
   })

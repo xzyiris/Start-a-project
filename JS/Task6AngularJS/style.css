@@ -213,6 +213,10 @@ li{
 #manipulate{
   display: flex;
   justify-content: space-between;
+  width: 20%;
+}
+.btn{
+  margin: 0 !important;
 }
 ul a{
   color: white;

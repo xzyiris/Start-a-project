@@ -11,22 +11,23 @@
     form .ng-invalid.ng-dirty{
 
     }
-    form .ng-invalid.ng-pristine+div{
+    /* form .ng-invalid.ng-pristine+div{
       display: none;
-    }
+    } */
   </style>
 </head>
 <body ng-app="myApp">
     <form name="form1" novalidate ng-submit="signupForm()" ng-controller="signupController">
         <label>Your name</label>
-        <input type="text" placeholder="Name" ng-model="name" name="name" ng-minlength="3"
+        <input type="text" placeholder="Name" ng-model="name" name="name" ng-minlength="3" ng-pattern="matchPattern"
                ng-maxlength="20" required >
 
-        <div class="error" ng-messages="form1.name.$error" >
+        <div class="error" ng-messages="form1.name.$error" ng-show="form1.name.$invalid && form1.name.$dirty">
             <div ng-messages="form1.name.$error"></div>
             <div ng-message="required">请输入用户名</div>
             <div ng-message="minlength">少于3位</div>
             <div ng-message="maxlength">多余20位</div>
+            <div ng-message="pattern">输入正确的用户名</div>
         </div>
         <label for="">地址</label>
         <input type="text" placeholder="Name" ng-model="location"  name="location" required>
@@ -37,6 +38,8 @@
     </form>
     </body>
     <script>
-      angular.module('myApp',['ngMessages']).controller('signupController',function () {  });
+      angular.module('myApp',['ngMessages']).controller('signupController',function ($scope) {
+        $scope.matchPattern = /^[a-z]{5}$/;
+      });
     </script>
 </html>

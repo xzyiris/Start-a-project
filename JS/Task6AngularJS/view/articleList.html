@@ -51,9 +51,9 @@
         <span>类型</span>
         <span>发布时间</span>
         <span>修改时间</span>
-        <span>发布者</span>
-        <span>状态</span>
-        <span id="mainpulate">操作</span>
+        <span style="width: 10%">发布者</span>
+        <span style="width: 7.5%">状态</span>
+        <span style="width: 20%" id="mainpulate">操作</span>
       </div>
       <div class="table-body" ng-repeat="item in list.data.articleList | range:selectedPage:pageSize" ng-class="$odd?'odd':'even'">
           <span style="width: 5%;">{{$index+1}}</span>
@@ -61,12 +61,12 @@
           <span>{{item.type | typeFilter}}</span>
           <span>{{item.createAt | date:'yyyy-MM-dd hh:mm:ss'}}</span>
           <span>{{item.updateAt | date:'yyyy-MM-dd hh:mm:ss'}}</span>
-          <span>{{item.author}}</span>
-          <span>{{item.status | statusFilter}}</span>
-          <span id="#manipulate">
-            <a style="font-size: 80%" href="">{{item.status | inverseStatusFilter}}</a>
-            <a style="font-size: 80%" href="">编辑</a>
-            <a style="font-size: 80%" href="">删除</a>
+          <span style="width: 10%">{{item.author}}</span>
+          <span style="width: 7.5%">{{item.status | statusFilter}}</span>
+          <span id="#manipulate" style="width: 20%">
+            <a class="btn btn-primary" style="font-size: 80%" href="">{{item.status | inverseStatusFilter}}</a>
+            <a class="btn btn-success" style="font-size: 80%" href="">编辑</a>
+            <a class="btn btn-danger" style="font-size: 80%" href="">删除</a>
           </span>
         </div>
     </div>

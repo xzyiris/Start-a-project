@@ -11,3 +11,7 @@ gulpfile.js
 JStask6-10*
 Algorithm/
 canvasJS/
+/AngularTutorial
+package*.*
+gulp*
+node_modules/

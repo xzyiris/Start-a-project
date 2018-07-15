@@ -1,16 +1,6 @@
 var myModule = angular.module('app');
 
 myModule.controller('TestController', ['$rootScope', '$scope', function ($rootScope, $scope) {
-  // $scope.expanders = [{
-  //   title: 'Click me to expand',
-  //   text: 'Hi there folks, I am the content that was hidden but is now shown.'
-  // }, {
-  //   title: 'Click this',
-  //   text: 'I am even better text than you have seen previously'
-  // }, {
-  //   title: 'Test',
-  //   text: 'test'
-  // }];
   $scope.navList = [{
       title: '信息管理',
       list: [{
@@ -85,11 +75,6 @@ myModule.directive('expander', function () {
       expanderList: '=',
       expanderListTitle: '=',
     },
-    // template:
-    // '<div><div class="aside-title" ng-click="toggle()" ng-class="active">{{expanderTitle}}</div>'+
-    // '<ul>'+
-    // '<a href="{{item.url}}" ng-repeat="item in expanderList" ng-show="showMe"><li ng-class="liActive" ng-click="liToggle()">{{item.name}}</li></a>'+
-    // '</ul></div>',
     template:
     '<div><div class="aside-title" ng-click="toggle()" ng-class="active">{{expanderTitle}}</div>'+
     '<ul class="list-group-flush">'+
