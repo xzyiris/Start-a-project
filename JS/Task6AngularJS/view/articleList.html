@@ -71,8 +71,6 @@
         </div>
     </div>
     <div class="text-right">
-      <button class="btn btn-default" ng-click="search(1)">首页</button>
-      <a href="" ng-repeat="page in displayPages" ng-click="search(page)" class="btn btn-info" ng-model="selectedPage">{{page}}</a>
-      <button class="btn btn-default" ng-click="search(totalPage)">末页</button>
+      <my-page-button total-pages="totalPages" selected-page="selectedPage" page-size="pageSize"></my-page-button>
     </div>
 </div>

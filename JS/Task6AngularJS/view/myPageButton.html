@@ -1,0 +1,9 @@
+<div class="text-right">
+    <button class="btn btn-default btn-page" ng-click="head()" ng-disabled="selectedPage == 1">首页</button>
+    <button class="btn btn-info btn-page" ng-click="prevPage()">&lt</button>
+    <button class="btn btn-info btn-page" ng-if="selectedPage>1" ng-disabled="'disabled'">...</button>
+    <a href="" ng-repeat="page in displayPages" ng-click="search(page)" class="btn btn-info btn-page" ng-model="selectedPage">{{page}}</a>
+    <button class="btn btn-info btn-page" ng-if="selectedPage<totalPage" ng-disabled="'disabled'">...</button>
+    <button class="btn btn-info btn-page" ng-click="nextPage()" ng-disabled="selectedPage>=totalPage">&gt</button>
+    <button class="btn btn-default btn-page" ng-click="tail()" ng-disabled="selectedPage == totalPage">末页</button>
+  </div>

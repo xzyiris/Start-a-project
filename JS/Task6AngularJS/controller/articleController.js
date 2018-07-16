@@ -5,7 +5,7 @@ angular.module("app").controller("articleCtrl",
     $scope.pageSize = 5;
     $scope.totalPage;
     $scope.pageArray;
-    $scope.displayPages = [1, 2, 3, 4, 5];
+    $scope.displayPages = [];
     // 上架状态
     $scope.status = [1, 2];
     // 图片类型
@@ -80,8 +80,14 @@ angular.module("app").controller("articleCtrl",
         () => {
           $scope.totalSize = $scope.list.data.data.total;
           $scope.totalPage = Math.ceil($scope.totalSize / $scope.pageSize);
-          console.log($scope.totalPage);
-          console.log($scope.list);
+          if ($scope.totalPage > 5) {
+            $scope.displayPages = [1, 2, 3, 4, 5];
+          } else {
+            $scope.displayPages = [];
+            for (let i = 0; i < $scope.totalPage; i++) {
+              $scope.displayPages.push(i + 1);
+            }
+          }
         }
       );
     }
@@ -89,7 +95,6 @@ angular.module("app").controller("articleCtrl",
       let selectedStartTime = Date.parse($scope.selectedStartTime);
       let selectedEndTime = Date.parse($scope.selectedEndTime);
       $scope.selectedPage = selectedPage;
-      console.log(selectedPage);
 
       // $location.search("type",$scope.selectedType);
       // $location.search("startAt",selectedStartTime);
@@ -110,14 +115,28 @@ angular.module("app").controller("articleCtrl",
       }).then(
         (data) => {
           $scope.list = data;
-          console.log($scope.list.data.data.articleList);
         },
         (err) => {
           console.error(err);
         }
       ).then(() => {
-        $scope.totalSize = $scope.list.data.data.total;
-        $scope.totalPage = Math.ceil($scope.totalSize / $scope.pageSize);
+        if ($scope.totalSize != $scope.list.data.data.total) {
+          $scope.totalSize = $scope.list.data.data.total;
+          $scope.totalPage = Math.ceil($scope.totalSize / $scope.pageSize);
+          // console.log($scope.totalPage);
+          if ($scope.totalPage > 5) {
+            $scope.displayPages = [1, 2, 3, 4, 5];
+          } else {
+            $scope.displayPages = [];
+            for (let i = 0; i < $scope.totalPage; i++) {
+              $scope.displayPages.push(i + 1);
+            }
+          }
+        }
+        let diff = $scope.selectedPage - $scope.displayPages[0];
+          for(let i = 0; i<$scope.displayPages.length; i++){
+            $scope.displayPages[i] += diff;
+          }
       })
     }
 
@@ -195,13 +214,37 @@ angular.module("app").controller("articleCtrl",
       })
     }
 
-    $scope.delete = function () {
-      $scope.imgFile = null;
-      $scope.imgSize = null;
-      $scope.imgName = null;
-      $scope.imgSrc = '/';
-      $scope.progressWidth = 0;
-    }
+    // $scope.delete = function () {
+    //   $scope.imgFile = null;
+    //   $scope.imgSize = null;
+    //   $scope.imgName = null;
+    //   $scope.imgSrc = '/';
+    //   $scope.progressWidth = 0;
+    // }
+    // $scope.nextPage = function () {
+    //   for (let i = 0; i < $scope.displayPages.length; i++) {
+    //     $scope.displayPages[i] += 1;
+    //   }
+    //   $scope.search($scope.displayPages[0]);
+    // }
+    // $scope.prevPage = function () {
+    //   for (let i = 0; i < $scope.displayPages.length; i++) {
+    //     $scope.displayPages[i] -= 1;
+    //   }
+    //   $scope.search($scope.displayPages[0]);
+    // }
+    // $scope.head = function () {
+    //   for(let i = 0; i < $scope.displayPages.length; i++){
+    //     $scope.displayPages[i] = i+1;
+    //   }
+    //   $scope.search(1);
+    // }
+    // $scope.tail = function () {
+    //   for (let i = $scope.displayPages.length; i >= 0 ; i--) {
+    //     $scope.displayPages[$scope.displayPages.length - i] = $scope.totalPage-i;
+    //   }
+    //   $scope.search($scope.totalPage);
+    // }
     $scope.init();
 
   })
