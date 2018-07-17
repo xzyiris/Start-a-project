@@ -1,137 +1,151 @@
-<div class="table" ng-controller="articleCtrl">
-  <div class="result-title">
-    <span>新增Article</span>
-  </div>
-  <div class="table-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-2">
-          <strong>
-            <label>标题名称</label>
-          </strong>
-        </div>
-        <div class="col-sm-8">
-          <input type="text" class="form-control" ng-model="title">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-2">
-          <strong>
-            <label>类&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp型</label>
-          </strong>
-        </div>
-        <div class="col-sm-4">
-          <select name="" id="" ng-model="selectedType" ng-options="item | typeFilter for item in type" class="form-control">
-            <option value="">请选择</option>
-          </select>
-        </div>
-        <div class="col-sm-4">
-          <select name="" id="" ng-model="selectedIndustry" ng-options="item | industryFilter for item in industry" ng-show="selectedType==3"
-            class="form-control">
-            <option value="">请选择</option>
-          </select>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-2">
-          <strong>
-            <label>说&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp明</label>
-          </strong>
-        </div>
-        <div class="col-sm-8">
-          <input ng-model="content" type="text" class="form-control">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-2">
-          <strong>
-            <label>跳转链接</label>
-          </strong>
-        </div>
-        <div class="col-sm-8">
-          <input type="text" class="form-control" ng-model="url">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-2">
-          <strong>
-            <label>配&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp图</label>
-          </strong>
-        </div>
-        <div class="col-sm-8">
-          <label class="btn btn-primary" for="upload">选择文件
-          </label>
-          <input upload type="file" id="upload" style="display: none;" ng-model="imgFile">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-2">
-          <strong>
-            <label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
-          </strong>
-        </div>
-        <div class="col-sm-8">
-          <img style="width: 200px;height: 200px" ng-src="{{imgSrc}}" alt="配图预览">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-2">
-          <strong>
-            <label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
-          </strong>
-        </div>
-        <div class="col-sm-7">
-          <div class="row" style="margin: 0;padding: 10px 0;border-bottom: 2px solid #ccc">
-            <div class="col-sm-2" style="padding: 0 5px">
-              <strong>图片名</strong>
-            </div>
-            <div class="col-sm-2" style="padding: 0 5px">
-              <strong>文件大小</strong>
-            </div>
-            <div class="col-sm-2 text-center" style="padding: 0 5px">
-              <strong>进度</strong>
-            </div>
-            <div class="col-sm-2" style="padding: 0 5px">
-              <strong>操作</strong>
-            </div>
-            <div class="col-sm-4 text-center" style="padding: 0 5px">
-              <strong>操作</strong>
-            </div>
-
+<form name="newArticle" ng-controller="newArticleCtrl">
+  <div class="table">
+    <div class="result-title">
+      <span>新增Article</span>
+    </div>
+    <div class="table-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-2">
+            <strong>
+              <label>标题名称</label>
+            </strong>
           </div>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" ng-model="title" name="title" ng-blur="required(title)" ng-change="required(title)" required>
+          </div>
+        </div>
+        <div class="error row" ng-show="showValidation"style="margin: 0">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-8">
+            请填写标题
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <strong>
+              <label>类&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp型</label>
+            </strong>
+          </div>
+          <div class="col-sm-4">
+            <select name="type" id="" ng-model="selectedType" ng-options="item | typeFilter for item in type" class="form-control">
+              <option value="">请选择</option>
+            </select>
+          </div>
+          <div class="col-sm-4">
+            <select name="" id="" ng-model="selectedIndustry" ng-options="item | industryFilter for item in industry" ng-show="selectedType==3"
+              class="form-control">
+              <option value="">请选择</option>
+            </select>
+          </div>
+        </div>
+        <div class="error row" ng-show="showValidation"style="margin: 0">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+              请选择类型
+            </div>
+          </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <strong>
+              <label>说&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp明</label>
+            </strong>
+          </div>
+          <div class="col-sm-8">
+            <input ng-model="content" type="text" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <strong>
+              <label>跳转链接</label>
+            </strong>
+          </div>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" ng-model="url">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <strong>
+              <label>配&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp图</label>
+            </strong>
+          </div>
+          <div class="col-sm-8">
+            <label class="btn btn-primary" for="upload">选择文件
+            </label>
+            <input upload type="file" id="upload" style="display: none;" ng-model="imgFile">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <strong>
+              <label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+            </strong>
+          </div>
+          <div class="col-sm-8">
+            <img style="width: 200px;height: 200px" ng-src="{{imgSrc}}" alt="配图预览">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <strong>
+              <label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+            </strong>
+          </div>
+          <div class="col-sm-7">
+            <div class="row" style="margin: 0;padding: 10px 0;border-bottom: 2px solid #ccc">
+              <div class="col-sm-2" style="padding: 0 5px">
+                <strong>图片名</strong>
+              </div>
+              <div class="col-sm-2" style="padding: 0 5px">
+                <strong>文件大小</strong>
+              </div>
+              <div class="col-sm-2 text-center" style="padding: 0 5px">
+                <strong>进度</strong>
+              </div>
+              <div class="col-sm-2" style="padding: 0 5px">
+                <strong>操作</strong>
+              </div>
+              <div class="col-sm-4 text-center" style="padding: 0 5px">
+                <strong>操作</strong>
+              </div>
 
-          <div ng-if=" imgName!=null " class="row" style="margin: 0;padding: 10px 0;border-bottom: 2px solid #ccc">
-            <div class="col-sm-2" style="padding: 0 5px">
-              <strong>{{imgName}}</strong>
             </div>
-            <div class="col-sm-2" style="padding: 0 5px">
-              <strong>{{imgSize}}</strong>
-            </div>
-            <div class="col-sm-2" style="padding: 0 5px">
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" ng-style="monitorProgress" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+
+            <div ng-if=" imgName!=null " class="row" style="margin: 0;padding: 10px 0;border-bottom: 2px solid #ccc">
+              <div class="col-sm-2" style="padding: 0 5px">
+                <strong>{{imgName}}</strong>
+              </div>
+              <div class="col-sm-2" style="padding: 0 5px">
+                <strong>{{imgSize}}</strong>
+              </div>
+              <div class="col-sm-2" style="padding: 0 5px">
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" ng-style="monitorProgress" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="col-sm-2" style="padding: 0 5px">
+                <strong></strong>
+              </div>
+              <div class="col-sm-4" style="padding: 0 5px">
+                <button class="btn btn-success" ng-click="uploadImg()">上传</button>
+                <button class="btn btn-danger" ng-click="delete()">删除</button>
               </div>
             </div>
-            <div class="col-sm-2" style="padding: 0 5px">
-              <strong></strong>
-            </div>
-            <div class="col-sm-4" style="padding: 0 5px">
-              <button class="btn btn-success" ng-click="uploadImg()">上传</button>
-              <button class="btn btn-danger" ng-click="delete()">删除</button>
-            </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-2">&nbsp</div>
-        <div class="col-sm-8">
-          <button class="btn btn-success" ng-click="upload()">立即上线</button>
-          <button class="btn btn-success" ng-click="draft()">存为草稿</button>
-        </div>
-        <div class="col-sm-2">
-          <button class="btn btn-default">取消</button>
+        <div class="row">
+          <div class="col-sm-2">&nbsp</div>
+          <div class="col-sm-8">
+            <button class="btn btn-success" ng-click="upload()">立即上线</button>
+            <button class="btn btn-success" ng-click="draft()">存为草稿</button>
+          </div>
+          <div class="col-sm-2">
+            <button class="btn btn-default">取消</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</form>

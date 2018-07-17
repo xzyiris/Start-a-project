@@ -1,8 +1,8 @@
 angular.module("app").controller("articleCtrl",
-  function ($scope, $http, $filter, $location) {
+  function ($scope,$rootScope, $http, $filter, $location,$state) {
     //总条数
     $scope.totalSize;
-    $scope.pageSize = 5;
+    $scope.pageSize = 8;
     $scope.totalPage;
     $scope.pageArray;
     $scope.displayPages = [];
@@ -32,14 +32,8 @@ angular.module("app").controller("articleCtrl",
     $scope.selectedPage = 1;
     $scope.selectedIndustry = null;
     $scope.progressWidth = 0;
-    $scope.monitorProgress = {
-      width: $scope.progressWidth
-    }
-    $scope.$watch('progressWidth', function () {
-      $scope.monitorProgress = {
-        width: $scope.progressWidth
-      }
-    });
+    $scope.editItem;
+
     $scope.expander = [{
         title: '信息管理',
         list: ['公司列表', '职位管理']
@@ -133,10 +127,6 @@ angular.module("app").controller("articleCtrl",
             }
           }
         }
-        let diff = $scope.selectedPage - $scope.displayPages[0];
-          for(let i = 0; i<$scope.displayPages.length; i++){
-            $scope.displayPages[i] += diff;
-          }
       })
     }
 
@@ -170,81 +160,88 @@ angular.module("app").controller("articleCtrl",
       }).then(() => {
         $location.url('/articleList');
       })
-      // $.ajax({
-      //   url: '/carrots-admin-ajax/a/u/article',
-      //   type:'POST',
-      //   data: form,
-      //   processData: false,
-      //   contentType: false
-      // }).then((data)=>console.log('ajax:' + data));
+    }
+    $scope.edit = function (index) {
+      // console.log('before state');
+      // console.log('after state');
+
+      $rootScope.editItem = $scope.list.data.data.articleList[index];
+      $rootScope.$broadcast('editItem',$rootScope.editItem);
+      // console.log($scope.editItem);
+      $state.go('editArticle',{name:'hha',age:11});
+      // let formData = new FormData();
+      // formData.append()
+      // $http({
+      //   method: 'PUT',
+      //   url: '/carrots-admin-ajax/a/u/article/' + item.id,
+      //   data:'',
+      //   headers: {
+      //     'Content-Type':undefined
+      //   }
+      // })
 
     }
-    $scope.draft = function () {
-      $scope.uploadStatus = 1;
-      $scope.upload();
-    }
-
-    $scope.uploadImg = function () {
-      //在服务器返回成功之前对进度条不断填充
-      let raf;
-
-      function fillProgress() {
-        $scope.progressWidth += 10;
-        raf = setTimeout(() => {
-          fillProgress()
-        }, 100);
+    $scope.deleteInServer = function (id) {
+      let feedback = confirm('确定删除吗？');
+      if(feedback){
+        $http({
+          method: 'DELETE',
+          url: '/carrots-admin-ajax/a/u/article/' + id,
+          headers: {
+            'Content-Type': undefined
+          }
+        }).then((data)=>{
+          alert('删除成功！')
+          $scope.search($scope.selectedPage);
+        })
       }
-      fillProgress();
-
-      let formImg = new FormData();
-      formImg.append('file', $scope.imgFile);
-      $http({
-        method: 'POST',
-        url: '/carrots-admin-ajax/a/u/img/task',
-        data: formImg,
-        headers: {
-          'Content-Type': undefined
-        }
-      }).then((data) => {
-        // console.log(data.data.data.url);
-        $scope.imgSrc = data.data.data.url;
-      }).then(() => {
-        clearTimeout(raf);
-        $scope.progressWidth = 100;
-      })
+      else{
+        return;
+      }
     }
+    $scope.modifyStatus = function (id,status) {
+      let feedback;
+      if(status == 1){
+        feedback = confirm('确定上架吗？');
+      }
+      else if(status == 2){
+        feedback = confirm('确定下架吗？')
+      }
+      if(feedback){
+        switch (status) {
+          case 1:
+            status = 2;
+            break;
+          case 2:
+            status = 1;
+            break;
+          default:
+            break;
+        }
 
-    // $scope.delete = function () {
-    //   $scope.imgFile = null;
-    //   $scope.imgSize = null;
-    //   $scope.imgName = null;
-    //   $scope.imgSrc = '/';
-    //   $scope.progressWidth = 0;
-    // }
-    // $scope.nextPage = function () {
-    //   for (let i = 0; i < $scope.displayPages.length; i++) {
-    //     $scope.displayPages[i] += 1;
-    //   }
-    //   $scope.search($scope.displayPages[0]);
-    // }
-    // $scope.prevPage = function () {
-    //   for (let i = 0; i < $scope.displayPages.length; i++) {
-    //     $scope.displayPages[i] -= 1;
-    //   }
-    //   $scope.search($scope.displayPages[0]);
-    // }
-    // $scope.head = function () {
-    //   for(let i = 0; i < $scope.displayPages.length; i++){
-    //     $scope.displayPages[i] = i+1;
-    //   }
-    //   $scope.search(1);
-    // }
-    // $scope.tail = function () {
-    //   for (let i = $scope.displayPages.length; i >= 0 ; i--) {
-    //     $scope.displayPages[$scope.displayPages.length - i] = $scope.totalPage-i;
-    //   }
-    //   $scope.search($scope.totalPage);
-    // }
+        // let formData = new FormData();
+        // formData.append('id',id);
+        // formData.append('status',status);
+
+        $http({
+          method: 'PUT',
+          url: '/carrots-admin-ajax/a/u/article/status',
+          params: {
+            id: id,
+            status: status
+          },
+          headers: {
+            // 'Content-Type': undefined
+            // 'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        }).then((data)=>{
+          alert("操作成功！");
+          $scope.search($scope.selectedPage);
+        }, (err) => {
+          console.log(err);
+        })
+      }
+    }
     $scope.init();
 
   })

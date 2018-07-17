@@ -20,4 +20,5 @@ app.directive("upload",function () {
       });
     }
   }
-})
+});
+

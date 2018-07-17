@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
-
+<html lang="en" ng-app="myApp">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Test</title>
   <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
   <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -15,46 +14,44 @@
   <script src="https://cdn.bootcss.com/angular.js/1.5.6/angular.min.js"></script>
   <script src="https://cdn.bootcss.com/angular.js/1.5.6/angular-route.min.js"></script>
   <script src="https://cdn.bootcss.com/angular.js/1.5.8/angular-messages.min.js"></script>
-  <script src="./resource/angular-ui-router.js"></script>
+  <script src="../resource/angular-ui-router.js"></script>
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="../style.css">
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
 </head>
-
-<body>
-  <header>
-    <span class="title">
-      <span>萝卜多后台管理系统</span>
-    </span>
-    <div class="status">
-      <span>管理员 </span>
-      <span> admin</span>
-      <img src="" alt="">
+<body ng-app="myApp" ng-controller="mainCtrl">
+    <h1>Hello Plunker!</h1>
+    <button ng-click="broadcast()">broadcast</button>
+    <div ng-controller="myCtrl1">
+      <button ng-click="shareData('123')">send</button>
     </div>
-  </header>
-  <main>
-    <aside ng-controller="TestController">
-      <accordion>
-        <expander class='expander' ng-repeat='item in navList' expander-title='item.title' expander-list='item.list'>
-        </expander>
-      </accordion>
-    </aside>
-    <section>
-      <!-- <div ng-view></div> -->
-      <div ui-view></div>
-    </section>
-  </main>
-</body>
-<script src="./controller/appController.js"></script>
-<script src="./controller/corpController.js"></script>
-<script src="./filter/filter.js"></script>
-<script src="./controller/jobController.js"></script>
-<script src="./controller/articleController.js"></script>
-<script src="./controller/testController.js"></script>
-<script src="./directive/myAccordion.js"></script>
-<script src="./directive/upload.js"></script>
-<script src="./directive/myPageButton.js"></script>
-<script src="./controller/newArticle.js"></script>
-<script src="./controller/editArticleCtrl.js"></script>
+    <div ng-controller="myCtrl2">
+       <button ng-click="showData()">show</button>
+    </div>
+        <script>
+      angular.module('myApp',[])
+      .controller('myCtrl1',function($scope){
+        $scope.shareData=function(data){
+         $scope.$emit('emit',data);
+        }
+      })
+      .controller('mainCtrl',function($scope){
+        $scope.$on('emit',function(e,data){
+          $scope.data=data;
+        });
+        $scope.broadcast=function(){
+          console.log($scope.data);
+           $scope.$broadcast('broadcast', $scope.data);
+        }
+      })
+      .controller('myCtrl2',function($scope){
+       $scope.$on('broadcast',function(e,data){
+         console.log(data);
+       });
+      })
+    </script>
+  </body>
+<script src="./mainCtrl.js"></script>
+<script src="./router.js"></script>
 </html>
