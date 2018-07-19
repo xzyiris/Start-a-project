@@ -47,7 +47,7 @@ app.config(function ($stateProvider,$urlRouterProvider) {
     name: 'articleDetails',
     url: '/articleDetails',
     templateUrl: './view/articleDetails.html',
-    controller: 'articleContrl'
+    // controller: 'articleContrl'
   })
   .state({
     name: 'welcome',
@@ -56,7 +56,8 @@ app.config(function ($stateProvider,$urlRouterProvider) {
   })
   .state({
     name: 'editArticle',
-    url: '/editArticle',
+    url: '/editArticle?id=',
+    // params:{id:null},
     templateUrl: './view/editArticle.html',
     controller: 'editArticleCtrl'
   })

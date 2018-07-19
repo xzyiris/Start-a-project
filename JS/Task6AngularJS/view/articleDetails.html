@@ -12,10 +12,10 @@
             </strong>
           </div>
           <div class="col-sm-8">
-            <input type="text" class="form-control" ng-model="title" name="title" ng-blur="required(title)" ng-change="required(title)" required>
+            <input type="text" class="form-control" ng-model="title" name="title" ng-blur="change=true" required>
           </div>
         </div>
-        <div class="error row" ng-show="showValidation"style="margin: 0">
+        <div class="error row" ng-show="newArticle.title.$error.required && change" style="margin: 0">
           <div class="col-sm-2"></div>
           <div class="col-sm-8">
             请填写标题
@@ -28,23 +28,24 @@
             </strong>
           </div>
           <div class="col-sm-4">
-            <select name="type" id="" ng-model="selectedType" ng-options="item | typeFilter for item in type" class="form-control">
+            <select name="type" id="" ng-model="selectedType" ng-options="item | typeFilter for item in type" required ng-blur="typeChange=true"
+              class="form-control">
               <option value="">请选择</option>
             </select>
           </div>
           <div class="col-sm-4">
-            <select name="" id="" ng-model="selectedIndustry" ng-options="item | industryFilter for item in industry" ng-show="selectedType==3"
+            <select name="industry" id="" ng-model="selectedIndustry" ng-options="item | industryFilter for item in industry" ng-show="selectedType==3"
               class="form-control">
               <option value="">请选择</option>
             </select>
           </div>
         </div>
-        <div class="error row" ng-show="showValidation"style="margin: 0">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-8">
-              请选择类型
-            </div>
+        <div class="error row" ng-show="newArticle.type.$error.required && typeChange" style="margin: 0">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-8">
+            请选择类型
           </div>
+        </div>
         <div class="row">
           <div class="col-sm-2">
             <strong>
@@ -52,7 +53,7 @@
             </strong>
           </div>
           <div class="col-sm-8">
-            <input ng-model="content" type="text" class="form-control">
+            <input ng-model="content" type="text" name="content" class="form-control">
           </div>
         </div>
         <div class="row">
@@ -62,7 +63,13 @@
             </strong>
           </div>
           <div class="col-sm-8">
-            <input type="text" class="form-control" ng-model="url">
+            <input type="text" name="url" class="form-control" ng-model="url" ng-blur="urlChange=true" required>
+          </div>
+        </div>
+        <div class="error row" ng-show="newArticle.url.$error.required && urlChange" style="margin: 0">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-8">
+            请输入跳转链接
           </div>
         </div>
         <div class="row">
@@ -72,9 +79,15 @@
             </strong>
           </div>
           <div class="col-sm-8">
-            <label class="btn btn-primary" for="upload">选择文件
+            <label tabindex="0" class="btn btn-primary" for="upload">选择文件
             </label>
-            <input upload type="file" id="upload" style="display: none;" ng-model="imgFile">
+            <input upload type="file" id="upload" name="file" style="display: none" required onchange="angular.element(this).scope().fileChanged(this)">
+          </div>
+        </div>
+        <div class="error row" style="margin: 0" ng-show="false">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-8">
+            请上传图片
           </div>
         </div>
         <div class="row">
@@ -138,8 +151,8 @@
         <div class="row">
           <div class="col-sm-2">&nbsp</div>
           <div class="col-sm-8">
-            <button class="btn btn-success" ng-click="upload()">立即上线</button>
-            <button class="btn btn-success" ng-click="draft()">存为草稿</button>
+            <button class="btn btn-success" ng-click="upload()" ng-disabled="newArticle.$invalid">立即上线</button>
+            <button class="btn btn-success" ng-click="draft()" ng-disabled="newArticle.$invalid">存为草稿</button>
           </div>
           <div class="col-sm-2">
             <button class="btn btn-default">取消</button>

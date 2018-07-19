@@ -1,7 +1,8 @@
-angular.module('app').controller('newArticleCtrl', function ($scope, $http, $location) {
+angular.module('app').controller('newArticleCtrl', function ($scope, $http, $location,$rootScope) {
   $scope.type = [0, 1, 2, 3];
   // 图片类型为3时，必须选择industry
   $scope.industry = [0, 1, 2, 3, 4, 5, 6];
+  $scope.uploadStatus = 2;
   $scope.monitorProgress = {
     width: $scope.progressWidth
   }
@@ -54,10 +55,11 @@ angular.module('app').controller('newArticleCtrl', function ($scope, $http, $loc
     $scope.upload();
   }
 
+  $scope.fileChanged = function (ele) {
+  }
   $scope.uploadImg = function () {
     //在服务器返回成功之前对进度条不断填充
     let raf;
-
     function fillProgress() {
       $scope.progressWidth += 10;
       raf = setTimeout(() => {
@@ -85,10 +87,21 @@ angular.module('app').controller('newArticleCtrl', function ($scope, $http, $loc
     })
   }
   $scope.delete = function () {
-    $scope.imgFile = null;
+    angular.element('#upload')[0].value = null;
+    $scope.imgFile = undefined;
     $scope.imgSize = null;
     $scope.imgName = null;
     $scope.imgSrc = '/';
     $scope.progressWidth = 0;
+
   }
+  $scope.change = false;
+  $scope.typeChange = false;
+  $scope.urlChange = false;
+  $scope.fileChange = false;
+
+  // $scope.$watch('imgFile',function () {
+  //   console.log($scope.imgFile);
+
+  // })
 })

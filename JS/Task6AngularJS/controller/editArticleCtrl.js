@@ -1,5 +1,38 @@
 angular.module('app').controller('editArticleCtrl',function ($scope,$http,$rootScope,$location) {
-  $scope.editItem = $rootScope.editItem;
+  // $scope.editItem = $rootScope.editItem;
+  // console.log($location.search());
+  $scope.type = [0, 1, 2, 3];
+  // 图片类型为3时，必须选择industry
+  $scope.industry = [0, 1, 2, 3, 4, 5, 6];
+  //用于表单验证
+  $scope.selectedIndustry;
+  $scope.changeTitle = false;
+  $scope.typeChange = false;
+  $scope.industryChange = false;
+  $scope.urlChange = false;
+  $scope.fileChange = false;
+  let params = $location.search();
+
+  $scope.init = function () {
+    $http({
+      method:'GET',
+      url: '/carrots-admin-ajax/a/article/' + params.id,
+    })
+    .then((data)=>{
+      let result = data.data.data.article;
+      $scope.title = result.title;
+      $scope.selectedType = result.type;
+      $scope.selectedIndustry = result.industry;
+      $scope.content = result.content;
+      $scope.url = result.url;
+      $scope.img = result.img;
+      $scope.createAt = result.createAt;
+      $scope.selectedStatus = result.status;
+      console.log($scope.content);
+
+      editor.txt.html($scope.content);
+    })
+  }();
 
   $scope.monitorProgress = {
     width: $scope.progressWidth
@@ -9,44 +42,53 @@ angular.module('app').controller('editArticleCtrl',function ($scope,$http,$rootS
       width: $scope.progressWidth
     }
   });
-
   $scope.upload = function () {
     let form = new FormData();
-    let file = document.getElementById('upload');
-    form.append("img", $scope.editItem.img);
-    form.append("title", $scope.editItem.title);
-    form.append('type', $scope.editItem.type);
-    form.append('status', $scope.editItem.status);
-    form.append('url', $scope.editItem.url);
-    form.append('content', $scope.editItem.content);
-    if ($scope.editItem.industry) {
-      form.append('industry', $scope.editItem.industry);
-    }
+    // let file = document.getElementById('upload');
+    // form.append("img", $scope.img);
+    // form.append("title", $scope.title);
+    // form.append('type', $scope.selectedType);
+    // form.append('status', $scope.selectedStatus);
+    // form.append('url', $scope.url);
+    form.append('content', editor.txt.html());
+    // form.append('createAt',$scope.createAt);
+    // if ($scope.selectedIndustry) {
+    //   form.append('industry', $scope.selectedIndustry);
+    // }
 
     $http({
       method: 'PUT',
-      url: '/carrots-admin-ajax/a/u/article/' + $scope.editItem.id,
-      data: form,
+      url: '/carrots-admin-ajax/a/u/article/' + params.id,
+      // data: form,
+      params: {
+        title: $scope.title,
+        status: $scope.selectedStatus,
+        img: $scope.img,
+        content: editor.txt.html(),
+        url: $scope.url,
+        industry: $scope.selectedIndustry,
+        createAt: $scope.createAt,
+        type: $scope.selectedType,
+      },
+      // data: form,
       headers: {
         'Content-Type': undefined,
       }
     }).then((data) => {
+      $scope.message = data.data.code;
         console.log(data);
+
       },
       (err) => {
         console.error(err);
       }).then(() => {
       console.log("complete");
     }).then(() => {
-      $location.url('/articleList');
+      if($scope.message >= 0){
+        $location.url('/articleList');
+      }
     })
-    // $.ajax({
-    //   url: '/carrots-admin-ajax/a/u/article',
-    //   type:'POST',
-    //   data: form,
-    //   processData: false,
-    //   contentType: false
-    // }).then((data)=>console.log('ajax:' + data));
+
 
   }
   $scope.draft = function () {
@@ -77,7 +119,7 @@ angular.module('app').controller('editArticleCtrl',function ($scope,$http,$rootS
       }
     }).then((data) => {
       // console.log(data.data.data.url);
-      $scope.editItem.img = data.data.data.url;
+      $scope.img = data.data.data.url;
     }).then(() => {
       clearTimeout(raf);
       console.log('complete');
@@ -85,10 +127,13 @@ angular.module('app').controller('editArticleCtrl',function ($scope,$http,$rootS
     })
   }
   $scope.delete = function () {
-    $scope.imgFile = null;
+    angular.element("#upload")[0].value = null;
+    console.log(angular.element("#upload"));
+
     $scope.imgSize = null;
     $scope.imgName = null;
     $scope.imgSrc = '/';
     $scope.progressWidth = 0;
   }
+
 })
