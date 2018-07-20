@@ -20,12 +20,14 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="./style.css">
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+  <script src="./resource/ocLazyLoad.min.js"></script>
 </head>
 
-<body>
+<body ng-controller="appCtrl">
   <header>
     <span class="title">
       <span>萝卜多后台管理系统</span>
+      <div onclick="lazy()">test</div>
     </span>
     <div class="status">
       <span>管理员 </span>
@@ -46,17 +48,18 @@
     </section>
   </main>
 </body>
+
 <script src="./controller/appController.js"></script>
-<script src="./controller/corpController.js"></script>
 <script src="./filter/filter.js"></script>
+<script src="./directive/myAccordion.js"></script>
+<!-- <script src="./controller/testController.js"></script> -->
+<script src="./resource/wangEditor.min.js"></script>
+<script src="./directive/myPageButton.js"></script>
+<script src="./service/service.js"></script>
+<script src="./directive/upload.js"></script>
+
+<!-- <script src="./controller/corpController.js"></script>
 <script src="./controller/jobController.js"></script>
 <script src="./controller/articleController.js"></script>
-<script src="./controller/testController.js"></script>
-<script src="./directive/myAccordion.js"></script>
-<script src="./directive/upload.js"></script>
-<script src="./directive/myPageButton.js"></script>
-<script src="./controller/newArticle.js"></script>
-<script src="./controller/editArticleCtrl.js"></script>
-<script src="./service/service.js"></script>
-<script src="./resource/wangEditor.min.js"></script>
+<script src="./controller/editArticleCtrl.js"></script> -->
 </html>

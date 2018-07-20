@@ -1,5 +1,6 @@
 angular.module("app").controller('corpCtrl',
 function ($scope, $http) {
+  // $ocLazyLoad.load('./controller/corpController.js');
   $scope.data = {
     industry: [0, 1, 2, 3, 4, 5, 6],
     type: [0, 1, 2, 3],

@@ -1,5 +1,5 @@
 angular.module("app").controller("articleCtrl",
-  function ($scope, $rootScope, $http, $filter, $location, $state, saveSession,myHttp,pageService) {
+  function ($scope,$q, $location, $state, $ocLazyLoad,saveSession,myHttp,pageService) {
     //总条数
     $scope.totalSize;
     $scope.pageSize = 5;
@@ -151,5 +151,25 @@ angular.module("app").controller("articleCtrl",
     $scope.clear = function () {
       $scope.selectedStartTime = $scope.selectedEndTime = $scope.selectedType = $scope.selectedStatus = undefined;
     }
+    let asynLoad = function () {
+      let defferd = $q.defer();
+      let message = $ocLazyLoad.load('./controller/newArticle.js');
+      console.log(message.$$state.status);
+
+      defferd.resolve('OK');
+      return defferd.promise;
+    }
+    // $scope.newArticle = function () {
+    //   let promise = new asynLoad();
+    //   promise.then((data)=>{
+    //     $ocLazyLoad.load('./controller/newArticle.js');
+    //   }).then(()=>{
+    //     $state.go('articleDetails');
+    //   })
+    //   // setTimeout(() => {
+    //   //   $state.go('articleDetails');
+    //   // }, 500);
+
+    // }
     $scope.init();
   })
