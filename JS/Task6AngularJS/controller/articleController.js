@@ -1,6 +1,8 @@
 angular.module("app").controller("articleCtrl",
   function ($scope,$q, $location, $state, $ocLazyLoad,saveSession,myHttp,pageService) {
     //总条数
+    console.log(vm);
+
     $scope.totalSize;
     $scope.pageSize = 5;
     $scope.totalPage;
