@@ -20,8 +20,13 @@ app.directive('myPageButton', function () {
       }
       $scope.totalPage = undefined;
       let params = saveSession.get('params');
-      console.log(params);
-
+      // console.log(params);
+      $scope.directPage ;
+      $scope.detectPage = function () {
+        if($scope.directPage > $scope.totalPage){
+          $scope.directPage = $scope.totalPage;
+        }
+      }
       $http({
         method: 'GET',
         url: '/carrots-admin-ajax/a/article/search',
@@ -101,22 +106,22 @@ app.directive('myPageButton', function () {
 
           for (let i = 0; i < $scope.displayPages.length; i++) {
             $scope.displayPages[i].index += diff;
+            $scope.displayPages[i].isActive.myActive = false;
           }
-
+          $scope.displayPages[0].isActive.myActive = true;
         } else if (page >= $scope.totalPage - 5 && page <= $scope.totalPage) {
           for (let i = 0; i < $scope.displayPages.length; i++) {
             $scope.displayPages[i].index = $scope.totalPage - $scope.displayPages.length + 1 + i;
             $scope.displayPages[i].isActive.myActive = false;
           }
-
           $scope.displayPages[$scope.displayPages.length - $scope.totalPage + page - 1].isActive.myActive = true;
         }
-        console.log(sessionStorage.params);
+        // console.log(sessionStorage.params);
         sessionStorage.params = JSON.stringify($location.search());
       }
       $scope.nextPage = function () {
         let selectedPage;
-        if ($scope.selectedPage > $scope.totalPage - $scope.displayPages.length + 1 || $scope.total < 5) {
+        if ($scope.selectedPage >= $scope.totalPage - $scope.displayPages.length + 1 || $scope.total < 5) {
           for (let i = 0; i < $scope.displayPages.length; i++) {
             if ($scope.displayPages[i].isActive.myActive == true) {
               selectedPage = i;
@@ -128,10 +133,9 @@ app.directive('myPageButton', function () {
           $scope.displayPages[selectedPage + 1].isActive.myActive = true;
           $scope.selectedPage++;
           $scope.search($scope.selectedPage);
-          console.log(1);
-
+          // console.log(1);
         } else {
-          console.log(2);
+          // console.log(2);
 
           for (let i = 0; i < $scope.displayPages.length; i++) {
             $scope.displayPages[i].index += 1;

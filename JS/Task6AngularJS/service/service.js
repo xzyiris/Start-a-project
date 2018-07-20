@@ -90,9 +90,10 @@ app.factory('myHttp', function ($http) {
       return $http({
         method: 'PUT',
         url: updateArticleUrl + id,
-        params: params,
+        // params: params,
+        data: $.param(params),
         headers: {
-          'Content-Type': undefined,
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
       });
     },
