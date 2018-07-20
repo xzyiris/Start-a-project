@@ -52,7 +52,7 @@ angular.module("app").controller("articleCtrl",
       if (saveSession.get('params')) {
 
         let params = saveSession.get('params');
-        console.log(params);
+        // console.log(params);
 
         $scope.selectedStartTime = (new Date(params.startAt))
         $scope.selectedEndTime = (new Date(params.endAt))

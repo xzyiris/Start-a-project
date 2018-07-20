@@ -33,68 +33,66 @@ app.directive('myPageButton', function () {
         params: params,
       }).then((data) => {
         $scope.totalPage = Math.ceil(data.data.data.total / $scope.pageSize);
-        console.log(data);
-
-        console.log($scope.totalPage);
-
+        // console.log(data);
+        // console.log($scope.totalPage);
       }).then(() => {
         // console.log($scope.displayPages);
-        $scope.pageCount = Math.ceil($scope.totalPage / $scope.pageSize);
-        if ($scope.totalPage > 5) {
-          let firstPage;
-          if($scope.selectedPage > $scope.totalPage - $scope.displayPages.length){
-            firstPage = $scope.totalPage - $scope.displayPages.length + 1;
-          }
-          else{
-            firstPage = $scope.selectedPage;
-          }
+        // $scope.pageCount = Math.ceil($scope.totalPage / $scope.pageSize);
+        // if ($scope.totalPage > 5) {
+        //   let firstPage;
+        //   if($scope.selectedPage > $scope.totalPage - $scope.displayPages.length){
+        //     firstPage = $scope.totalPage - $scope.displayPages.length + 1;
+        //   }
+        //   else{
+        //     firstPage = $scope.selectedPage;
+        //   }
 
-          $scope.displayPages = [{
-              index: firstPage,
-              isActive: {
-                'myActive': false,
-              }
-            },
-            {
-              index: firstPage +1,
-              isActive: {
-                'myActive': false
-              }
-            },
-            {
-              index: firstPage +2,
-              isActive: {
-                'myActive': false
-              }
-            },
-            {
-              index: firstPage +3,
-              isActive: {
-                'myActive': false
-              }
-            },
-            {
-              index: firstPage +4,
-              isActive: {
-                'myActive': false
-              }
-            },
-          ];
-        } else {
-          for (let i = 0; i < $scope.totalPage; i++) {
-            $scope.displayPages[i] = {
-              index: i + 1,
-              isActive: {
-                'myActive': false
-              }
-            };
-          }
-        }
-        for(let i in $scope.displayPages){
-          if($scope.displayPages[i].index == $scope.selectedPage){
-            $scope.displayPages[i].isActive.myActive = true;
-          }
-        }
+        //   $scope.displayPages = [{
+        //       index: firstPage,
+        //       isActive: {
+        //         'myActive': false,
+        //       }
+        //     },
+        //     {
+        //       index: firstPage +1,
+        //       isActive: {
+        //         'myActive': false
+        //       }
+        //     },
+        //     {
+        //       index: firstPage +2,
+        //       isActive: {
+        //         'myActive': false
+        //       }
+        //     },
+        //     {
+        //       index: firstPage +3,
+        //       isActive: {
+        //         'myActive': false
+        //       }
+        //     },
+        //     {
+        //       index: firstPage +4,
+        //       isActive: {
+        //         'myActive': false
+        //       }
+        //     },
+        //   ];
+        // } else {
+        //   for (let i = 0; i < $scope.totalPage; i++) {
+        //     $scope.displayPages[i] = {
+        //       index: i + 1,
+        //       isActive: {
+        //         'myActive': false
+        //       }
+        //     };
+        //   }
+        // }
+        // for(let i in $scope.displayPages){
+        //   if($scope.displayPages[i].index == $scope.selectedPage){
+        //     $scope.displayPages[i].isActive.myActive = true;
+        //   }
+        // }
       })
       $scope.directSelect = function (page) {
         $scope.search(page);
@@ -204,17 +202,26 @@ app.directive('myPageButton', function () {
       }
       $scope.$watch('totalPage', function (newValue, oldValue) {
         // console.log($scope.totalPage);
+        // console.log(1);
+
         $scope.displayPages = [];
         if ($scope.totalPage > 5) {
           let firstPage;
-          if($scope.selectedPage > $scope.totalPage - $scope.displayPages.length){
+          // console.log('selectedPage:' + $scope.selectedPage);
+          // console.log('totalPage:' + $scope.totalPage);
+
+          if($scope.selectedPage >= $scope.totalPage - $scope.displayPages.length){
+            $scope.displayPages = [1,2,3,4,5];
             firstPage = $scope.totalPage - $scope.displayPages.length + 1;
+            // console.log('selectedPage2:' + $scope.selectedPage);
+            // console.log('firstPage:' + firstPage);
           }
           else{
             firstPage = $scope.selectedPage;
           }
+
           $scope.displayPages = [{
-              index: $scope.selectedPage,
+              index: firstPage,
               isActive: {
                 'myActive': false
               }
