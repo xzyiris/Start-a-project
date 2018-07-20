@@ -1,5 +1,5 @@
 angular.module("app").controller("articleCtrl",
-  function ($scope, $rootScope, $http, $filter, $location, $state, saveSession,myHttp) {
+  function ($scope, $rootScope, $http, $filter, $location, $state, saveSession,myHttp,pageService) {
     //总条数
     $scope.totalSize;
     $scope.pageSize = 5;
@@ -27,6 +27,7 @@ angular.module("app").controller("articleCtrl",
     $scope.list = null;
     $scope.selectedStartTime = undefined;
     $scope.selectedEndTime = undefined;
+    $scope.selectedStatus = undefined;
     $scope.uploadStatus = 2;
     //选中的页数，默认值为1
     $scope.selectedPage = 1;
@@ -47,15 +48,6 @@ angular.module("app").controller("articleCtrl",
         list: ['用户列表']
       }
     ];
-    // $scope.selectPage = function (newPage) {
-    //   $scope.selectedPage = newPage;
-    // }
-    // $scope.$watch('list',function (newValue,oldValue) {
-    //   let number = Date.parse(newValue);
-    //   console.log(newValue);
-    //   console.log(Date.parse(newValue));
-    //   console.log(new Date(number));
-    // })
     $scope.init = function () {
       if (saveSession.get('params')) {
 
@@ -64,15 +56,12 @@ angular.module("app").controller("articleCtrl",
 
         $scope.selectedStartTime = (new Date(params.startAt))
         $scope.selectedEndTime = (new Date(params.endAt))
-
+        $scope.selectedType = params.type;
+        $scope.selectedStatus = params.status;
         params.size = $scope.pageSize;
         $scope.selectedPage = parseInt(params.page);
         // $scope.$apply();
-        $http({
-          method: 'GET',
-          url: '/carrots-admin-ajax/a/article/search',
-          params: params
-        }).then(
+        myHttp.getArticle(params).then(
           (data) => {
             $scope.list = data;
           },
@@ -83,24 +72,11 @@ angular.module("app").controller("articleCtrl",
           () => {
             $scope.totalSize = $scope.list.data.data.total;
             $scope.totalPage = Math.ceil($scope.totalSize / $scope.pageSize);
-            if ($scope.totalPage > 5) {
-              $scope.displayPages = [1, 2, 3, 4, 5];
-            } else {
-              $scope.displayPages = [];
-              for (let i = 0; i < $scope.totalPage; i++) {
-                $scope.displayPages.push(i + 1);
-              }
-            }
+            $scope.displayPages = pageService.getDisplayPages($scope.totalPage);
           }
         );
       } else {
-        $http({
-          method: 'GET',
-          url: '/carrots-admin-ajax/a/article/search',
-          params: {
-            size: $scope.pageSize,
-          }
-        }).then(
+        myHttp.getArticle({size:$scope.pageSize}).then(
           (data) => {
             $scope.list = data;
           },
@@ -111,14 +87,7 @@ angular.module("app").controller("articleCtrl",
           () => {
             $scope.totalSize = $scope.list.data.data.total;
             $scope.totalPage = Math.ceil($scope.totalSize / $scope.pageSize);
-            if ($scope.totalPage > 5) {
-              $scope.displayPages = [1, 2, 3, 4, 5];
-            } else {
-              $scope.displayPages = [];
-              for (let i = 0; i < $scope.totalPage; i++) {
-                $scope.displayPages.push(i + 1);
-              }
-            }
+            $scope.displayPages = pageService.getDisplayPages($scope.totalPage);
           }
         );
       }
@@ -127,26 +96,20 @@ angular.module("app").controller("articleCtrl",
       let selectedStartTime = Date.parse($scope.selectedStartTime);
       let selectedEndTime = Date.parse($scope.selectedEndTime);
       $scope.selectedPage = selectedPage;
-
       $location.search("type", $scope.selectedType);
       $location.search("startAt", selectedStartTime);
       $location.search("endAt", selectedEndTime);
       $location.search("status", $scope.selectedStatus);
       $location.search("page", selectedPage);
-      $http({
-        method: 'get',
-        url: '/carrots-admin-ajax/a/article/search',
-        params: {
-          title: "",
-          author: "",
-          startAt: selectedStartTime ? selectedStartTime : null,
-          endAt: selectedEndTime ? selectedEndTime : null,
-          type: $scope.selectedType,
-          status: $scope.selectedStatus,
-          page: selectedPage,
-          size: $scope.pageSize
-        }
-      }).then(
+      params = {
+        startAt: selectedStartTime ? selectedStartTime : null,
+        endAt: selectedEndTime ? selectedEndTime : null,
+        type: $scope.selectedType,
+        status: $scope.selectedStatus,
+        page: selectedPage,
+        size: $scope.pageSize
+      }
+      myHttp.getArticle(params).then(
         (data) => {
           $scope.list = data;
         },
@@ -157,52 +120,13 @@ angular.module("app").controller("articleCtrl",
         if ($scope.totalSize != $scope.list.data.data.total) {
           $scope.totalSize = $scope.list.data.data.total;
           $scope.totalPage = Math.ceil($scope.totalSize / $scope.pageSize);
-          // console.log($scope.totalPage);
-          if ($scope.totalPage > 5) {
-            $scope.displayPages = [1, 2, 3, 4, 5];
-          } else {
-            $scope.displayPages = [];
-            for (let i = 0; i < $scope.totalPage; i++) {
-              $scope.displayPages.push(i + 1);
-            }
-          }
+          $scope.displayPages = pageService.getDisplayPages($scope.totalPage);
         }
         saveSession.save('params', $location.search());
 
       })
     }
 
-    $scope.upload = function () {
-      let form = new FormData();
-      let file = document.getElementById('upload');
-      form.append("img", $scope.imgSrc);
-      form.append("title", $scope.title);
-      form.append('type', $scope.selectedType);
-      form.append('status', $scope.uploadStatus);
-      form.append('url', $scope.url);
-      form.append('content', $scope.content);
-      if ($scope.selectedIndustry) {
-        form.append('industry', $scope.selectedIndustry);
-      }
-
-      $http({
-        method: 'POST',
-        url: '/carrots-admin-ajax/a/u/article',
-        data: form,
-        headers: {
-          'Content-Type': undefined,
-        }
-      }).then((data) => {
-          console.log(data);
-        },
-        (err) => {
-          console.error(err);
-        }).then(() => {
-        console.log("complete");
-      }).then(() => {
-        $location.url('/articleList');
-      })
-    }
     $scope.deleteInServer = function (id) {
       myHttp.delete(id).then((data)=>{
         if(data.data.code >= 0){
@@ -212,43 +136,20 @@ angular.module("app").controller("articleCtrl",
       })
     }
     $scope.modifyStatus = function (id, status) {
-      let feedback;
-      if (status == 1) {
-        feedback = confirm('确定上架吗？');
-      } else if (status == 2) {
-        feedback = confirm('确定下架吗？')
-      }
-      if (feedback) {
-        switch (status) {
-          case 1:
-            status = 2;
-            break;
-          case 2:
-            status = 1;
-            break;
-          default:
-            break;
-        }
         myHttp.modifyStatus(id,status).then((data)=>{
           console.log(data);
           $scope.search($scope.selectedPage)
         })
-      }
     }
 
     $scope.edit = function (index) {
-      sessionStorage.setItem('params', JSON.stringify($location.search()));
+      // saveSession.save('params',JSON.stringify($location.search()));
       $state.go('editArticle', {
         id: $scope.list.data.data.articleList[index].id
       });
-
+    }
+    $scope.clear = function () {
+      $scope.selectedStartTime = $scope.selectedEndTime = $scope.selectedType = $scope.selectedStatus = undefined;
     }
     $scope.init();
-    let object = {};
-    myHttp.getArticle().then((data)=>{
-      console.log(data);
-    })
-
-
-
   })
