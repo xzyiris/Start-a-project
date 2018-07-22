@@ -7,70 +7,32 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="./node_modules/vue/dist/vue.min.js"></script>
+  <script src="./node_modules/vue-router/dist/vue-router.min.js"></script>
+  <script src="./node_modules/axios/dist/axios.min.js"></script>
+  <style>
+    .active {
+      background-color: yellowgreen;
+    }
+
+    .text-danger {
+      color: red;
+    }
+  </style>
 </head>
 
 <body>
   <div id="app">
-    {{message}}
-  </div>
-  <div id="app-2">
-    <span v-bind:title="message">
-      鼠标悬停几秒查看信息
+    <h1>Bitcoin Price Index</h1>
+    <div v-for="(currency, index) in info" :key="index" class="currency">
+      {{currency.description}}:
+    </div>
+    <span class="lighten">
+      <span v-html="currency.symbol"></span>
+      {{currency.rate_float | currencydecimal}}
     </span>
   </div>
-  <div id="app-3">
-    <p v-if="seen">现在你看到我了</p>
-  </div>
-  <div id="app-4">
-    <ol>
-      <li v-for="todo in todos">
-        {{todo.text}}
-      </li>
-    </ol>
-  </div>
-
-  <div id="app-5">
-    <p>{{message}}</p>
-    <button v-on:click="reverseMessage">逆转消息</button>
-  </div>
-  <div id="app-6">
-    <p>{{message}}</p>
-    <input type="text" v-model="message">
-  </div>
-
-  <div id="app-7">
-    <ol>
-      <todo-item
-      v-for="item in groceryList"
-      v-bind:todo="item"
-      v-bind:key="item.id">
-      </todo-item>
-    </ol>
-  </div>
-
-  <div id="app-8">
-    <my-vue></my-vue>
-  </div>
-
-  <div id="app-9">
-    <p>{{rawHtml}}</p>
-    <p v-html="rawHtml"></p>
-    <p>{{false?'YES':'NO'}}</p>
-    <p>{{rawHtml.split('').reverse().join('')}}</p>
-    <button v-on:click="foo='baz'">Change it!</button>
-  </div>
-
-  <div id="example">
-    <p>Original message: {{message}}</p>
-    <p>Computed reversed message: {{reversedMessage}}</p>
-    <div>{{filter}}</div>
-    <div>{{reversedMessage()}}</div>
-    <input type="text" v-model="firstName">
-    <input type="text" v-model="lastName">
-    <input type="text" v-model="fullName">
-  </div>
-
 </body>
+</div>
 <script src="./index.js">
 </script>
 

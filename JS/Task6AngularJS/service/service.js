@@ -27,7 +27,7 @@ app.factory('saveSession', function () {
   return service;
 })
 
-app.factory('myHttp', function ($http) {
+app.factory('myHttp', function ($http,$q) {
   let getArticleUrl = '/carrots-admin-ajax/a/article/search/';
   let getSingleArticleUrl = '/carrots-admin-ajax/a/article/';
   let modifyStatusUrl = '/carrots-admin-ajax/a/u/article/status';
