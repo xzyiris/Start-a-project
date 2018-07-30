@@ -30,11 +30,11 @@ app.factory('saveSession', function () {
 app.factory('myHttp', function ($http,$q) {
   let getArticleUrl = '/carrots-admin-ajax/a/article/search/';
   let getSingleArticleUrl = '/carrots-admin-ajax/a/article/';
-  let modifyStatusUrl = '/carrots-admin-ajax/a/u/article/status';
   let updateArticleUrl = '/carrots-admin-ajax/a/u/article/';
   let deleteUrl = '/carrots-admin-ajax/a/u/article/';
-  let uploadPictureUrl = '/carrots-admin-ajax/a/u/img/task';
   let uploadArticleUrl = '/carrots-admin-ajax/a/u/article';
+  let uploadPictureUrl = '/carrots-admin-ajax/a/u/img/task';
+  let modifyStatusUrl = '/carrots-admin-ajax/a/u/article/status';
   let service = {
     getArticle: function (params) {
       return $http({
